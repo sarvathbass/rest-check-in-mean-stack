@@ -1,0 +1,584 @@
+<div class="row">
+    <style>
+        #c3js1, #c3js2, #c3js3, #c3js4, #c3js5, #c3js6, #c3js1 svg, #c3js2 svg, #c3js3 svg, #c3js4 svg, #c3js5 svg, #c3js6 svg{
+            min-width: 250px;
+            max-width: 100%;
+            height: 500px;
+            margin: 0 auto
+        }
+        pre{
+            max-height: 547px;
+        }
+
+    </style>
+    <div class="row section-header">
+        <h4 class="page-title">C3.js</h4>
+        <p class="page-title"><a href="http://c3js.org/" target="_blank">More info <small><i class="fontello-icon icon-link-ext blue-text darken-1"></i></small></a></p>
+    </div>
+    <div class="row dashboard-wrapper content-container">
+        <div class="row">
+            <div class="col l6 m12 s12">
+                <div class="card charts">
+                    <div class="card-content">
+                        <h5>Model 1</h5>
+                    </div>
+                    <div class="card-action">
+                        <div id="c3js1"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col l6 m12 s12 hide-on-small-only">
+                <div class="card code1">
+                    <div class="row">
+                        <div class="col s12">
+                            <ul class="tabs" tabs >
+                                <li class="tab col s3"><a href="#c3js1_js" class="active" >Javascript</a></li>
+                                <li class="tab col s3"><a href="#c3js1_css">CSS</a></li>
+                                <li class="tab col s3"><a href="#c3js1_html">HTML</a></li>
+                            </ul>
+                        </div>
+                        <div class="col s12">
+                            <div class="row">
+                                <div id="c3js1_js" class="s12">
+                                    <pre>
+                                        <code class="language-javascript">
+(function () {
+    'use strict';
+    angular.module('mara').controller('chartsC3Controller',chartsC3Controller);
+    chartsC3Controller.$inject = ['$timeout'];
+    function chartsC3Controller($timeout) {
+        var vm = this;
+        vm.c3js1 = c3.generate({
+            bindto: '#c3js1',
+            data: {
+                columns: [
+                    ['data1', 30, 200, 100, 400, 150, 250],
+                    ['data2', 50, 20, 10, 40, 15, 25]
+                ]
+            }
+        });
+        $timeout(function () {
+            vm.c3js1.load({
+                columns: [
+                    ['data1', 230, 190, 300, 500, 300, 400]
+                ]
+            });
+        }, 2000);
+        $timeout(function () {
+            vm.c3js1.load({
+                columns: [
+                    ['data3', 130, 150, 200, 300, 200, 100]
+                ]
+            });
+        }, 2500);
+        $timeout(function () {
+            vm.c3js1.unload({
+                ids: 'data1'
+            });
+        }, 3000);
+    }
+})();
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div id="c3js1_css" class="s12">
+                                    <pre>
+                                        <code class="language-css">
+#c3js1 {
+    min-width: 250px;
+    height: 500px;
+    margin: 0 auto
+}
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div id="c3js1_html" class="s12">
+                                    <pre>
+                                        <code class="language-markup">
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://rawgit.com/masayuki0812/c3/master/c3.css&quot; /&gt;
+&lt;script src=&quot;http://d3js.org/d3.v3.min.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://rawgit.com/masayuki0812/c3/master/c3.js&quot;&gt;&lt;/script&gt;
+&lt;div class=&quot;card&quot;&gt;
+    &lt;div id=&quot;c3js1&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+                                        </code>
+                                    </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col l6 m12 s12">
+                <div class="card charts">
+                    <div class="card-content">
+                        <h5>Model 2</h5>
+                    </div>
+                    <div class="card-action">
+                        <div id="c3js2"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col l6 m12 s12 hide-on-small-only">
+                <div class="card code1">
+                    <div class="row">
+                        <div class="col s12">
+                            <ul class="tabs" tabs >
+                                <li class="tab col s3"><a href="#c3js2_js" class="active" >Javascript</a></li>
+                                <li class="tab col s3"><a href="#c3js2_css">CSS</a></li>
+                                <li class="tab col s3"><a href="#c3js2_html">HTML</a></li>
+                            </ul>
+                        </div>
+                        <div class="col s12">
+                            <div class="row">
+                                <div id="c3js2_js" class="s12">
+                                    <pre>
+                                        <code class="language-javascript">
+(function () {
+    'use strict';
+    angular.module('mara').controller('chartsC3Controller',chartsC3Controller);
+    chartsC3Controller.$inject = ['$timeout'];
+    function chartsC3Controller($timeout) {
+        var vm = this;
+        vm.c3js2 = c3.generate({
+            bindto: '#c3js2',
+            data: {
+                columns: [
+                    ['data1', 30, 200, 100, 400, 150, 250],
+                    ['data2', 130, 100, 140, 200, 150, 50]
+                ],
+                type: 'bar'
+            }
+        });
+        $timeout(function () {
+            vm.c3js2.transform('spline', 'data1');
+        }, 2000);
+        $timeout(function () {
+            vm.c3js2.transform('spline', 'data2');
+        }, 3000);
+        $timeout(function () {
+            vm.c3js2.transform('bar');
+        }, 4000);
+        $timeout(function () {
+            vm.c3js2.transform('spline');
+        }, 5000);
+        $timeout(function () {
+            vm.c3js2.transform('bar','data1');
+        }, 6000);
+        $timeout(function () {
+            vm.c3js2.transform('bar','data2');
+        }, 7000);
+    }
+})();
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div id="c3js2_css" class="s12">
+                                    <pre>
+                                        <code class="language-css">
+#c3js2 {
+    min-width: 250px;
+    height: 500px;
+    margin: 0 auto
+}
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div id="c3js2_html" class="s12">
+                                    <pre>
+                                        <code class="language-markup">
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://rawgit.com/masayuki0812/c3/master/c3.css&quot; /&gt;
+&lt;script src=&quot;http://d3js.org/d3.v3.min.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://rawgit.com/masayuki0812/c3/master/c3.js&quot;&gt;&lt;/script&gt;
+&lt;div class=&quot;card&quot;&gt;
+    &lt;div id=&quot;c3js2&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+                                        </code>
+                                    </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col l6 m12 s12">
+                <div class="card charts">
+                    <div class="card-content">
+                        <h5>Model 3</h5>
+                    </div>
+                    <div class="card-action">
+                        <div id="c3js3"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col l6 m12 s12 hide-on-small-only">
+                <div class="card code1">
+                    <div class="row">
+                        <div class="col s12">
+                            <ul class="tabs" tabs >
+                                <li class="tab col s3"><a href="#c3js3_js" class="active" >Javascript</a></li>
+                                <li class="tab col s3"><a href="#c3js3_css">CSS</a></li>
+                                <li class="tab col s3"><a href="#c3js3_html">HTML</a></li>
+                            </ul>
+                        </div>
+                        <div class="col s12">
+                            <div class="row">
+                                <div id="c3js3_js" class="s12">
+                                    <pre>
+                                        <code class="language-javascript">
+(function () {
+    'use strict';
+    angular.module('mara').controller('chartsC3Controller',chartsC3Controller);
+    chartsC3Controller.$inject = ['$timeout'];
+    function chartsC3Controller($timeout) {
+        var vm = this;
+        vm.c3js3 = c3.generate({
+            bindto: '#c3js3',
+            data: {
+                columns: [
+                    ['data1', 300, 350, 300, 0, 0, 0],
+                    ['data2', 130, 100, 140, 200, 150, 50]
+                ],
+                types: {
+                    data1: 'area',
+                    data2: 'area-spline'
+                }
+            }
+        });
+    }
+})();
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div id="c3js3_css" class="s12">
+                                    <pre>
+                                        <code class="language-css">
+#c3js3 {
+    min-width: 250px;
+    height: 500px;
+    margin: 0 auto
+}
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div id="c3js3_html" class="s12">
+                                    <pre>
+                                        <code class="language-markup">
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://rawgit.com/masayuki0812/c3/master/c3.css&quot; /&gt;
+&lt;script src=&quot;http://d3js.org/d3.v3.min.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://rawgit.com/masayuki0812/c3/master/c3.js&quot;&gt;&lt;/script&gt;
+&lt;div class=&quot;card&quot;&gt;
+    &lt;div id=&quot;c3js3&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+                                        </code>
+                                    </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col l6 m12 s12">
+                <div class="card charts">
+                    <div class="card-content">
+                        <h5>Model 4</h5>
+                    </div>
+                    <div class="card-action">
+                        <div id="c3js4"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col l6 m12 s12 hide-on-small-only">
+                <div class="card code1">
+                    <div class="row">
+                        <div class="col s12">
+                            <ul class="tabs" tabs >
+                                <li class="tab col s3"><a href="#c3js4_js" class="active" >Javascript</a></li>
+                                <li class="tab col s3"><a href="#c3js4_css">CSS</a></li>
+                                <li class="tab col s3"><a href="#c3js4_html">HTML</a></li>
+                            </ul>
+                        </div>
+                        <div class="col s12 ">
+                            <div class="row">
+                                <div id="c3js4_js" class="s12">
+                                    <pre>
+                                        <code class="language-javascript">
+(function () {
+    'use strict';
+    angular.module('mara').controller('chartsC3Controller',chartsC3Controller);
+    chartsC3Controller.$inject = ['$timeout'];
+    function chartsC3Controller($timeout) {
+        var vm = this;
+        vm.c3js4 = c3.generate({
+            bindto: '#c3js4',
+            data: {
+                columns: [
+                    ['sample', 30, 200, 100, 400, 150, 250, 150, 200, 170, 240, 350, 150, 100, 400, 150, 250, 150, 200, 170, 240, 100, 150, 250, 150, 200, 170, 240, 30, 200, 100, 400, 150, 250, 150, 200, 170, 240, 350, 150, 100, 400, 350, 220, 250, 300, 270, 140, 150, 90, 150, 50, 120, 70, 40]
+                ]
+            },
+            zoom: {
+                enabled: true
+            },
+            subchart: {
+                show: true
+            },
+            grid: {
+                x: {
+                    show: true
+                },
+                y: {
+                    show: true
+                }
+            }
+        });
+
+    }
+})();
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div id="c3js4_css" class="s12">
+                                    <pre>
+                                        <code class="language-css">
+#c3js4 {
+    min-width: 250px;
+    height: 500px;
+    margin: 0 auto
+}
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div id="c3js4_html" class="s12">
+                                    <pre>
+                                        <code class="language-markup">
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://rawgit.com/masayuki0812/c3/master/c3.css&quot; /&gt;
+&lt;script src=&quot;http://d3js.org/d3.v3.min.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://rawgit.com/masayuki0812/c3/master/c3.js&quot;&gt;&lt;/script&gt;
+&lt;div class=&quot;card&quot;&gt;
+    &lt;div id=&quot;c3js4&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+                                        </code>
+                                    </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col l6 m12 s12">
+                <div class="card charts">
+                    <div class="card-content">
+                        <h5>Model 5</h5>
+                    </div>
+                    <div class="card-action">
+                        <div id="c3js5"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col l6 m12 s12 hide-on-small-only">
+                <div class="card code1">
+                    <div class="row">
+                        <div class="col s12">
+                            <ul class="tabs" tabs >
+                                <li class="tab col s3"><a href="#c3js5_js" class="active" >Javascript</a></li>
+                                <li class="tab col s3"><a href="#c3js5_css">CSS</a></li>
+                                <li class="tab col s3"><a href="#c3js5_html">HTML</a></li>
+                            </ul>
+                        </div>
+                        <div class="col s12">
+                            <div class="row">
+                                <div id="c3js5_js" class="s12">
+                                    <pre>
+                                        <code class="language-javascript">
+(function () {
+    'use strict';
+    angular.module('mara').controller('chartsC3Controller',chartsC3Controller);
+    chartsC3Controller.$inject = ['$timeout'];
+    function chartsC3Controller($timeout) {
+        var vm = this;
+        vm.c3js5 = c3.generate({
+            bindto: '#c3js5',
+            data: {
+                xs: {
+                    setosa: 'setosa_x',
+                    versicolor: 'versicolor_x'
+                },
+                columns: [
+                    ["setosa_x", 3.5, 3.0, 3.2, 3.1, 3.6, 3.9, 3.4, 3.4, 2.9, 3.1, 3.7, 3.4, 3.0, 3.0, 4.0, 4.4, 3.9, 3.5, 3.8, 3.8, 3.4, 3.7, 3.6, 3.3, 3.4, 3.0, 3.4, 3.5, 3.4, 3.2, 3.1, 3.4, 4.1, 4.2, 3.1, 3.2, 3.5, 3.6, 3.0, 3.4, 3.5, 2.3, 3.2, 3.5, 3.8, 3.0, 3.8, 3.2, 3.7, 3.3],
+                    ["versicolor_x", 3.2, 3.2, 3.1, 2.3, 2.8, 2.8, 3.3, 2.4, 2.9, 2.7, 2.0, 3.0, 2.2, 2.9, 2.9, 3.1, 3.0, 2.7, 2.2, 2.5, 3.2, 2.8, 2.5, 2.8, 2.9, 3.0, 2.8, 3.0, 2.9, 2.6, 2.4, 2.4, 2.7, 2.7, 3.0, 3.4, 3.1, 2.3, 3.0, 2.5, 2.6, 3.0, 2.6, 2.3, 2.7, 3.0, 2.9, 2.9, 2.5, 2.8],
+                    ["setosa", 0.2, 0.2, 0.2, 0.2, 0.2, 0.4, 0.3, 0.2, 0.2, 0.1, 0.2, 0.2, 0.1, 0.1, 0.2, 0.4, 0.4, 0.3, 0.3, 0.3, 0.2, 0.4, 0.2, 0.5, 0.2, 0.2, 0.4, 0.2, 0.2, 0.2, 0.2, 0.4, 0.1, 0.2, 0.2, 0.2, 0.2, 0.1, 0.2, 0.2, 0.3, 0.3, 0.2, 0.6, 0.4, 0.3, 0.2, 0.2, 0.2, 0.2],
+                    ["versicolor", 1.4, 1.5, 1.5, 1.3, 1.5, 1.3, 1.6, 1.0, 1.3, 1.4, 1.0, 1.5, 1.0, 1.4, 1.3, 1.4, 1.5, 1.0, 1.5, 1.1, 1.8, 1.3, 1.5, 1.2, 1.3, 1.4, 1.4, 1.7, 1.5, 1.0, 1.1, 1.0, 1.2, 1.6, 1.5, 1.6, 1.5, 1.3, 1.3, 1.3, 1.2, 1.4, 1.2, 1.0, 1.3, 1.2, 1.3, 1.3, 1.1, 1.3]
+                ],
+                type: 'pie'
+            },
+            axis: {
+                x: {
+                    label: 'Sepal.Width',
+                    tick: {
+                        fit: false
+                    }
+                },
+                y: {
+                    label: 'Petal.Width'
+                }
+            }
+        });
+        $timeout(function () {
+            vm.c3js5 .transform('scatter');
+        }, 2000);
+        $timeout(function () {
+            vm.c3js5 .transform('pie');
+        }, 3000);
+        $timeout(function () {
+            vm.c3js5 .transform('scatter');
+        }, 4000);
+        $timeout(function () {
+            vm.c3js5 .transform('pie');
+        }, 5000);
+
+    }
+})();
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div id="c3js5_css" class="s12">
+                                    <pre>
+                                        <code class="language-css">
+#c3js5 {
+    min-width: 250px;
+    height: 500px;
+    margin: 0 auto
+}
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div id="c3js5_html" class="s12">
+                                    <pre>
+                                        <code class="language-markup">
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://rawgit.com/masayuki0812/c3/master/c3.css&quot; /&gt;
+&lt;script src=&quot;http://d3js.org/d3.v3.min.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://rawgit.com/masayuki0812/c3/master/c3.js&quot;&gt;&lt;/script&gt;
+&lt;div class=&quot;card&quot;&gt;
+    &lt;div id=&quot;c3js5&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+                                        </code>
+                                    </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col l6 m12 s12">
+                <div class="card charts">
+                    <div class="card-content">
+                        <h5>Model 6</h5>
+                    </div>
+                    <div class="card-action">
+                        <div id="c3js6"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col l6 m12 s12 hide-on-small-only">
+                <div class="card code1">
+                    <div class="row">
+                        <div class="col s12">
+                            <ul class="tabs" tabs >
+                                <li class="tab col s3"><a href="#c3js6_js" class="active" >Javascript</a></li>
+                                <li class="tab col s3"><a href="#c3js6_css">CSS</a></li>
+                                <li class="tab col s3"><a href="#c3js6_html">HTML</a></li>
+                            </ul>
+                        </div>
+                        <div class="col s12">
+                            <div class="row">
+                                <div id="c3js6_js" class="s12">
+                                    <pre>
+                                        <code class="language-javascript">
+(function () {
+    'use strict';
+    angular.module('mara').controller('chartsC3Controller',chartsC3Controller);
+    chartsC3Controller.$inject = ['$timeout'];
+    function chartsC3Controller($timeout) {
+        var vm = this;
+        vm.c3js6 = c3.generate({
+            bindto: '#c3js6',
+            data: {
+                columns: [
+                    ['data1', 30],
+                    ['data2', 120]
+                ],
+                type : 'donut'
+            },
+            donut: {
+                title: "Iris Petal Width"
+            }
+        });
+        $timeout(function () {
+            vm.c3js6.load({
+                columns: [
+                    ["setosa", 0.2, 0.2, 0.2, 0.2, 0.2, 0.4, 0.3, 0.2, 0.2, 0.1, 0.2, 0.2, 0.1, 0.1, 0.2, 0.4, 0.4, 0.3, 0.3, 0.3, 0.2, 0.4, 0.2, 0.5, 0.2, 0.2, 0.4, 0.2, 0.2, 0.2, 0.2, 0.4, 0.1, 0.2, 0.2, 0.2, 0.2, 0.1, 0.2, 0.2, 0.3, 0.3, 0.2, 0.6, 0.4, 0.3, 0.2, 0.2, 0.2, 0.2],
+                    ["versicolor", 1.4, 1.5, 1.5, 1.3, 1.5, 1.3, 1.6, 1.0, 1.3, 1.4, 1.0, 1.5, 1.0, 1.4, 1.3, 1.4, 1.5, 1.0, 1.5, 1.1, 1.8, 1.3, 1.5, 1.2, 1.3, 1.4, 1.4, 1.7, 1.5, 1.0, 1.1, 1.0, 1.2, 1.6, 1.5, 1.6, 1.5, 1.3, 1.3, 1.3, 1.2, 1.4, 1.2, 1.0, 1.3, 1.2, 1.3, 1.3, 1.1, 1.3],
+                    ["virginica", 2.5, 1.9, 2.1, 1.8, 2.2, 2.1, 1.7, 1.8, 1.8, 2.5, 2.0, 1.9, 2.1, 2.0, 2.4, 2.3, 1.8, 2.2, 2.3, 1.5, 2.3, 2.0, 2.0, 1.8, 2.1, 1.8, 1.8, 1.8, 2.1, 1.6, 1.9, 2.0, 2.2, 1.5, 1.4, 2.3, 2.4, 1.8, 1.8, 2.1, 2.4, 2.3, 1.9, 2.3, 2.5, 2.3, 1.9, 2.0, 2.3, 1.8]
+                ]
+            });
+        }, 1500);
+        $timeout(function () {
+            vm.c3js6.unload({
+                ids: 'data1'
+            });
+            vm.c3js6.unload({
+                ids: 'data2'
+            });
+        }, 2500);
+    }
+})();
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div id="c3js6_css" class="s12">
+                                    <pre>
+                                        <code class="language-css">
+#c3js6 {
+    min-width: 250px;
+    height: 500px;
+    margin: 0 auto
+}
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div id="c3js6_html" class="s12">
+                                    <pre>
+                                        <code class="language-markup">
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://rawgit.com/masayuki0812/c3/master/c3.css&quot; /&gt;
+&lt;script src=&quot;http://d3js.org/d3.v3.min.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://rawgit.com/masayuki0812/c3/master/c3.js&quot;&gt;&lt;/script&gt;
+&lt;div class=&quot;card&quot;&gt;
+    &lt;div id=&quot;c3js6&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+                                        </code>
+                                    </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br/>
+    </div>
+</div>

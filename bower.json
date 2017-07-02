@@ -1,0 +1,29 @@
+{
+  "name": "psg_ies_admissions",
+  "description": "",
+  "main": "",
+  "authors": [
+    "PSG"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "dependencies": {
+    "prismjs": "^1.5.0",
+    "fullcalendar": "^2.7.3",
+    "lightbox2": "^2.8.2",
+    "angular-qr": "^0.2.0",
+    "angular-qr-scanner": "^0.1.0",
+    "webcam": "webcam-directive#^3.1.1",
+    "bc-qr-reader": "^0.3.0",
+    "zingchart": "^2.5.2",
+    "angularPrint": "^0.3.8",
+    "angular-pdfjs-viewer": "^0.7.4"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

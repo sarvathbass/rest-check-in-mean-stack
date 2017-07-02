@@ -1,0 +1,31 @@
+.page-title {
+    margin-left: 0px!important;
+    font-size: 1.5em!important;
+}
+.section-header {
+    padding: 0.25em!important;
+}
+.breadcrumb-wrapper {
+    font-size: 1em!important;
+}
+#page-content {
+    padding:5px!important;
+}
+#page-content nav, .breadcrumb-wrapper, .breadcrumb {
+    padding: 0px!important;
+    margin: 0px!important;
+    font-size: 1em!important;
+}
+.form-error {
+    line-height: 0.1em!important;
+}
+.collection .collection-item {
+    line-height: 0.5em!important;
+}
+.brand-logo img {
+    max-height: 75%!important;
+}
+.brand-logo span {
+    font-size:0.5em!important;
+    padding-left:2.5em!important;
+}

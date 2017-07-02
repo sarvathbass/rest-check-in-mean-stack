@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html >
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="PSG IES">
+    <title>PSG - IES</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/material-design-iconic-font.css">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/mara.min.css"  media="screen"/>
+    <link type="text/css" rel="stylesheet" href="css/qrread.css"/>
+    <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="prismjs/themes/prism.css"/>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- other styles go here-->
+</head>
+
+<body class="yellow-theme">
+<!--Page load animation-->
+<div class="page-loader-container"><div class="dizzy-gillespie"></div></div>
+<div class="wrapper vertical-sidebar" id="full-page">
+    <div data-template="templates/navigation/topnav.html" data-on-load="yes"></div>
+    <div data-template="templates/navigation/sidebar.html" data-on-load="yes"></div>
+    <main id="content">
+    <style>
+        pre{
+            max-height: 208px;
+        }
+    </style>
+        <div id="page-content">
+            <div class="row section-header">
+                <h4 class="page-title">Layouts</h4>
+            </div>
+            <div class="row dashboard-wrapper content-container">
+                <div class="layouts">
+                <div id="default" class="col s12 m6">
+                    <div class="card">
+                        <div class="card-content">
+                            <h5 class="fs-20">Fixed Header</h5>
+                        </div>
+                        <div class="card-action">
+                            <div class="layout-base card-panel">
+                                <div class="grey lighten-1 layout-side-nav">
+                                </div>
+                                <div class="layout-header card-panel margin white">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m6 code hide-on-small-only">
+                    <div class="card">
+                        <div class="card-content">
+                            <h5 class="fs-20">Code Sample</h5>
+                        </div>
+                        <div class="card-action">
+                                <pre>
+                                    <code class="language-markup">
+&lt;body&gt;
+    &lt;div class=&quot;wrapper vertical-sidebar&quot;&gt;
+        &lt;header id=&quot;header&quot;&gt;
+        &lt;/header&gt;
+        &lt;aside class=&quot;sidebar-left&quot;&gt;
+        &lt;/aside&gt;
+        &lt;main id=&quot;content&quot;&gt;
+            &lt;div id=&quot;page-content&quot;&gt;
+            &lt;/div&gt;
+        &lt;/main&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+                                    </code>
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+                <div id="fixed-header" class="col s12 m6">
+                    <div class="card">
+                        <div class="card-content">
+                            <h5 class="fs-20">Floating Header</h5>
+                        </div>
+                        <div class="card-action">
+                            <div class="layout-base card-panel">
+                                <div class="grey lighten-1 layout-side-nav">
+                                </div>
+                                <div class="layout-header dashed card-panel margin white">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m6 code hide-on-small-only">
+                    <div class="card">
+                        <div class="card-content">
+                            <h5 class="fs-20">Code Sample</h5>
+                        </div>
+                        <div class="card-action">
+                            <pre class="language-markup">
+                                <code class="language-markup">
+&lt;body class=&quot;floating-header&quot;&gt;
+    &lt;div class=&quot;wrapper vertical-sidebar&quot;&gt;
+        &lt;header id=&quot;header&quot;&gt;
+        &lt;/header&gt;
+        &lt;aside class=&quot;sidebar-left&quot;&gt;
+        &lt;/aside&gt;
+        &lt;main id=&quot;content&quot;&gt;
+            &lt;div id=&quot;page-content&quot;&gt;
+            &lt;/div&gt;
+        &lt;/main&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+                <div id="boxed" class="col s12 m6">
+                    <div class="card">
+                        <div class="card-content">
+                            <h5 class="fs-20">Vertical Sidebar</h5>
+                        </div>
+                        <div class="card-action">
+                            <div class="layout-base card-panel">
+                                <div class="grey lighten-1 layout-side-nav">
+                                </div>
+                                <div class="layout-header card-panel margin white">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m6 code hide-on-small-only">
+                    <div class="card">
+                        <div class="card-content">
+                            <h5 class="fs-20">Code Sample</h5>
+                        </div>
+                        <div class="card-action">
+                            <pre class="language-markup">
+                                <code class="language-markup">
+&lt;body class=&quot;boxed-layout&quot;&gt;
+    &lt;div class=&quot;wrapper vertical-sidebar&quot;&gt;
+        &lt;header id=&quot;header&quot;&gt;
+        &lt;/header&gt;
+        &lt;aside class=&quot;sidebar-left&quot;&gt;
+        &lt;/aside&gt;
+        &lt;main id=&quot;content&quot;&gt;
+            &lt;div id=&quot;page-content&quot;&gt;
+            &lt;/div&gt;
+        &lt;/main&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+                <div id="horizontal-nav" class="col s12 m6">
+                    <div class="card">
+                        <div class="card-content">
+                            <h5 class="fs-20">Horizontal Navigation</h5>
+                        </div>
+                        <div class="card-action">
+                            <div class="layout-base card-panel">
+                                <div class="grey lighten-1 layout-side-nav horizontal">
+                                </div>
+                                <div class="layout-header card-panel margin white">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m6 code hide-on-small-only">
+                    <div class="card">
+                        <div class="card-content">
+                            <h5 class="fs-20">Code Sample</h5>
+                        </div>
+                        <div class="card-action">
+                            <pre class="language-markup">
+                                <code class="language-markup">
+&lt;body class=&quot;horizontal-navigation&quot;&gt;
+    &lt;div class=&quot;wrapper vertical-sidebar&quot;&gt;
+        &lt;header id=&quot;header&quot;&gt;
+        &lt;/header&gt;
+        &lt;nav class=&quot;site-nav&quot;&gt;
+        &lt;/nav&gt;
+        &lt;main id=&quot;content&quot;&gt;
+            &lt;div id=&quot;page-content&quot;&gt;
+            &lt;/div&gt;
+        &lt;/main&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+                <div id="horiz-fix-box" class="col s12 m6">
+                    <div class="card">
+                        <div class="card-content">
+                            <h5 class="fs-20">Floating Header and Horizontal Navigation</h5>
+                        </div>
+                        <div class="card-action">
+                            <div class="layout-base card-panel">
+                                <div class="dashed grey lighten-1 layout-side-nav horizontal">
+                                </div>
+                                <div class="layout-header dashed card-panel margin white">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m6 code hide-on-small-only">
+                    <div class="card">
+                        <div class="card-content">
+                            <h5 class="fs-20">Code Sample</h5>
+                        </div>
+                        <div class="card-action">
+                            <pre class="language-markup">
+                                <code class="language-markup">
+&lt;body class=&quot;floating-header boxed-layout horizontal-navigation&quot;&gt;
+    &lt;div class=&quot;wrapper vertical-sidebar&quot;&gt;
+        &lt;header id=&quot;header&quot;&gt;
+        &lt;/header&gt;
+        &lt;nav class=&quot;site-nav&quot;&gt;
+        &lt;/nav&gt;
+        &lt;main id=&quot;content&quot;&gt;
+            &lt;div id=&quot;page-content&quot;&gt;
+            &lt;/div&gt;
+        &lt;/main&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+                                </code>
+                        </pre>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div data-template="templates/navigation/footer.html" data-on-load="yes"></div>
+</div>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="js/materialize.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+
+<script type="text/javascript" src="js/mara.min.js"></script>
+<script type="text/javascript" src="assets/js/prism.min.js"></script>
+<script>
+    $(function () {
+        ol();
+        $('#default').click(function(){
+            ThemeSettings.changeFloatingHeaderState(false);
+            $( "#vertical-navigation" ).trigger( "click" );
+            $( "#full-width-layout" ).trigger( "click" );
+        });
+        $('#fixed-header').click(function(){
+            ThemeSettings.changeFloatingHeaderState(true);
+            if( !$("#header-toggle").is(":checked")){
+                $( "#header-toggle").closest("label").trigger( "click" );
+            }
+            $( "#vertical-navigation" ).trigger( "click" );
+            $( "#full-width-layout" ).trigger( "click" );
+        });
+        $('#boxed').click(function(){
+            ThemeSettings.changeFloatingHeaderState(false);
+            $( "#vertical-navigation" ).trigger( "click" );
+            $( "#boxed-layout").trigger( "click" );
+        });
+        $('#horizontal-nav').click(function(){
+            ThemeSettings.changeFloatingHeaderState(false);
+            $( "#horizontal-navigation" ).trigger( "click" );
+            $( "#full-width-layout" ).trigger( "click" );
+        });
+        $('#horiz-fix-box').click(function(){
+            ThemeSettings.changeFloatingHeaderState(true);
+            if( !$("#header-toggle").is(":checked")){
+                $( "#header-toggle").closest("label").trigger( "click" );
+            }
+            $( "#horizontal-navigation" ).trigger( "click" );
+            $( "#boxed-layout").trigger( "click" );
+        })
+    });
+</script>
+<!-- other scripts go here-->
+<script>
+
+
+</script>
+</body>
+</html>

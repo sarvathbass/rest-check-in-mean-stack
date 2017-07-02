@@ -1,0 +1,630 @@
+
+<div >
+    <style>
+        .card-default {
+            border: 1px solid #eaeaea;
+        }
+        .card-default .card-header {
+            background-color: #eaeaea;
+            border-bottom: 1px solid #ccc;
+            padding: 10px 20px;
+        }
+        pre {
+            max-height: 596px;
+        }
+        table.dataTable tbody td {
+            padding: 8px 18px;
+        }
+        #search-items{
+            display: inline-block;
+            background: transparent none repeat scroll 0 0;
+            font-size: 16px;
+            line-height: 40px;
+            height: 40px;
+            color: black;
+            transition: border-color 0.3s ease 0s;
+        }
+        .search-div i{
+            display: inline-block;
+            position: absolute;
+            bottom: 20px;
+            margin-left: -24px;
+            color: #000000;
+        }
+        .search-div label {
+            margin-left: 0;
+            left: -184px
+        }
+    </style>
+    <div class="row section-header">
+        <h4 class="page-title">Data Tables</h4>
+    </div>
+    <div class="row dashboard-wrapper content-container">
+        <div class="col l8 m12 s12">
+            <div class="card card-default table-height">
+                <div class="card-header dataTable-header">
+                    Data Tables
+                </div>
+                <div class="card-content clearfix">
+                    <table id="demo-table"  class="responsive-table display dataTable" >
+                        <thead>
+                            <tr>
+                                <th data-ng-repeat="hd in dtb.dataTable.headings">{{ hd }}</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th data-ng-repeat="hd in dtb.dataTable.headings">{{ hd }}</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            <tr data-ng-repeat="row in dtb.dataTable.rows">
+                                <td>{{ row.name }}</td>
+                                <td>{{ row.position }}</td>
+                                <td>{{ row.office }}</td>
+                                <td>{{ row.age }}</td>
+                                <td>{{ row.startDate }}</td>
+                                <td>{{ row.salary }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col l4 m4 s12 hide-on-med-and-down">
+            <div class="card code1">
+                <div class="row">
+                    <div class="col s12">
+                        <ul class="tabs" tabs>
+                            <li class="tab col s3"><a href="#dtb_html" class="active" >HTML</a></li>
+                            <li class="tab col s3"><a href="#dtb_js">Javascript</a></li>
+                        </ul>
+                    </div>
+                    <div class="col s12">
+                        <div class="row">
+                            <div id="dtb_html" class="s12">
+                                <pre>
+                                    <code class="language-markup">
+&lt;div class=&quot;card card-default&quot;&gt;
+    &lt;div class=&quot;card-header white-text&quot;&gt;
+        Data Tables
+    &lt;/div&gt;
+    &lt;div class=&quot;card-content clearfix&quot;&gt;
+        &lt;table id=&quot;demo-table&quot;  class=&quot; display dataTable&quot; &gt;
+            &lt;thead&gt;
+                &lt;tr&gt;
+                    &lt;th data-ng-repeat=&quot;hd in dtb.dataTable.headings&quot;&gt;{{ hd }}&lt;/th&gt;
+                &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tfoot&gt;
+                &lt;tr&gt;
+                    &lt;th data-ng-repeat=&quot;hd in dtb.dataTable.headings&quot;&gt;{{ hd }}&lt;/th&gt;
+                &lt;/tr&gt;
+            &lt;/tfoot&gt;
+            &lt;tbody&gt;
+                &lt;tr data-ng-repeat=&quot;row in dtb.dataTable.rows&quot;&gt;
+                    &lt;td&gt;{{ row.name }}&lt;/td&gt;
+                    &lt;td&gt;{{ row.position }}&lt;/td&gt;
+                    &lt;td&gt;{{ row.office }}&lt;/td&gt;
+                    &lt;td&gt;{{ row.age }}&lt;/td&gt;
+                    &lt;td&gt;{{ row.startDate }}&lt;/td&gt;
+                    &lt;td&gt;{{ row.salary }}&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/tbody&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                                    </code>
+                                </pre>
+                            </div>
+                            <div id="dtb_js" class="s12">
+                                <pre>
+                                    <code class="language-javascript">
+(function () {
+    'use strict';
+    angular.module('mara').config(configuration);
+    configuration.$inject = ['$stateProvider'];
+    function configuration($stateProvider, $urlRouterProvider,$locationProvider,$translateProvider) {
+        //...
+        $stateProvider
+            .state('mara.tables-data', {
+                url:'tables/data-tables',
+                template: '&lt;div dt-tables&gt;&lt;/div&gt;'
+            })
+    }
+    angular.module('mara').directive('dtTables', dtTables);
+    dtTables.$inject = ['$rootScope','$compile', '$timeout'];
+    function dtTables($rootScope,$compile, $timeout)
+    {
+        return {
+            restrict: 'EA',
+            templateUrl: '/app/components/tables/data-tables.html',
+            replace: true,
+            link: function(scope, element) {
+                $compile(element.contents())($rootScope);
+                $timeout(function() {
+                    angular.element('#demo-table').DataTable();
+                    angular.element('select').material_select();
+                }, 1000);
+            },
+            controller:'tablesController',
+            controllerAs:'dtb'
+        };
+    }
+    angular.module('mara').controller('tablesController',tablesController);
+    function tablesController() {
+        var vm = this;
+        vm.dataTable =
+        {
+            "headings":['Name', 'Position', 'Office', 'Age', 'Start date','Salary'],
+            "rows": [
+                {
+                    "name": "Tiger Nixon",
+                    "position": "System Architect",
+                    "salary": "$320,800",
+                    "startDate": "2011/04/25",
+                    "office": "Edinburgh",
+                    "age": "66"
+                },
+                {
+                    "name": "Garrett Winters",
+                    "position": "Accountant",
+                    "salary": "$170,750",
+                    "startDate": "2011/07/25",
+                    "office": "Tokyo",
+                    "age": "65"
+                },
+                {
+                    "name": "Ashton Cox",
+                    "position": "Junior Technical Author",
+                    "salary": "$86,000",
+                    "startDate": "2009/01/12",
+                    "office": "San Francisco",
+                    "age": "64"
+                },
+                {
+                    "name": "Cedric Kelly",
+                    "position": "Senior Javascript Developer",
+                    "salary": "$433,060",
+                    "startDate": "2012/03/29",
+                    "office": "Edinburgh",
+                    "age": "63"
+                },
+                {
+                    "name": "Airi Satou",
+                    "position": "Accountant",
+                    "salary": "$162,700",
+                    "startDate": "2008/11/28",
+                    "office": "Tokyo",
+                    "age": "62"
+                },
+                {
+                    "name": "Brielle Williamson",
+                    "position": "Integration Specialist",
+                    "salary": "$372,000",
+                    "startDate": "2012/12/02",
+                    "office": "New York",
+                    "age": "61"
+                },
+                {
+                    "name": "Herrod Chandler",
+                    "position": "Sales Assistant",
+                    "salary": "$137,500",
+                    "startDate": "2012/08/06",
+                    "office": "San Francisco",
+                    "age": "60"
+                },
+                {
+                    "name": "Rhona Davidson",
+                    "position": "Integration Specialist",
+                    "salary": "$327,900",
+                    "startDate": "2010/10/14",
+                    "office": "Tokyo",
+                    "age": "59"
+                },
+                {
+                    "name": "Colleen Hurst",
+                    "position": "Javascript Developer",
+                    "salary": "$205,500",
+                    "startDate": "2009/09/15",
+                    "office": "San Francisco",
+                    "age": "58"
+                },
+                {
+                    "name": "Sonya Frost",
+                    "position": "Software Engineer",
+                    "salary": "$103,600",
+                    "startDate": "2008/12/13",
+                    "office": "Edinburgh",
+                    "age": "57"
+                },
+                {
+                    "name": "Jena Gaines",
+                    "position": "Office Manager",
+                    "salary": "$90,560",
+                    "startDate": "2008/12/19",
+                    "office": "London",
+                    "age": "56"
+                },
+                {
+                    "name": "Quinn Flynn",
+                    "position": "Support Lead",
+                    "salary": "$342,000",
+                    "startDate": "2013/03/03",
+                    "office": "Edinburgh",
+                    "age": "55"
+                },
+                {
+                    "name": "Charde Marshall",
+                    "position": "Regional Director",
+                    "salary": "$470,600",
+                    "startDate": "2008/10/16",
+                    "office": "San Francisco",
+                    "age": "54"
+                },
+                {
+                    "name": "Haley Kennedy",
+                    "position": "Senior Marketing Designer",
+                    "salary": "$313,500",
+                    "startDate": "2012/12/18",
+                    "office": "London",
+                    "age": "53"
+                },
+                {
+                    "name": "Tatyana Fitzpatrick",
+                    "position": "Regional Director",
+                    "salary": "$385,750",
+                    "startDate": "2010/03/17",
+                    "office": "London",
+                    "age": "52"
+                },
+                {
+                    "name": "Michael Silva",
+                    "position": "Marketing Designer",
+                    "salary": "$198,500",
+                    "startDate": "2012/11/27",
+                    "office": "London",
+                    "age": "51"
+                },
+                {
+                    "name": "Paul Byrd",
+                    "position": "Chief Financial Officer (CFO)",
+                    "salary": "$725,000",
+                    "startDate": "2010/06/09",
+                    "office": "New York",
+                    "age": "50"
+                },
+                {
+                    "name": "Gloria Little",
+                    "position": "Systems Administrator",
+                    "salary": "$237,500",
+                    "startDate": "2009/04/10",
+                    "office": "New York",
+                    "age": "50"
+                },
+                {
+                    "name": "Bradley Greer",
+                    "position": "Software Engineer",
+                    "salary": "$132,000",
+                    "startDate": "2012/10/13",
+                    "office": "London",
+                    "age": "49"
+                },
+                {
+                    "name": "Dai Rios",
+                    "position": "Personnel Lead",
+                    "salary": "$217,500",
+                    "startDate": "2012/09/26",
+                    "office": "Edinburgh",
+                    "age": "49"
+                },
+                {
+                    "name": "Jenette Caldwell",
+                    "position": "Development Lead",
+                    "salary": "$345,000",
+                    "startDate": "2011/09/03",
+                    "office": "New York",
+                    "age": "48"
+                },
+                {
+                    "name": "Yuri Berry",
+                    "position": "Chief Marketing Officer (CMO)",
+                    "salary": "$675,000",
+                    "startDate": "2009/06/25",
+                    "office": "New York",
+                    "age": "47"
+                },
+                {
+                    "name": "Caesar Vance",
+                    "position": "Pre-Sales Support",
+                    "salary": "$106,450",
+                    "startDate": "2011/12/12",
+                    "office": "New York",
+                    "age": "44"
+                },
+                {
+                    "name": "Doris Wilder",
+                    "position": "Sales Assistant",
+                    "salary": "$85,600",
+                    "startDate": "2010/09/20",
+                    "office": "Sidney",
+                    "age": "43"
+                },
+                {
+                    "name": "Angelica Ramos",
+                    "position": "Chief Executive Officer (CEO)",
+                    "salary": "$1,200,000",
+                    "startDate": "2009/10/09",
+                    "office": "London",
+                    "age": "42"
+                },
+                {
+                    "name": "Gavin Joyce",
+                    "position": "Developer",
+                    "salary": "$92,575",
+                    "startDate": "2010/12/22",
+                    "office": "Edinburgh",
+                    "age": "39"
+                },
+                {
+                    "name": "Jennifer Chang",
+                    "position": "Regional Director",
+                    "salary": "$357,650",
+                    "startDate": "2010/11/14",
+                    "office": "Singapore",
+                    "age": "30"
+                },
+                {
+                    "name": "Brenden Wagner",
+                    "position": "Software Engineer",
+                    "salary": "$206,850",
+                    "startDate": "2011/06/07",
+                    "office": "San Francisco",
+                    "age": "31"
+                },
+                {
+                    "name": "Fiona Green",
+                    "position": "Chief Operating Officer (COO)",
+                    "salary": "$850,000",
+                    "startDate": "2010/03/11",
+                    "office": "San Francisco",
+                    "age": "32"
+                },
+                {
+                    "name": "Shou Itou",
+                    "position": "Regional Marketing",
+                    "salary": "$163,000",
+                    "startDate": "2011/08/14",
+                    "office": "Tokyo",
+                    "age": "29"
+                },
+                {
+                    "name": "Michelle House",
+                    "position": "Integration Specialist",
+                    "salary": "$95,400",
+                    "startDate": "2011/06/02",
+                    "office": "Sidney",
+                    "age": "28"
+                },
+                {
+                    "name": "Suki Burks",
+                    "position": "Developer",
+                    "salary": "$114,500",
+                    "startDate": "2009/10/22",
+                    "office": "London",
+                    "age": "24"
+                },
+                {
+                    "name": "Prescott Bartlett",
+                    "position": "Technical Author",
+                    "salary": "$145,000",
+                    "startDate": "2011/05/07",
+                    "office": "London",
+                    "age": "29"
+                },
+                {
+                    "name": "Gavin Cortez",
+                    "position": "Team Leader",
+                    "salary": "$235,500",
+                    "startDate": "2008/10/26",
+                    "office": "San Francisco",
+                    "age": "33"
+                },
+                {
+                    "name": "Martena Mccray",
+                    "position": "Post-Sales support",
+                    "salary": "$324,050",
+                    "startDate": "2011/03/09",
+                    "office": "Edinburgh",
+                    "age": "36"
+                },
+                {
+                    "name": "Unity Butler",
+                    "position": "Marketing Designer",
+                    "salary": "$85,675",
+                    "startDate": "2009/12/09",
+                    "office": "San Francisco",
+                    "age": "42"
+                },
+                {
+                    "name": "Howard Hatfield",
+                    "position": "Office Manager",
+                    "salary": "$164,500",
+                    "startDate": "2008/12/16",
+                    "office": "San Francisco",
+                    "age": "38"
+                },
+                {
+                    "name": "Hope Fuentes",
+                    "position": "Secretary",
+                    "salary": "$109,850",
+                    "startDate": "2010/02/12",
+                    "office": "San Francisco",
+                    "age": "21"
+                },
+                {
+                    "name": "Vivian Harrell",
+                    "position": "Financial Controller",
+                    "salary": "$452,500",
+                    "startDate": "2009/02/14",
+                    "office": "San Francisco",
+                    "age": "45"
+                },
+                {
+                    "name": "Timothy Mooney",
+                    "position": "Office Manager",
+                    "salary": "$136,200",
+                    "startDate": "2008/12/11",
+                    "office": "London",
+                    "age": "34"
+                },
+                {
+                    "name": "Jackson Bradshaw",
+                    "position": "Director",
+                    "salary": "$645,750",
+                    "startDate": "2008/09/26",
+                    "office": "New York",
+                    "age": "36"
+                },
+                {
+                    "name": "Olivia Liang",
+                    "position": "Support Engineer",
+                    "salary": "$234,500",
+                    "startDate": "2011/02/03",
+                    "office": "Singapore",
+                    "age": "49"
+                },
+                {
+                    "name": "Bruno Nash",
+                    "position": "Software Engineer",
+                    "salary": "$163,500",
+                    "startDate": "2011/05/03",
+                    "office": "London",
+                    "age": "54"
+                },
+                {
+                    "name": "Sakura Yamamoto",
+                    "position": "Support Engineer",
+                    "salary": "$139,575",
+                    "startDate": "2009/08/19",
+                    "office": "Tokyo",
+                    "age": "24"
+                },
+                {
+                    "name": "Thor Walton",
+                    "position": "Developer",
+                    "salary": "$98,540",
+                    "startDate": "2013/08/11",
+                    "office": "New York",
+                    "age": "22"
+                },
+                {
+                    "name": "Finn Camacho",
+                    "position": "Support Engineer",
+                    "salary": "$87,500",
+                    "startDate": "2009/07/07",
+                    "office": "San Francisco",
+                    "age": "27"
+                },
+                {
+                    "name": "Serge Baldwin",
+                    "position": "Data Coordinator",
+                    "salary": "$138,575",
+                    "startDate": "2012/04/09",
+                    "office": "Singapore",
+                    "age": "26"
+                },
+                {
+                    "name": "Zenaida Frank",
+                    "position": "Software Engineer",
+                    "salary": "$125,250",
+                    "startDate": "2010/01/04",
+                    "office": "New York",
+                    "age": "27"
+                },
+                {
+                    "name": "Zorita Serrano",
+                    "position": "Software Engineer",
+                    "salary": "$115,000",
+                    "startDate": "2012/06/01",
+                    "office": "San Francisco",
+                    "age": "28"
+                },
+                {
+                    "name": "Jennifer Acosta",
+                    "position": "Junior Javascript Developer",
+                    "salary": "$75,650",
+                    "startDate": "2013/02/01",
+                    "office": "Edinburgh",
+                    "age": "20"
+                },
+                {
+                    "name": "Cara Stevens",
+                    "position": "Sales Assistant",
+                    "salary": "$145,600",
+                    "startDate": "2011/12/06",
+                    "office": "New York",
+                    "age": "34"
+                },
+                {
+                    "name": "Hermione Butler",
+                    "position": "Regional Director",
+                    "salary": "$356,250",
+                    "startDate": "2011/03/21",
+                    "office": "London",
+                    "age": "43"
+                },
+                {
+                    "name": "Lael Greer",
+                    "position": "Systems Administrator",
+                    "salary": "$103,500",
+                    "startDate": "2009/02/27",
+                    "office": "London",
+                    "age": "50"
+                },
+                {
+                    "name": "Jonas Alexander",
+                    "position": "Developer",
+                    "salary": "$86,500",
+                    "startDate": "2010/07/14",
+                    "office": "San Francisco",
+                    "age": "32"
+                },
+                {
+                    "name": "Shad Decker",
+                    "position": "Regional Director",
+                    "salary": "$183,000",
+                    "startDate": "2008/11/13",
+                    "office": "Edinburgh",
+                    "age": "43"
+                },
+                {
+                    "name": "Michael Bruce",
+                    "position": "Javascript Developer",
+                    "salary": "$183,000",
+                    "startDate": "2011/06/27",
+                    "office": "Singapore",
+                    "age": "23"
+                },
+                {
+                    "name": "Donna Snider",
+                    "position": "Customer Support",
+                    "salary": "$112,000",
+                    "startDate": "2011/01/25",
+                    "office": "New York",
+                    "age": "22"
+                }
+            ]
+        }
+    }
+})();
+                                    </code>
+                                </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

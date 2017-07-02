@@ -1,0 +1,535 @@
+<div >
+    <div class="row section-header">
+        <h4 class="page-title">Form Elements</h4>
+    </div>
+    <div class="row content-container elements">
+        <div class="row">
+            <div class="col l6 m6 s12">
+                <div class="card" id="elements1">
+                    <div class="col s12">
+                        <div class="input-field col m2 hide-on-med-and-down ">
+                            <p>Normal</p>
+                        </div>
+                        <div class="input-field col m10 s12">
+                            <input id="normal" type="text" class="validate">
+                            <label for="normal" class="">Normal</label>
+                        </div>
+                    </div>
+                    <div class="col s12">
+                        <div class="input-field col m2 hide-on-med-and-down">
+                            <p>Help Text</p>
+                        </div>
+                        <div class="input-field  help-text-input col m10 s12">
+                            <input id="help_text" type="text" class="validate">
+                            <label for="help_text" class="">Help Text</label>
+                            <span>A block of help text that breaks onto the new line and may extend beyond one line.</span>
+                        </div>
+                    </div>
+                    <div class="col s12">
+                        <div class="input-field col m2 hide-on-med-and-down">
+                            <p>Password</p>
+                        </div>
+                        <div class="input-field col m10 s12">
+                            <input id="password" type="password" class="validate">
+                            <label for="password" class="">Password</label>
+                        </div>
+                    </div>
+                    <div class="col s12">
+                        <div class="input-field col m2 hide-on-med-and-down">
+                            <p class="green-text">Input with success</p>
+                        </div>
+                        <div class="input-field col m10 s12">
+                            <input id="success" type="text" class="valid">
+                            <label for="success" class="green-text">Input with success</label>
+                        </div>
+                    </div>
+                    <div class="col s12">
+                        <div class="input-field col m2 hide-on-med-and-down">
+                            <p class="red-text ">Input with warning</p>
+                        </div>
+                        <div class="input-field col m10 s12">
+                            <input id="warning" type="text" class="invalid" >
+                            <label for="warning" class="red-text" >Input with warning</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col l6 m6 s12 hide-on-small-only" >
+                <div class="card">
+                    <div class="row">
+                        <div class="col s12">
+                            <ul class="tabs" tabs>
+                                <li class="tab col s3"><a href="#text_inputs_html" class="active" >HTML</a></li>
+                                <li class="tab col s3"><a href="#text_inputs_css">CSS</a></li>
+                                <li class="tab col s3"><a href="#text_inputs_js">Javascript</a></li>
+                            </ul>
+                        </div>
+                        <div class="col s12">
+                            <div class="row">
+                                <div id="text_inputs_html" class="s12">
+                                    <pre>
+                                        <code class="language-markup">
+&lt;div class=&quot;card&quot; id=&quot;elements1&quot;&gt;
+    &lt;div class=&quot;col s12&quot;&gt;
+        &lt;div class=&quot;input-field col m2 hide-on-med-and-down &quot;&gt;
+            &lt;p&gt;Normal&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;input-field col m10 s12&quot;&gt;
+            &lt;input id=&quot;normal&quot; type=&quot;text&quot; class=&quot;validate&quot;&gt;
+            &lt;label for=&quot;normal&quot; class=&quot;&quot;&gt;Normal&lt;/label&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col s12&quot;&gt;
+        &lt;div class=&quot;input-field col m2 hide-on-med-and-down&quot;&gt;
+            &lt;p&gt;Help Text&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;input-field  help-text-input col m10 s12&quot;&gt;
+            &lt;input id=&quot;help_text&quot; type=&quot;text&quot; class=&quot;validate&quot;&gt;
+            &lt;label for=&quot;help_text&quot; class=&quot;&quot;&gt;Help Text&lt;/label&gt;
+            &lt;span&gt;A block of help text that breaks onto the new line and may extend beyond one line.&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col s12&quot;&gt;
+        &lt;div class=&quot;input-field col m2 hide-on-med-and-down&quot;&gt;
+            &lt;p&gt;Password&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;input-field col m10 s12&quot;&gt;
+            &lt;input id=&quot;password&quot; type=&quot;password&quot; class=&quot;validate&quot;&gt;
+            &lt;label for=&quot;password&quot; class=&quot;&quot;&gt;Password&lt;/label&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col s12&quot;&gt;
+        &lt;div class=&quot;input-field col m2 hide-on-med-and-down&quot;&gt;
+            &lt;p class=&quot;green-text&quot;&gt;Input with success&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;input-field col m10 s12&quot;&gt;
+            &lt;input id=&quot;success&quot; type=&quot;text&quot; class=&quot;valid&quot;&gt;
+            &lt;label for=&quot;success&quot; class=&quot;green-text&quot;&gt;Input with success&lt;/label&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col s12&quot;&gt;
+        &lt;div class=&quot;input-field col m2 hide-on-med-and-down&quot;&gt;
+            &lt;p class=&quot;red-text &quot;&gt;Input with warning&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;input-field col m10 s12&quot;&gt;
+            &lt;input id=&quot;warning&quot; type=&quot;text&quot; class=&quot;invalid&quot; &gt;
+            &lt;label for=&quot;warning&quot; class=&quot;red-text&quot; &gt;Input with warning&lt;/label&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div id="text_inputs_css" class="s12">
+                                    <pre>
+                                        <code class="language-css">
+#elements1 {
+    height: 500px;
+}
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div id="text_inputs_js" class="s12">
+                                    <pre>
+                                        <code class="language-javascript">
+
+                                        </code>
+                                    </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col l6 m6 s12">
+                <div class="card" id="elements2">
+                    <div class="col s12">
+                        <div class="input-field col m2 hide-on-med-and-down">
+                            <p>Textarea</p>
+                        </div>
+                        <div class="input-field col m10 s12">
+                            <textarea id="textarea1" class="materialize-textarea"></textarea>
+                            <label for="textarea1" class="textarea-label">Textarea</label>
+                        </div>
+                    </div>
+                    <div class="col s12">
+                        <div class="input-field col m2 hide-on-med-and-down">
+                            <p>With Icon</p>
+                        </div>
+                        <div class="input-field col m10 s12">
+                            <i class="material-icons prefix icons-margin">account_circle</i>
+                            <input id="with_icon" type="text" class="validate">
+                            <label for="with_icon" class="" >With Icon</label>
+                        </div>
+                    </div>
+                    <div class="col s12 ">
+                        <div class="input-field col m2 hide-on-med-and-down">
+                            <p>Input with button</p>
+                        </div>
+                        <div class="input-field col m10 s12">
+                            <i class="material-icons prefix icons-margin">email</i>
+                            <input id="email" type="email" class="validate">
+                            <label for="email" class="" >Email</label>
+                        </div>
+                    </div>
+                    <div class="col s12">
+                        <div class="input-field col m2 hide-on-med-and-down">
+                            <p>File Input</p>
+                        </div>
+                        <div class="input-field col m10 s12">
+                            <div class="file-field input-field margin">
+                                <div class="btn">
+                                    <span class="white-text">File</span>
+                                    <input type="file" multiple>
+                                </div>
+                                <div class="file-path-wrapper">
+                                    <input class="file-path validate" type="text" placeholder="Upload one or more files">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12">
+                        <div class="input-field col m2 hide-on-med-and-down">
+                            <p>Choose a day</p>
+                        </div>
+                        <div class="input-field col m10 s12">
+                            <i class="material-icons prefix icons-margin">perm_contact_calendar</i>
+                            <input type="date" id="datepicker" class="datepicker"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col l6 m6 s12 hide-on-small-only">
+                <div class="card">
+                    <div class="row">
+                        <div class="col s12">
+                            <ul class="tabs" tabs>
+                                <li class="tab col s3"><a href="#icon-inputs_html" class="active" >HTML</a></li>
+                                <li class="tab col s3"><a href="#icon-inputs_css">CSS</a></li>
+                                <li class="tab col s3"><a href="#icon-inputs_js">Javascript</a></li>
+                            </ul>
+                        </div>
+                        <div class="col s12">
+                            <div class="row">
+                                <div id="icon-inputs_html" class="s12">
+                                    <pre>
+                                        <code class="language-markup">
+&lt;div class=&quot;card&quot; id=&quot;elements2&quot;&gt;
+    &lt;div class=&quot;col s12&quot;&gt;
+        &lt;div class=&quot;input-field col m2 hide-on-med-and-down&quot;&gt;
+            &lt;p&gt;Textarea&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;input-field col m10 s12&quot;&gt;
+            &lt;textarea id=&quot;textarea1&quot; class=&quot;materialize-textarea&quot;&gt;&lt;/textarea&gt;
+            &lt;label for=&quot;textarea1&quot;&gt;Textarea&lt;/label&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col s12&quot;&gt;
+        &lt;div class=&quot;input-field col m2 hide-on-med-and-down&quot;&gt;
+            &lt;p&gt;With Icon&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;input-field col m10 s12&quot;&gt;
+            &lt;i class=&quot;material-icons prefix&quot;&gt;account_circle&lt;/i&gt;
+            &lt;input id=&quot;with_icon&quot; type=&quot;text&quot; class=&quot;validate&quot;&gt;
+            &lt;label for=&quot;with_icon&quot; class=&quot;&quot; &gt;With Icon&lt;/label&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col s12 &quot;&gt;
+        &lt;div class=&quot;input-field col m2 hide-on-med-and-down&quot;&gt;
+            &lt;p&gt;Input with button&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;input-field col m10 s12&quot;&gt;
+            &lt;i class=&quot;material-icons prefix&quot;&gt;email&lt;/i&gt;
+            &lt;input id=&quot;email&quot; type=&quot;email&quot; class=&quot;validate&quot;&gt;
+            &lt;label for=&quot;email&quot; class=&quot;&quot; &gt;Email&lt;/label&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col s12&quot;&gt;
+        &lt;div class=&quot;input-field col m2 hide-on-med-and-down&quot;&gt;
+            &lt;p&gt;File Input&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;input-field col m10 s12&quot;&gt;
+            &lt;div class=&quot;file-field input-field&quot;&gt;
+                &lt;div class=&quot;btn&quot;&gt;
+                    &lt;span class=&quot;white-text&quot;&gt;File&lt;/span&gt;
+                    &lt;input type=&quot;file&quot; multiple&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;file-path-wrapper&quot;&gt;
+                    &lt;input class=&quot;file-path validate&quot; type=&quot;text&quot; placeholder=&quot;Upload one or more files&quot;&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col s12&quot;&gt;
+        &lt;div class=&quot;input-field col m2 hide-on-med-and-down&quot;&gt;
+            &lt;p&gt;Date Picker&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;input-field col m10 s12&quot;&gt;
+            &lt;i class=&quot;material-icons prefix&quot;&gt;perm_contact_calendar&lt;/i&gt;
+            &lt;input type=&quot;date&quot; id=&quot;datepicker&quot; class=&quot;datepicker&quot;/&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div id="icon-inputs_css" class="s12">
+                                    <pre>
+                                        <code class="language-css">
+#elements2 {
+    height: 500px;
+}
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div id="icon-inputs_js" class="s12">
+                                    <pre>
+                                        <code class="language-javascript">
+(function () {
+    'use strict';
+    angular.module('mara').config(configuration);
+    configuration.$inject = ['$stateProvider'];
+    function configuration($stateProvider) {
+        // ...
+        $stateProvider
+            .state('mara.forms', {
+                url:'forms',
+                template: '&lt;div forms&gt;&lt;/div&gt;'
+            });
+    };
+    angular.module('mara').directive('forms', forms);
+    forms.$inject = ['$rootScope','$compile'];
+    function forms($rootScope,$compile)
+    {
+        return {
+            restrict: 'EA',
+            templateUrl: '/app/components/pages/forms.html',
+            replace: true,
+            link: function(scope, element) {
+                $compile(element.contents())($rootScope);
+                angular.element('.datepicker').pickadate({
+                    selectMonths: true, // Creates a dropdown to control month
+                    selectYears: 15, // Creates a dropdown of 15 years to control year
+                    format: 'dd/mm/yyyy'
+                });
+		        // ...
+            }
+        };
+    };
+})();
+                                        </code>
+                                    </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col l6 m6 s12">
+                <div class="card col s12 no-padd grid-h" id="elements3">
+                    <div class="col s12 ">
+                        <h5 class="">Selects</h5>
+                        <div class="col s12 ">
+                            <label for="simple-select">Single-choice</label>
+                            <select id="simple-select" ng-model="select.simple" material-select watch>
+                                <option ng-repeat="value in select.choices" >{{value}}</option>
+                            </select>
+                        </div>
+                        <div class="col s12 ">
+                            <label for="multi-select">Multi-choice</label>
+                            <select id="multi-select" ng-model="select.multi" material-select multiple watch>
+                                <option ng-repeat="value in select.choices">{{value}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col m6 s12">
+                        <h5 class="">Checkboxes</h5>
+                        <div class="col s12 input-padding">
+                            <input type="checkbox" id="checkbox2" />
+                            <label for="checkbox2">Checkbox</label>
+                        </div>
+                        <div class="col s12 input-padding">
+                            <input type="checkbox" id="checkbox3" checked="checked" />
+                            <label for="checkbox3">Checkbox checked</label>
+                        </div>
+                        <div class="col s12 input-padding">
+                            <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
+                            <label for="filled-in-box">Filled in Checkbox checked</label>
+                        </div>
+                        <div class="col s12 input-padding">
+                            <input type="checkbox" id="test7" checked="checked" disabled="disabled" />
+                            <label for="test7">Checkbox disabled</label>
+                        </div>
+                        <div class="col s12 input-padding">
+                            <input type="checkbox" id="test8" disabled="disabled" />
+                            <label for="test8">Filled in Checkbox disabled</label>
+                        </div>
+                    </div>
+                    <div class="col m6 s12">
+                        <h5 class="">Switches</h5>
+                        <div class="switch">
+                            <div class="col s12">
+                                <p>
+                                    <span class="hide-on-large-only">Normal switch</span>
+                                    <label>
+                                        Off
+                                        <input type="checkbox">
+                                        <span class="lever"></span>
+                                        On
+                                    </label>
+                                </p>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="switch">
+                            <div class="col s12">
+                                <p>
+                                    <span class="hide-on-large-only"> Disabled switch</span>
+                                    <label>
+                                        Off
+                                        <input disabled type="checkbox">
+                                        <span class="lever"></span>
+                                        On
+                                    </label>
+                                </p>
+                            </div>
+                        </div>
+                        <br/>
+                        <h5 class="">Radio Buttons</h5>
+                        <div class="col s12 input-padding">
+                            <input class="with-gap" name="group1" type="radio" id="radio1"  />
+                            <label for="radio1">Radio Button </label>
+                        </div>
+                        <div class="col s12 input-padding">
+                            <input name="group1" type="radio" id="radio3" disabled="disabled" />
+                            <label for="radio3">Radio Button Disabled</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col l6 m6 s12 hide-on-small-only">
+                <div class="card code1">
+                    <div class="row">
+                        <div class="col s12">
+                            <ul class="tabs" tabs>
+                                <li class="tab col s3"><a href="#elements3_html" class="active" >HTML</a></li>
+                                <li class="tab col s3"><a href="#elements3_css">CSS</a></li>
+                                <li class="tab col s3"><a href="#elements3_js">Javascript</a></li>
+                            </ul>
+                        </div>
+                        <div class="col s12">
+                            <div class="row">
+                                <div id="elements3_html" class="s12">
+                                    <pre class="last">
+                                        <code class="language-markup">
+&lt;div class=&quot;card&quot; id=&quot;elements3&quot;&gt;
+    &lt;div class=&quot;col s12 &quot;&gt;
+        &lt;h5 class=&quot;hide-on-med-and-down&quot;&gt;Selects&lt;/h5&gt;
+        &lt;div class=&quot;col s12 &quot;&gt;
+            &lt;label for=&quot;simple-select&quot;&gt;Single-choice&lt;/label&gt;
+            &lt;select id=&quot;simple-select&quot; ng-model=&quot;select.simple&quot; material-select watch&gt;
+                &lt;option ng-repeat=&quot;value in select.choices&quot; &gt;{{value}}&lt;/option&gt;
+            &lt;/select&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col s12 &quot;&gt;
+            &lt;label for=&quot;multi-select&quot;&gt;Multi-choice&lt;/label&gt;
+            &lt;select id=&quot;multi-select&quot; ng-model=&quot;select.multi&quot; material-select multiple watch&gt;
+                &lt;option ng-repeat=&quot;value in select.choices&quot;&gt;{{value}}&lt;/option&gt;
+            &lt;/select&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col m6 s12&quot;&gt;
+        &lt;h5 class=&quot;hide-on-med-and-down&quot;&gt;Checkboxes&lt;/h5&gt;
+        &lt;div class=&quot;col s12 input-padding&quot;&gt;
+            &lt;input type=&quot;checkbox&quot; id=&quot;checkbox2&quot; /&gt;
+            &lt;label for=&quot;checkbox2&quot;&gt;Checkbox&lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col s12 input-padding&quot;&gt;
+            &lt;input type=&quot;checkbox&quot; id=&quot;checkbox3&quot; checked=&quot;checked&quot; /&gt;
+            &lt;label for=&quot;checkbox3&quot;&gt;Checkbox checked&lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col s12 input-padding&quot;&gt;
+            &lt;input type=&quot;checkbox input-padding&quot; class=&quot;filled-in&quot; id=&quot;filled-in-box&quot; checked=&quot;checked&quot; /&gt;
+            &lt;label for=&quot;filled-in-box&quot;&gt;Filled in Checkbox checked&lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col s12 input-padding&quot;&gt;
+            &lt;input type=&quot;checkbox&quot; id=&quot;test7&quot; checked=&quot;checked&quot; disabled=&quot;disabled&quot; /&gt;
+            &lt;label for=&quot;test7&quot;&gt;Checkbox disabled&lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col s12 input-padding&quot;&gt;
+            &lt;input type=&quot;checkbox&quot; id=&quot;test8&quot; disabled=&quot;disabled&quot; /&gt;
+            &lt;label for=&quot;test8&quot;&gt;Filled in Checkbox disabled&lt;/label&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col m6 s12&quot;&gt;
+        &lt;h5 class=&quot;hide-on-med-and-down&quot;&gt;Switches&lt;/h5&gt;
+        &lt;div class=&quot;switch&quot;&gt;
+            &lt;div class=&quot;col s12&quot;&gt;
+                &lt;p&gt;
+                    &lt;span class=&quot;hide-on-large-only&quot;&gt;Normal switch&lt;/span&gt;
+                    &lt;label&gt;
+                        Off
+                        &lt;input type=&quot;checkbox&quot;&gt;
+                        &lt;span class=&quot;lever&quot;&gt;&lt;/span&gt;
+                        On
+                    &lt;/label&gt;
+                &lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;br/&gt;
+        &lt;div class=&quot;switch&quot;&gt;
+            &lt;div class=&quot;col s12&quot;&gt;
+                &lt;p&gt;
+                    &lt;span class=&quot;hide-on-large-only&quot;&gt; Disabled switch&lt;/span&gt;
+                    &lt;label&gt;
+                        Off
+                        &lt;input disabled type=&quot;checkbox&quot;&gt;
+                        &lt;span class=&quot;lever&quot;&gt;&lt;/span&gt;
+                        On
+                    &lt;/label&gt;
+                &lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;br/&gt;
+        &lt;h5 class=&quot;hide-on-med-and-down&quot;&gt;Radio Buttons&lt;/h5&gt;
+        &lt;div class=&quot;col s12 input-padding&quot;&gt;
+            &lt;input class=&quot;with-gap&quot; name=&quot;group1&quot; type=&quot;radio&quot; id=&quot;radio1&quot;  /&gt;
+            &lt;label for=&quot;radio1&quot;&gt;Radio Button &lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col s12 input-padding&quot;&gt;
+            &lt;input name=&quot;group1&quot; type=&quot;radio&quot; id=&quot;radio3&quot; disabled=&quot;disabled&quot; /&gt;
+            &lt;label for=&quot;radio3&quot;&gt;Radio Button Disabled&lt;/label&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div id="elements3_css" class="s12">
+                                    <pre class="last">
+                                        <code class="language-css">
+#elements3 {
+    height: 500px;
+}
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div id="elements3_js" class="s12">
+                                    <pre class="last">
+                                        <code class="language-javascript">
+
+                                        </code>
+                                    </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

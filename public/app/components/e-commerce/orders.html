@@ -1,0 +1,675 @@
+<div id="page-content" class="e-commerce-products">
+    <div class="row dashboard-wrapper content-container">
+    <div class="top-bg"></div>
+    <div class="">
+        <div id="table-orders" class="col m12 s12 table-layout">
+            <div class="above-prod-table">
+                <div class="col left prod-title-div no-padding">
+                    <span>Orders</span>
+                    <div class="order-count">
+                        <span>Total Orders:</span>
+                        <span>20</span>
+                    </div>
+                </div>
+                <div class="input-field col s6 right search-div hide-on-small-only">
+                    <i class="material-icons search-icon">search</i>
+                    <input id="search-order" type="text" class="validate">
+                    <label for="search-order" class="search-label">Search</label>
+                </div>
+            </div>
+            <div class="card clearfix">
+                <div class="card-content clearfix">
+                    <table id="orders-table"  class="responsive-table display dataTable">
+                        <thead>
+                            <tr>
+                                <th class="order-th">ID</th>
+                                <th class="order-th">Reference</th>
+                                <th class="order-th">Delivery</th>
+                                <th class="order-th">Customer</th>
+                                <th class="order-th">Total</th>
+                                <th class="order-th">Payment</th>
+                                <th class="order-th">Status</th>
+                                <th class="order-th">Date</th>
+                                <th class="all order-th">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>b49e7810</td>
+                                <td>Arizona</td>
+                                <td>Drake Figueroa</td>
+                                <td>$83.70</td>
+                                <td>Check</td>
+                                <td>
+                                    <span class="status purple lighten-2">On pre-order (not paid)</span>
+                                </td>
+                                <td>2016/03/10 06:56:02</td>
+                                <td><div class="edit-product waves-effect waves-ripple center-align"><i class="zmdi zmdi-more"></i></div></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>621c1509</td>
+                                <td>Maine</td>
+                                <td>Laurie Ramsey</td>
+                                <td>$14.39</td>
+                                <td>Credit Card</td>
+                                <td>
+                                    <span class="status blue">Awaiting check payment</span>
+                                </td>
+                                <td>2015/09/02 17:05:54</td>
+                                <td><div class="edit-product waves-effect waves-ripple center-align"><i class="zmdi zmdi-more"></i></div></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>b09e69d8</td>
+                                <td>District Of Columbia</td>
+                                <td>Goodman Oneil</td>
+                                <td>$95.61</td>
+                                <td>Bank-wire</td>
+                                <td>
+                                    <span class="status red darken-4">Payment error</span>
+                                </td>
+                                <td>2016/02/18 21:53:14</td>
+                                <td><div class="edit-product waves-effect waves-ripple center-align"><i class="zmdi zmdi-more"></i></div></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>d49d5d83</td>
+                                <td>Iowa</td>
+                                <td>Bass Rich</td>
+                                <td>$44.47</td>
+                                <td>PayPal</td>
+                                <td>
+                                    <span class="status green darken-4">Delivered</span>
+                                </td>
+                                <td>2016/02/18 21:53:14</td>
+                                <td><div class="edit-product waves-effect waves-ripple center-align"><i class="zmdi zmdi-more"></i></div></td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>c32ae619</td>
+                                <td>Massachusetts </td>
+                                <td>Candace Langley</td>
+                                <td>$22.44</td>
+                                <td>PayPal</td>
+                                <td>
+                                    <span class="status purple">Shipped</span>
+                                </td>
+                                <td>2015/10/28 03:01:45</td>
+                                <td><div class="edit-product waves-effect waves-ripple center-align"><i class="zmdi zmdi-more"></i></div></td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>653be198</td>
+                                <td>Pennsylvania</td>
+                                <td>Cassandra Salazar</td>
+                                <td>$74.16</td>
+                                <td>Credit Card</td>
+                                <td>
+                                    <span class="status orange darken-1">Preparing the order</span>
+                                </td>
+                                <td>2015/01/11 02:22:16</td>
+                                <td><div class="edit-product waves-effect waves-ripple center-align"><i class="zmdi zmdi-more"></i></div></td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>9ed08243</td>
+                                <td>Connecticut</td>
+                                <td>Frieda Wheele</td>
+                                <td>$92.14</td>
+                                <td>Check</td>
+                                <td>
+                                    <span class="status red">Refunded</span>
+                                </td>
+                                <td>2015/01/11 02:22:16</td>
+                                <td><div class="edit-product waves-effect waves-ripple center-align"><i class="zmdi zmdi-more"></i></div></td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>3fb01a99</td>
+                                <td>Ohio</td>
+                                <td>Dolly Savage</td>
+                                <td>$61.72</td>
+                                <td>Bank-wire</td>
+                                <td>
+                                    <span class="status green">Payment accepted</span>
+                                </td>
+                                <td>2016/04/19 11:04:31</td>
+                                <td><div class="edit-product waves-effect waves-ripple center-align"><i class="zmdi zmdi-more"></i></div></td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>c1161192</td>
+                                <td>Nevada</td>
+                                <td>Clarke Lindsey</td>
+                                <td>$58.89</td>
+                                <td>Credit Card</td>
+                                <td>
+                                    <span class="status pink">Canceled</span>
+                                </td>
+                                <td>2015/11/26 23:08:26</td>
+                                <td><div class="edit-product waves-effect waves-ripple center-align"><i class="zmdi zmdi-more"></i></div></td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>b49e7810</td>
+                                <td>Arizona</td>
+                                <td>Drake Figueroa</td>
+                                <td>$83.70</td>
+                                <td>Check</td>
+                                <td>
+                                    <span class="status purple lighten-2">On pre-order (not paid)</span>
+                                </td>
+                                <td>2016/03/10 06:56:02</td>
+                                <td><div class="edit-product waves-effect waves-ripple center-align"><i class="zmdi zmdi-more"></i></div></td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>621c1509</td>
+                                <td>Maine</td>
+                                <td>Laurie Ramsey</td>
+                                <td>$14.39</td>
+                                <td>Credit Card</td>
+                                <td>
+                                    <span class="status blue">Awaiting check payment</span>
+                                </td>
+                                <td>2015/09/02 17:05:54</td>
+                                <td><div class="edit-product waves-effect waves-ripple center-align"><i class="zmdi zmdi-more"></i></div></td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td>b09e69d8</td>
+                                <td>District Of Columbia</td>
+                                <td>Goodman Oneil</td>
+                                <td>$95.61</td>
+                                <td>Bank-wire</td>
+                                <td>
+                                    <span class="status red darken-4">Payment error</span>
+                                </td>
+                                <td>2016/02/18 21:53:14</td>
+                                <td><div class="edit-product waves-effect waves-ripple center-align"><i class="zmdi zmdi-more"></i></div></td>
+                            </tr>
+                            <tr>
+                                <td>13</td>
+                                <td>d49d5d83</td>
+                                <td>Iowa</td>
+                                <td>Bass Rich</td>
+                                <td>$44.47</td>
+                                <td>PayPal</td>
+                                <td>
+                                    <span class="status green darken-4">Delivered</span>
+                                </td>
+                                <td>2016/02/18 21:53:14</td>
+                                <td><div class="edit-product waves-effect waves-ripple center-align"><i class="zmdi zmdi-more"></i></div></td>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td>c32ae619</td>
+                                <td>Massachusetts </td>
+                                <td>Candace Langley</td>
+                                <td>$22.44</td>
+                                <td>PayPal</td>
+                                <td>
+                                    <span class="status purple">Shipped</span>
+                                </td>
+                                <td>2015/10/28 03:01:45</td>
+                                <td><div class="edit-product waves-effect waves-ripple center-align"><i class="zmdi zmdi-more"></i></div></td>
+                            </tr>
+                            <tr>
+                                <td>15</td>
+                                <td>653be198</td>
+                                <td>Pennsylvania</td>
+                                <td>Cassandra Salazar</td>
+                                <td>$74.16</td>
+                                <td>Credit Card</td>
+                                <td>
+                                    <span class="status orange darken-1">Preparing the order</span>
+                                </td>
+                                <td>2015/01/11 02:22:16</td>
+                                <td><div class="edit-product waves-effect waves-ripple center-align"><i class="zmdi zmdi-more"></i></div></td>
+                            </tr>
+                            <tr>
+                                <td>16</td>
+                                <td>9ed08243</td>
+                                <td>Connecticut</td>
+                                <td>Frieda Wheele</td>
+                                <td>$92.14</td>
+                                <td>Check</td>
+                                <td>
+                                    <span class="status green darken-4">Delivered</span>
+                                </td>
+                                <td>2015/01/11 02:22:16</td>
+                                <td><div class="edit-product waves-effect waves-ripple center-align"><i class="zmdi zmdi-more"></i></div></td>
+                            </tr>
+                            <tr>
+                                <td>17</td>
+                                <td>3fb01a99</td>
+                                <td>Ohio</td>
+                                <td>Dolly Savage</td>
+                                <td>$61.72</td>
+                                <td>Bank-wire</td>
+                                <td>
+                                    <span class="status green">Payment accepted</span>
+                                </td>
+                                <td>2016/04/19 11:04:31</td>
+                                <td><div class="edit-product waves-effect waves-ripple center-align"><i class="zmdi zmdi-more"></i></div></td>
+                            </tr>
+                            <tr>
+                                <td>18</td>
+                                <td>c1161192</td>
+                                <td>Nevada</td>
+                                <td>Clarke Lindsey</td>
+                                <td>$58.89</td>
+                                <td>Credit Card</td>
+                                <td>
+                                    <span class="status pink">Canceled</span>
+                                </td>
+                                <td>2015/11/26 23:08:26</td>
+                                <td><div class="edit-product waves-effect waves-ripple center-align"><i class="zmdi zmdi-more"></i></div></td>
+                            </tr>
+                            <tr>
+                                <td>19</td>
+                                <td>c1161192</td>
+                                <td>Nevada</td>
+                                <td>Clarke Lindsey</td>
+                                <td>$58.89</td>
+                                <td>Credit Card</td>
+                                <td>
+                                    <span class="status red">Refunded</span>
+                                </td>
+                                <td>2015/11/26 23:08:26</td>
+                                <td><div class="edit-product waves-effect waves-ripple center-align"><i class="zmdi zmdi-more"></i></div></td>
+                            </tr>
+                            <tr>
+                                <td>20</td>
+                                <td>c1161192</td>
+                                <td>Nevada</td>
+                                <td>Clarke Lindsey</td>
+                                <td>$58.89</td>
+                                <td>Credit Card</td>
+                                <td>
+                                    <span class="status green darken-4">Delivered</span>
+                                </td>
+                                <td>2015/11/26 23:08:26</td>
+                                <td><div class="edit-product waves-effect waves-ripple center-align"><i class="zmdi zmdi-more"></i></div></td>
+                            </tr>
+                            <tr>
+                                <td>21</td>
+                                <td>c1161192</td>
+                                <td>Nevada</td>
+                                <td>Clarke Lindsey</td>
+                                <td>$58.89</td>
+                                <td>Credit Card</td>
+                                <td>
+                                    <span class="status red darken-4">Payment error</span>
+                                </td>
+                                <td>2015/11/26 23:08:26</td>
+                                <td><div class="edit-product waves-effect waves-ripple center-align"><i class="zmdi zmdi-more"></i></div></td>
+                            </tr>
+                            <tr>
+                                <td>22</td>
+                                <td>c1161192</td>
+                                <td>Nevada</td>
+                                <td>Clarke Lindsey</td>
+                                <td>$58.89</td>
+                                <td>Credit Card</td>
+                                <td>
+                                    <span class="status pink">Canceled</span>
+                                </td>
+                                <td>2015/11/26 23:08:26</td>
+                                <td><div class="edit-product waves-effect waves-ripple center-align"><i class="zmdi zmdi-more"></i></div></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div id="order-edit" class="col m12 s12 table-layout">
+            <div class="above-prod-table header">
+                <div class="col row left prod-title-div">
+                    <button id="back-to-orders" class="btn left">
+                        <i class="zmdi zmdi-arrow-left white-text"></i>
+                    </button>
+                    <div class="col s6 order-number">
+                        <span>Order 68541f025</span>
+                        <span>from John Doe</span>F
+                    </div>
+                </div>
+                <div class="input-field col   right search-div hide-on-small-only">
+                    <i class="material-icons search-icon">search</i>
+                    <input id="search-order1" type="text" class="validate">
+                    <label for="search-order1" class="search-label">Search</label>
+                </div>        
+            </div>
+            <div class="row">
+                <div class="col s12 white">
+                    <div class="col s12">
+                        <div class="col s12 m7">
+                            <ul class="tabs">
+                                <li class="tab col s3"><a class="active" href="#order-details"><span class="hide-on-small-and-down">Details</span><i class="zmdi zmdi-view-headline hide-on-med-and-up"></i> </a></li>
+                                <li class="tab col s3"><a href="#products"><span class="hide-on-small-and-down">Products</span><i class="zmdi zmdi-shopping-cart hide-on-med-and-up"></i></a></li>
+                                <li class="tab col s3"><a href="#invoice"><span class="hide-on-small-and-down">Invoice</span><i class="zmdi zmdi-assignment-o hide-on-med-and-up"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col s12">
+                        <div id="order-details" class="row col s12">
+                            <div class="card-panel">
+                                <div class="col s12">
+                                    <p class="subtile"><i class="zmdi zmdi-account"></i>Customer</p>
+                                </div>
+                                <table class="col s12 responsive-table">
+                                    <thead>
+                                    <tr>
+                                        <th data-field="name">Name</th>
+                                        <th data-field="email">Email</th>
+                                        <th data-field="phone">Phone</th>
+                                        <th data-field="company">Company</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td class="avatar">
+                                            <div class="col s12 valign-wrapper no-padding">
+                                                <img src="../assets/images/profile/blog3.jpg" alt="avatar" class="circle">
+                                                <span class="title valign">Mary Jane</span>
+                                            </div>
+                                        </td>
+                                        <td>john@example.com</td>
+                                        <td>02415244</td>
+                                        <td>company</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <div class="row section margin">
+                                    <div class="adress col s12 m6">
+                                        <h5>Adress</h5>
+                                        <p>
+                                            2010-A Harbison Dr.#267<br>
+                                            Vacaville, CA. 95687
+                                        </p>
+                                    </div>
+                                    <div class="col s12 m6">
+                                        <div id="googleMap" class="right" style="width:500px;height:380px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-panel col s12">
+                                <div class="col s12">
+                                    <p class="subtile"><i class="zmdi zmdi-time"></i>Order Status</p>
+                                </div>
+                                <table id="status-table" class="col s12 responsive-table">
+                                    <thead>
+                                    <tr>
+                                        <th data-field="id">Status</th>
+                                        <th data-field="p-method">Updated On</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>
+                                            <span class="status blue">Awaiting check payment</span>
+                                        </td>
+                                        <td>2016/06/10 11:42:12</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="status purple">Shipped</span>
+                                        </td>
+                                        <td>2016/06/10 11:42:12</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <div class="input-field col s12 l9 selectStatus">
+                                    <select id="status-list" onchange="enable_status()">
+                                        <option value="" class="disabled">Select a status</option>
+                                        <option value="On pre-order (not paid)">On pre-order (not paid)</option>
+                                        <option value="Awaiting check payment">Awaiting check payment</option>
+                                        <option value="Payment accepted">Payment accepted</option>
+                                        <option value="Payment error">Payment error</option>
+                                        <option value="Preparing">Preparing the order</option>
+                                        <option value="Shipped">Shipped</option>
+                                        <option value="Delivered">Delivered</option>
+                                        <option value="Refunded">Refunded</option>
+                                        <option value="Canceled">Canceled</option>
+                                    </select>
+                                </div>
+                                <div id="update-status" class="col s12 l2">
+                                    <a class="waves-effect waves-light btn disabled" >Update Status</a>
+                                </div>
+                            </div>
+                            <div class="card-panel col s12">
+                                <div class="col s12">
+                                    <p class="subtile"><i class="zmdi zmdi-money-box"></i>Payment</p>
+                                    <table class="col s12 responsive-table">
+                                        <thead>
+                                        <tr>
+                                            <th data-field="id">TransactionID</th>
+                                            <th data-field="p-method">Payment Method</th>
+                                            <th data-field="amount">Amount</th>
+                                            <th data-field="date">Date</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>5h89gh5469e</td>
+                                            <td>Credit Card</td>
+                                            <td>$112</td>
+                                            <td>2016/06/10 11:42:12</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="card-panel col s12">
+                                <div class="col s12">
+                                    <p class="subtile"><i class="zmdi zmdi-truck"></i>Shipping</p>
+                                    <table class="col s12 responsive-table">
+                                        <thead>
+                                        <tr>
+                                            <th data-field="code">Tracking Code</th>
+                                            <th data-field="carrier">Carrier</th>
+                                            <th data-field="wight">Weight</th>
+                                            <th data-field="fee">Fee</th>
+                                            <th data-field="date">Date</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="input-field margin">
+                                                    <input placeholder="Click to add a tracking code" id="tracking-code" type="text" class="validate">
+                                                </div>
+                                            </td>
+                                            <td>USPS</td>
+                                            <td>6.12</td>
+                                            <td>4.00</td>
+                                            <td>2016/06/12 16:12:45</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                        
+                            </div>
+                        </div>
+                        <div id="products" class="col s12 row">
+                            <div class="card-panel col s12">
+                                <table id="products-table"  class="responsive-table display dataTable" >
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Image</th>
+                                            <th>Name</th>
+                                            <th>Category</th>
+                                            <th>Price</th>
+                                            <th>Quantity</th>
+                                            <th>Active</th>
+                                            <th class="all">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr data-prodimg="../assets/images/user_test_bg.png" data-prodname="Green Skirt">
+                                            <td>1</td>
+                                            <td><img class="product-image" src="../assets/images/user_test_bg.png" alt="user"/></td>
+                                            <td>Green Skirt</td>
+                                            <td>Skirts</td>
+                                            <td>10$</td>
+                                            <td>
+                                                <div class="quantity-div">
+                                                    <div class="quantity-indicator red"></div>
+                                                    <div class="">3</div>
+                                                </div>
+                                            </td>
+                                        
+                                            <td><i class="zmdi zmdi-hc-2x zmdi-close-circle red-text"></i></td>
+                                            <td>
+                                                <a href="../templates/pages/e-commerce/products.html#productEdit">
+                                                    <div class="edit-product waves-effect waves-ripple center-align"><i class="zmdi zmdi-edit"></i></div>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td><img class="product-image" src="../assets/images/user_test_bg.png" alt="user"/></td>
+                                            <td>All Stars</td>
+                                            <td>Shoes</td>
+                                            <td>15$</td>
+                                            <td><div class="quantity-div">
+                                                <div class="quantity-indicator green"></div>
+                                                <div class="">46</div>
+                                            </div></td>
+                                            <td><i class="zmdi zmdi-hc-2x zmdi-check-circle green-text"></i></td>
+                                            <td>
+                                                <a href="../templates/pages/e-commerce/products.html#productEdit">
+                                                    <div class="edit-product waves-effect waves-ripple center-align"><i class="zmdi zmdi-edit"></i></div>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td><img class="product-image" src="../assets/images/user_test_bg.png" alt="user"/></td>
+                                            <td>Tennis</td>
+                                            <td>Shoes</td>
+                                            <td>129$</td>
+                                            <td><div class="quantity-div">
+                                                <div class="quantity-indicator amber"></div>
+                                                <div class="">15</div>
+                                            </div></td>
+                                            <td><i class="zmdi zmdi-hc-2x zmdi-check-circle green-text"></i></td>
+                                            <td>
+                                                <a href="../templates/pages/e-commerce/products.html#productEdit">
+                                                    <div class="edit-product waves-effect waves-ripple center-align"><i class="zmdi zmdi-edit"></i></div>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td><img class="product-image" src="../assets/images/user_test_bg.png" alt="user"/></td>
+                                            <td>Green Skirt</td>
+                                            <td>Skirts</td>
+                                            <td>10$</td>
+                                            <td>
+                                                <div class="quantity-div">
+                                                    <div class="quantity-indicator red"></div>
+                                                    <div class="">3</div>
+                                                </div>
+                                            </td>
+                                        
+                                            <td><i class="zmdi zmdi-hc-2x zmdi-close-circle red-text"></i></td>
+                                            <td>
+                                                <a href="javascript:void(0);" ng-click="navigateToProductEdit()">
+                                                    <div class="edit-product waves-effect waves-ripple center-align"><i class="zmdi zmdi-edit"></i></div>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div id="invoice" class="col s12">
+                            <div class="row white">
+                                <div class="card-panel col s12 m12 l12 invoice">
+                                    <div class="section">
+                                    </div>
+                                    <div>
+                                        <div class="col s12 m6 no-padding">
+                                            <img src="../assets/images/logo-pink.gif" alt="gif">
+                                        </div>
+                                        <div class="col s12 m4 l3 no-padding right">
+                                            <p class="details margin-m-l">Prepared by<br>
+                                                <span class="name bold">John Dow Inc.</span><br>
+                                                2010-A Harbison Dr.#267 <br>
+                                                Vacaville, CA. 95687<br>
+                                                Info@info.com
+                                            </p>
+                                        </div>
+                                        <div class="col s12 no-padding">
+                                            <p class="details margin-m-l">
+                                                Prepared for <br>
+                                                <span class="name bold">Company Name Here</span><br>
+                                                User Name here<br><br>
+                                                Invoice#: 257878787<br>
+                                                Due date: 11/21/2015<br>
+                                                Paid date: 10/21/2015
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col s12 no-padding">
+                                        <table class="responsive-table" style="width: 100%">
+                                            <thead>
+                                            <tr>
+                                                <th data-field="description">Description</th>
+                                                <th class="center-align" data-field="price">Unit Price</th>
+                                                <th class="center-align" data-field="amount">Amount</th>
+                                                <th class="center-align" data-field="quantity">Quantity</th>
+                                            </tr>
+                                            </thead>
+                        
+                                            <tbody>
+                                            <tr class="grey lighten-4">
+                                                <td>Item no. 1 </td>
+                                                <td class="center-align">$19.95</td>
+                                                <td class="center-align left-bordered">1</td>
+                                                <td class="center-align left-bordered">$19.95</td>
+                                            </tr>
+                                            <tr class="grey lighten-4">
+                                                <td>Item no. 2 </td>
+                                                <td class="center-align">$79.95</td>
+                                                <td class="center-align left-bordered">2</td>
+                                                <td class="center-align left-bordered">$79.95</td>
+                                            </tr>
+                                            <tr class="grey lighten-4">
+                                                <td>Item no. 3 </td>
+                                                <td class="center-align">$28.87</td>
+                                                <td class="center-align left-bordered">7</td>
+                                                <td class="center-align left-bordered">$29.87</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="col s12 no-padding">
+                                        <p class="details"><span class="name light">Invoice Notes</span></p>
+                                        <p class="details light">
+                                            All sellers are required to have an automatic payment method on file. We accept the following types of automatic payment methods:
+                                            PayPal, Credit Card, Direct Pay from your checking account.
+                                            Your invoice payment will be automatically processed by your payment due date, according to the payment method you chose when you created your seller account.
+                                        </p>
+                                    </div>
+                                    <div class="col s8 m6 right">
+                                        <p class="col s11 details right-align">
+                                            Subotal: $129.91
+                                        </p>
+                                        <div class="divider col s12"></div>
+                                        <p class="details col s11 pink-text text-darken-3 right-align"><span class="bold">Total:</span> $129.91 </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>

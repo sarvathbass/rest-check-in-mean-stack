@@ -1,0 +1,212 @@
+
+<div class="sales">
+    <!-- page content goes here-->
+    <div class="row section-header header-content">
+        <div>
+            <div class="col l12 m12 s12 small-charts">
+                <div class="small-chart" id="small-chart1">
+                    <div class="col l3 m6 s12 text-center" >
+                        <div id="smc1" ></div>
+                        <small>Website Traffics</small>
+                        <h2>987,459</h2>
+                    </div>
+                    <div class="col l3 m6 s12 text-center" >
+                        <div id="smc3" ></div>
+                        <small>Total Sales</small>
+                        <h2>$ 458,778</h2>
+                    </div>
+                    <div class="col l3 m6 s12 text-center" >
+                        <div id="smc2"></div>
+                        <small>Website Traffics</small>
+                        <h2>987,459</h2>
+                    </div>
+                    <div class="col l3 m6 s12 text-center" >
+                        <div id="smc4" ></div>
+                        <small>Total Sales</small>
+                        <h2>987,459</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class=" row dashboard-wrapper content-container">
+        <div class="row">
+            <div class="row margin">
+                <div class="col s12 m12 l4">
+                    <div class="card green">
+                        <div class="card-content white-text">
+                            <h5>Overall Sales</h5>
+                            <div class="row col s12 m8 l8">
+                                <table>
+                                    <tr>
+                                        <td class="no-padding">Today</td>
+                                        <td class="no-padding">This Week</td>
+                                        <td class="no-padding">This Month</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="no-padding"><strong>1,230</strong></td>
+                                        <td class="no-padding"><strong>9,362</strong></td>
+                                        <td class="no-padding"><strong>293,646</strong></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="progress green darken-3">
+                                <div class="determinate white" style="width: 70%"></div>
+                            </div>
+                            <p>
+                                <small>5% increase vs previous month</small>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card blue">
+                        <div class="card-content white-text">
+                            <h5>Undelivered Orders</h5>
+                            <div class="row col s12 m8 l8">
+                                <table>
+                                    <tr>
+                                        <td class="no-padding">Today</td>
+                                        <td class="no-padding">This Week</td>
+                                        <td class="no-padding">This Month</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="no-padding"><strong>20</strong></td>
+                                        <td class="no-padding"><strong>30</strong></td>
+                                        <td class="no-padding"><strong>120</strong></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="progress blue darken-3">
+                                <div class="determinate white" style="width: 90%"></div>
+                            </div>
+                            <p>
+                                <small>35% improvement vs previous month</small>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card red">
+                        <div class="card-content white-text">
+                            <h5>Cancelled Orders</h5>
+                            <div class="row col s12 m8 l8">
+                                <table>
+                                    <tr>
+                                        <td class="no-padding">Today</td>
+                                        <td class="no-padding">This Week</td>
+                                        <td class="no-padding">This Month</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="no-padding"><strong>1</strong></td>
+                                        <td class="no-padding"><strong>3</strong></td>
+                                        <td class="no-padding"><strong>46</strong></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="progress red darken-3">
+                                <div class="determinate white" style="width: 5%"></div>
+                            </div>
+                            <p>
+                                <small>95% improvement vs previous month</small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m12 l8">
+                    <div class="card">
+                        <div class="card-content">
+                            <h5>Orders overview by Country<i class="material-icons right">more_vert</i></h5>
+                        </div>
+                        <div class="card-action">
+                            <div id="chartdiv"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row margin">
+                <div class="col s12 m12 l4">
+                    <div class="card">
+                        <div class="card-content">
+                            <h5>Relative sales vs. last year<i class="material-icons right">more_vert</i></h5>
+                        </div>
+                        <div class="card-action">
+                            <div id="hc3"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m12 l8">
+                    <div class="card">
+                        <div class="card-content">
+                            <h5>Latest transactions<i class="material-icons right">more_vert</i></h5>
+                        </div>
+                        <div class="card-action">
+                            <table class="highlight">
+                                <thead>
+                                <tr>
+                                    <td class="hide-on-small-only">Type</td>
+                                    <td>Date</td>
+                                    <td>Department</td>
+                                    <td>Amount</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class="hide-on-small-only"><span class="green-text"><i class="zmdi zmdi-trending-up"></i> deposit</span></td>
+                                    <td>25th May, 2016</td>
+                                    <td>Sports Ware</td>
+                                    <td><span class="green-text"> + $2,895.00</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="hide-on-small-only"><span class="red-text"><i class="zmdi zmdi-trending-down"></i> withdrawal</span></td>
+                                    <td>25th May, 2016</td>
+                                    <td>Acquisitions</td>
+                                    <td><span class="red-text">- $54,695.00</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="hide-on-small-only"><span class="green-text"><i class="zmdi zmdi-trending-up"></i> deposit</span></td>
+                                    <td>25th May, 2016</td>
+                                    <td>Advertising</td>
+                                    <td><span class="green-text">+ $6,234.72</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="hide-on-small-only"><span class="green-text"><i class="zmdi zmdi-trending-up"></i> deposit</span></td>
+                                    <td>25th May, 2016</td>
+                                    <td>sports ware</td>
+                                    <td><span class="green-text"> + $2,895.00</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="hide-on-small-only"><span class="red-text"><i class="zmdi zmdi-trending-down"></i> withdrawal</span></td>
+                                    <td>25th May, 2016</td>
+                                    <td>acquisitions</td>
+                                    <td><span class="red-text">- $54,695.00</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="hide-on-small-only"><span class="green-text"><i class="zmdi zmdi-trending-up"></i> deposit</span></td>
+                                    <td>25th May, 2016</td>
+                                    <td>advertising</td>
+                                    <td><span class="green-text">+ $6,234.72</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="hide-on-small-only"><span class="green-text"><i class="zmdi zmdi-trending-up"></i> deposit</span></td>
+                                    <td>25th May, 2016</td>
+                                    <td>sports ware</td>
+                                    <td><span class="green-text"> + $2,895.00</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="hide-on-small-only"><span class="red-text"><i class="zmdi zmdi-trending-down"></i> withdrawal</span></td>
+                                    <td>25th May, 2016</td>
+                                    <td>acquisitions</td>
+                                    <td><span class="red-text">- $54,695.00</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="hide-on-small-only"><span class="green-text"><i class="zmdi zmdi-trending-up"></i> deposit</span></td>
+                                    <td>24th May, 2016</td>
+                                    <td>advertising</td>
+                                    <td><span class="green-text">+ $6,234.72</span></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,81 @@
+<div>
+    <style>
+        .card span{
+            color:white;
+        }
+        .new-title {
+            margin-left: 10px;
+        }
+        #calendar-modal {
+            max-width: 480px;
+            min-height: 650px;
+        }
+        .event-icon {
+            margin-top: 19px;
+        }
+        .event-icon2 {
+            margin-top: 16px;
+        }
+    </style>
+    <div class="row">
+        <div class="section-header">
+            <h4 class="page-title">Calendar</h4>
+        </div>
+    </div>
+    <div class="row dashboard-wrapper content-container">
+        <div class="col l12">
+            <div class="card">
+                <div class="card-content">
+                    <div id="calendar"></div>
+                </div>
+            </div>
+            <div class="fixed-action-btn horizontal">
+                <a class="btn-floating btn-large default-background modal-trigger" href="#calendar-modal">
+                    <i class="zmdi zmdi-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="calendar-modal" class="modal modal-fixed-footer" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <form id="add-event-form">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close modal-action modal-close right btn btn-small waves-effect default-background" aria-hidden="true" href="#!">
+                            <i class="zmdi zmdi-close"></i>
+                        </button>
+                        <div class="section-header center-align transparent">
+                            <img src="../assets/images/logo-pink.gif" alt="gif">
+                        </div>
+                        <h5 class="new-title">New Event</h5>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="event-title" type="text" class="validate" name="title">
+                                <label for="event-title">Event title</label>
+                            </div>
+                            <div class="input-field col s12">
+                                <i class="zmdi zmdi-calendar-note prefix event-icon"></i>
+                                <input type="date" placeholder="Event start" id="datepicker-start" class="datepicker" name="start" />
+                            </div>
+                            <div class="input-field col s12">
+                                <i class="zmdi zmdi-calendar-note prefix event-icon"></i>
+                                <input type="date" placeholder="Events end" id="datepicker-end" class="datepicker" name="end" />
+                            </div>
+                            <div class="input-field col s12">
+                                <i class="zmdi zmdi-format-color-fill prefix event-icon2"></i>
+                                <input type="text" placeholder="Events color" id="color" class="color" name="color" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="center-align">
+                        <button type="submit" class="btn waves-effect default-background">Add event</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

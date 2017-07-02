@@ -1,0 +1,355 @@
+<div id="page-content">
+    <div class="row">
+        <div class="section-header">
+            <h4 id="top" class="page-title">Documentation</h4>
+        </div>
+    </div>
+    <div class=" row content-container documentation">
+        <div class="row">
+            <div class="col s12 m9">
+                <div class="icon-set section scrollspy" id="introduction">
+                    <h5 class="page-header paragraph-title">Introduction</h5>
+                    <div class="row">
+                        <p>
+                            Here you can find a list of core libraries, design specifications and coding standards that we use in Mara.
+                        </p>
+                    </div>
+                    <div class="row sub-paragraph">
+                        <h6><strong>Google's Material Design</strong></h6>
+                        <p>
+                            All libraries and custom made components are following <a href="https://www.google.com/design/spec/material-design/introduction.html" target="_blank">Google's Material Design Specifications.</a>
+                        </p>
+                    </div>
+                    <div class="row sub-paragraph">
+                        <h6><strong>Materialize</strong></h6>
+                        <p>
+                            Mara is built upon the new <a href="http://materializecss.com/" target="_blank">Materialize</a> css framework.
+                        </p>
+                    </div>
+                    <div class="row sub-paragraph">
+                        <h6><strong>HTML/jQuery & AngularJS</strong></h6>
+                        <p>
+                            When creating your project you can choose to use the standard HTML/jQuery version and the AngularJS version.
+                        </p>
+                        <p>
+                            If you don't know what AngularJS is or don't know how to use it, we strongly recommend checking out <a href="https://angularjs.org/" target="_blank">AngularJS</a>.
+                        </p>
+                    </div>
+                </div>
+                <div class="section1 scrollspy" id="ootb">
+                    <h5 class="page-header paragraph-title">Out of the box version</h5>
+                    <div class="row sub-paragraph">
+                        <p>
+                            In addition to the standard version of the theme that requires <strong>Node.js</strong> and <strong>Grunt</strong> in order to be installed,<br>
+                            we also bundle an installed version that can just be extracted and used.<br>
+                            If you decide to use the installed version, you don't need to follow the steps from the <a href="#prerequisites">Prerequisites</a> and the
+                            <a href="#installation">Installation</a> sections below.
+                        </p>
+                    </div>
+                </div>
+                <div class="icon-set section1 scrollspy" id="prerequisites">
+                    <h5 class="page-header paragraph-title">Prerequisites</h5>
+                    <div class="row">
+                        <p>
+                            In order to start using Mara you will need some tools for installing 3rd party components and libraries
+                        </p>
+                    </div>
+                    <div class="row sub-paragraph">
+                        <h6><strong>Node.js</strong></h6>
+                        <p>
+                            <a href="https://nodejs.org" target="_blank">Node.js</a>® is a JavaScript runtime built on Chrome's V8 JavaScript engine.
+                        </p>
+                    </div>
+                    <div class="row sub-paragraph">
+                        <h6><strong>Grunt</strong></h6>
+                        <p>
+                            <a href="http://gruntjs.com/" target="_blank">Grunt</a> and Grunt plugins are installed and managed via npm, the Node.js package manager.
+                        </p>
+                    </div>
+                </div>
+                <div class="icon-set section1 scrollspy" id="installation">
+                    <h5 class="page-header paragraph-title">Installation</h5>
+                    <div class="row">
+                        In this section we will be installing the necessary tool and 3rd party components and libraries
+                    </div>
+                    <div class="row sub-paragraph">
+                        <h6><strong>Installing Prerequisites</strong></h6>
+                        <ol>
+                            <li>Download and install the latest <a href="https://nodejs.org/en/" target="_blank">Node.js</a> from its web site.</li>
+                            <li>
+                                <p>Run this command with a CLI client to install Grunt:</p>
+                                                        <pre class="margin black white-text">
+             <code>
+                 npm install -g grunt-cli</code>
+                                                        </pre>
+                            </li>
+                        </ol>
+
+                    </div>
+                    <div class="row sub-paragraph">
+                        <h6><strong>Installing Mara</strong></h6>
+                        <p>
+                            Navigate to the theme's folder and follow the following steps to complete installation
+                        </p>
+                        <ol>
+                            <li>
+                                <p>Run this command to install 3rd party components and libraries</p>
+                                                        <pre class="margin black white-text">
+             <code>
+                 npm install</code>
+                                                        </pre>
+                            </li>
+                            <li>
+                                <p>Now run this custom created command to have Grunt compile all the CSS and jQuery assets</p>
+                                                        <pre class="margin black white-text">
+             <code>
+                 grunt deploy</code>
+                                                        </pre>
+                            </li>
+                        </ol>
+                        <p>And that's it, your are now ready to use Mara!</p>
+                    </div>
+                    <div class="row sub-paragraph">
+                        <h6><strong>Creating your own pages</strong></h6>
+                        <p>To start using Mara you first have to include the compiled CSS file:</p>
+                        <div class="card">
+                            <div class="card-content">
+                                <h5 class="fs-20">Code Sample</h5>
+                            </div>
+                            <div class="card-action">
+                                            <pre class=" language-markup">
+                                                <code class=" language-markup">.
+&lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;css/mara.min.css&quot;  media=&quot;screen,projection&quot;/&gt;                           </code>
+                                            </pre>
+                            </div>
+                        </div>
+                        <p>And 3 javascript files ( jQuery, Materialize framework and the custom compiled javascript files ):</p>
+                        <div class="card">
+                            <div class="card-content">
+                                <h5 class="fs-20">Code Sample</h5>
+                            </div>
+                            <div class="card-action">
+                                            <pre class=" language-markup">
+                                                <code class=" language-markup">.
+&lt;script type=&quot;text/javascript&quot; src=&quot;//code.jquery.com/jquery-2.1.1.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;js/materialize.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;js/mara.min.js&quot;&gt;&lt;/script&gt;                                                </code>
+                                            </pre>
+                            </div>
+                        </div>
+                        <p>
+                            We also created a custom Grunt command that can be used in the development process.
+                            It watches inside the <code>/assets/sass/</code> and <code>/assets/js/scripts/</code> folders for any changes
+                            and when it detects one, it starts re-compiling the files.<br>
+                        </p>
+                        <p>To start using it just type:</p>
+                                                <pre class="margin black white-text">
+             <code>
+                 grunt w</code>
+                                                </pre>
+                    </div>
+                </div>
+                <div class="icon-set section1 scrollspy" id="3rdParty">
+                    <h5 class="page-header paragraph-title">3rd Party Components</h5>
+                    <p>In this section we will be presenting some of the components and plugins used.</p>
+                    <div class="row sub-paragraph">
+                        <h6 id="amcharts"><strong>AmCharts</strong></h6>
+                        <p>
+                            <a href="https://www.amcharts.com" target="_blank">amCharts</a> s an advanced charting library that will suit any data visualization need.<br/>
+                            Their charting solution include Column, Bar, Line, Area, Step, Step without risers, Smoothed line, Candlestick, OHLC, Pie/Donut, Radar/ Polar, XY/Scatter/Bubble, Bullet, Funnel/Pyramid charts as well as Gauges. <br/>
+                            It perfectly segregates itself into 3 independent charts — JavaScript Charts, Maps Charts (amMaps), and Stock charts.<br/>
+                            amCharts uses SVG to render charts that work in modern browsers only. These charts may not work properly below Internet Explorer 9.<br/>
+                            Checkout this fantastic collection of <a href="https://www.amcharts.com/demos"  target="_blank">cool demos</a> created using amCharts.<br/>
+                            And also these <a href="https://www.amcharts.com/tips/" target="_blank">cool tips</a> (from where these examples were selected) to help you customize your amCharts charts.<br/>
+                            The free version of amChart will leave a link to its website on the top of every chart. The commercial licenses are bit more expensive than most of the paid libraries in the market.
+                        </p>
+                    </div>
+                    <div class="row sub-paragraph">
+                        <h6 id="c3"><strong>C3.js</strong></h6>
+                        <p>
+                            <a href="http://c3js.org/" target="_blank">C3.js</a> is a D3-based reusable chart library.<br/>
+                            C3 makes it easy to generate D3-based charts by wrapping the code required to construct the entire chart.<br/>
+                            C3 gives some classes to each element when generating, so you can define a custom style by the class and it's possible to extend the structure directly by D3.<br/>
+                            C3 provides a variety of APIs and callbacks to access the state of the chart. By using them, you can update the chart even after it's rendered.<br/>
+                            Because of the dependence on D3, C3 supports only modern browsers D3 supports. Please see <a href="https://github.com/mbostock/d3/wiki#browser--platform-support">the description in D3</a>.
+                        </p>
+                    </div>
+                    <div class="row sub-paragraph">
+                        <h6 id="flot"><strong>Flot</strong></h6>
+                        <p>
+                            <a href="http://www.flotcharts.org/" target="_blank">Flot</a> is a pure JavaScript plotting library for jQuery, with a focus on simple usage, attractive looks and interactive features.<br>
+                            It is also one of the oldest and popular charting libraries.<br/>
+                            Flot supports lines, points, filled areas, bars and any combinations of these.<br/>
+                            Flot is completely free to use and commercial support is provided on special request to the creator.<br/>
+                            Works with Internet Explorer 6+, Chrome, Firefox 2+, Safari 3+ and Opera 9.5+<br>
+                            Please see their <a href="http://www.flotcharts.org/flot/examples/">examples</a>.
+                        </p>
+                    </div>
+                    <div class="row sub-paragraph">
+                        <h6 id="highcharts"><strong>Highcharts</strong></h6>
+                        <p>
+                            <a href="http://www.highcharts.com/" target="_blank">Highcharts</a> is a charting library written in pure JavaScript, offering an easy way of adding interactive charts to your web site or web application.<br/>
+                            Designed from ground up with mobile browsers in mind, everything from multitouch zooming to touch-friendly tooltips responds great on mobile platforms.<br/>
+                            In modern browsers graphs are rendered in SVG, with VML support for legacy browsers (e.g. Internet Explorer 6).<br/>
+                            Highcharts’ fast, mature, and modular codebase is also the foundation of its two sister products, Highstock JS and Highmaps JS.<br/>
+                            While Highchats is free for personal use, you need to purchase a license for commercial usage.
+                        </p>
+                    </div>
+                    <div class="row sub-paragraph">
+                        <h6 id="morris"><strong>Morris js</strong></h6>
+                        <p>
+                            <a href="http://morrisjs.github.io/morris.js/index.html" target="_blank">morris.js</a> is a pretty and powerful Charts Plugin with jQuery and Raphaël JS Library to make drawing simple charts easy.<br/>
+                            With Morris.js, you can create a wide variety of charts like line & area charts, bar charts and donut charts to fit you needs.<br/>
+                            It also works fine on mobile device such as iOS and android<br/>
+                            It was created by Olly Smith.<br/>
+                        </p>
+                    </div>
+                    <div class="row sub-paragraph">
+                        <h6 id="nvd3"><strong>nvD3.js</strong></h6>
+                        <p>
+                            <a href="http://nvd3.org/" target="_blank">nvD3.js</a> is a D3-based reusable chart library.<br/>
+                            This project is an attempt to build re-usable charts and chart components for d3.js without taking away the power that d3.js gives you.<br/>
+                            This is a very young collection of components, with the goal of keeping these components very customizeable, staying away from your standard cookie cutter solutions.<br/>
+                            Checkout their <a href="http://nvd3.org/examples/index.html">examples gallery</a> for how to code your first chart.
+                            <br/>
+                            Their examples should provide you with enough code to start making beautiful charts.<br/>
+                            Because of the dependence on D3, C3 supports only modern browsers D3 supports. Please see <a href="https://github.com/mbostock/d3/wiki#browser--platform-support">the description in D3</a>.
+                        </p>
+                    </div>
+                    <div class="row sub-paragraph">
+                        <h6 id="sparkline"><strong>jQuery Sparkline</strong></h6>
+                        <p>
+                            <a href="http://omnipotent.net/jquery.sparkline" target="_blank">jQuery Sparkline</a> generates <a href="http://en.wikipedia.org/wiki/Sparkline">sparklines</a> (small inline charts) directly in the browser using data supplied either inline in the HTML, or via javascript.<br/>
+                            The plugin is compatible with most modern browsers and has been tested with Firefox 2+, Safari 3+, Opera 9, Google Chrome and Internet Explorer 6, 7, 8, 9 & 10 as well as iOS and Android.<br/>
+                            Each example displayed below takes just 1 line of HTML or javascript to generate.<br/>
+                            The plugin was written by <a href="http://omnipotent.net/">Gareth Watts</a> for <a href="http://www.splunk.com/">Splunk Inc</a> and released under the <a href="http://www.opensource.org/licenses/BSD-3-Clause">New BSD License</a>.<br/>
+                        </p>
+                    </div>
+                    <div class="row sub-paragraph">
+                        <h6><strong>FullCalendar</strong></h6>
+                        <p>
+                            <a class="http://fullcalendar.io/" target="_blank">FullCalendar</a> is a drag-n-drop jQuery plugin for displaying events on a full-sized calendar.
+                        </p>
+                    </div>
+                    <div class="row sub-paragraph">
+                        <h6><strong>DataTables</strong></h6>
+                        <p>
+                            <a class="https://www.datatables.net/" target="_blank">DataTables</a> is a plug-in for the
+                            jQuery Javascript library. It is a highly flexible tool, based upon the foundations of progressive enhancement,
+                            and will add advanced interaction controls to any HTML table.
+                        </p>
+                    </div>
+                    <div class="row sub-paragraph">
+                        <h6><strong>Google Material Design Icons</strong></h6>
+                        <p>
+                            <a class="https://design.google.com/icons/" target="_blank">Google Material Design Icons</a> are beautifully crafted,
+                            delightful, and easy to use in your web, Android, and iOS projects.
+                        </p>
+                    </div>
+                    <div class="row sub-paragraph">
+                        <h6><strong>Material Design Iconic Icons</strong></h6>
+                        <p>
+                            <a class="http://zavoloklom.github.io/material-design-iconic-font/" target="_blank">Material Design Iconic Icons</a> is a full suite of material design icons
+                            (created and maintained by Google) with additional community-designed and brands icons for easy scalable vector graphics on websites or desktop.
+                        </p>
+                    </div>
+                    <div class="row sub-paragraph">
+                        <h6><strong>Fontello Icons</strong></h6>
+                        <p>
+                            <a class="http://fontello.com/" target="_blank">Fontello</a> is a tool to quickly pack vector images into webfonts.
+                        </p>
+                    </div>
+                    <div class="row sub-paragraph">
+                        <h6><strong>CKEditor</strong></h6>
+                        <p>
+                            <a class="http://ckeditor.com/" target="_blank">CKEditor</a> is a ready-for-use HTML text editor designed to simplify web content creation.
+                            It's a WYSIWYG editor that brings common word processor features directly to your web pages.
+                            Enhance your website experience with our community maintained editor.
+                        </p>
+                    </div>
+                    <div class="row sub-paragraph">
+                        <h6><strong>Medium Editor</strong></h6>
+                        <p>
+                            <a class="https://yabwe.github.io/medium-editor/" target="_blank">Medium Editor</a> is a clone of medium.com inline editor toolbar.
+                            MediumEditor has been written using vanilla JavaScript, no additional frameworks required.
+                        </p>
+                    </div>
+                    <div class="row sub-paragraph">
+                        <h6><strong>noUiSlider</strong></h6>
+                        <p>
+                            <a class="http://refreshless.com/nouislider/" target="_blank">noUiSlider</a> is a  lightweight JavaScript range slider
+                            noUiSlider is a range slider without bloat. It offers a ton off features, and it is as small,
+                            lightweight and minimal as possible, which is great for mobile use on the many supported devices, including iPhone,
+                            iPad, Android devices & Windows (Phone) 8 desktops, tablets and all-in-ones. It works on desktops too, of course!
+                        </p>
+                    </div>
+                    <div class="row sub-paragraph">
+                        <h6><strong>jQuery UI Tag-it</strong></h6>
+                        <p>
+                            <a class="http://aehlke.github.io/tag-it/" target="_blank">jQuery UI Tag-it</a> is a simple and configurable tag editing widget with autocomplete support.
+                        </p>
+                    </div>
+                    <div class="row sub-paragraph">
+                        <h6><strong>jQuery Chosen</strong></h6>
+                        <p>
+                            <a class="https://harvesthq.github.io/chosen/" target="_blank">jQuery Chosen</a> is a jQuery plugin that makes long, unwieldy select boxes much more user-friendly.
+                        </p>
+                    </div>
+                    <div class="row sub-paragraph">
+                        <h6><strong>Materialize Color Picker</strong></h6>
+                        <p>
+                            <a class="https://github.com/felipegruoso/materialize-colorpicker" target="_blank">Materialize Color Picker</a> is a nice and customizable colorpicker plugin for MaterializeCSS.
+                        </p>
+                    </div>
+                    <div class="row sub-paragraph">
+                        <h6><strong>jQuery Star Rating</strong></h6>
+                        <p>
+                            <a class="https://github.com/jvv/jquery-star-rating-plugin" target="_blank">jQuery Star Rating</a> is a simple star rating plugin which uses Google's Materialize Icons.
+                        </p>
+                    </div>
+                    <div class="row sub-paragraph">
+                        <h6><strong>Lightbox</strong></h6>
+                        <p>
+                            <a class="https://github.com/jvv/jquery-star-rating-plugin" target="_blank">Lightbox</a> is a small javascript library used to overlay images on top of the current page. It's a snap to setup and works on all modern browsers.
+                        </p>
+                    </div>
+                </div>
+                <div class="icon-set section1 scrollspy" id="faq">
+                    <h5 class="page-header paragraph-title">FAQ</h5>
+                    <p>This section provides answers for frequently asked questions</p>
+                    <div class="row sub-paragraph">
+                        <h6><strong>How to remove theme settings button?</strong></h6>
+                        <p>
+                            The easiest way is to add the following code snippet in your HTML pages:
+                        </p>
+                        <pre class="language-html"><code>&lt;script&gt;window.disableThemeSettings = true;&lt;/script&gt;</code></pre>
+                        <p>
+                            Another, more permanent way, is to comment out the code from the <code class="language-javascript">'\assets\js\scripts\_theme-settings.js'</code> file that creates the theme settings button:
+                        </p>
+                            <pre class="language-javascript"><code>$(&#39;body&#39;).append(
+    $(&#39;&lt;div/&gt;&#39;).load(&#39;/templates/themeSettings.html&#39;, function(){
+        ThemeSettings.init();
+    })
+);</code></pre>
+                        <p>
+                            And then run the <code class="language-javascript">'grunt deploy'</code> or the <code class="language-javascript">'grunt w'</code> command to repack the theme's JS components into the
+                            <code class="language-javascript">'mara.min.js'</code> file.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col m3 hide-on-small-only hidden-print">
+                <div data-spy="affix" data-offset-top="470" data-offset-bottom="70" class="bs-docs-sidebar affix-top" role="complementary">
+                    <ul class="nav bs-docs-sidenav table-of-contents">
+                        <li><a href="#introduction"><i class="zmdi zmdi-shape zmdi-hc-fw"></i> Introduction</a></li>
+                        <li><a href="#prerequisites"><i class="zmdi zmdi-swap-vertical zmdi-hc-fw"></i> Prerequisites</a></li>
+                        <li><a href="#installation"><i class="zmdi zmdi-home zmdi-hc-fw"></i> Installation</a></li>
+                        <li><a href="#3rdParty"><i class="zmdi zmdi-group zmdi-hc-fw"></i> 3rd Party Components</a></li>
+                        <li><a href="#faq"><i class="zmdi zmdi-help zmdi-hc-fw"></i> FAQ</a></li>
+                    </ul>
+                    <a class="back-to-top" href="#top">Back to top</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

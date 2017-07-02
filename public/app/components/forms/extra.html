@@ -1,0 +1,355 @@
+<div >
+    <div class="row section-header">
+        <h4 class="page-title">Extra Form Elements</h4>
+    </div>
+    <div class="row content-container extra-elements">
+        <div class="row">
+            <div class="col l6 m6 s12">
+                <div class="card" id="elements4">
+                    <div class=" col s12">
+                        <h5 >Horizontal Range Slider</h5>
+                        <div class="col l12 m12 s12">
+                            <div class="col m5 s5">
+                                <label for="range-h-min"> From:</label> <input id="range-h-min"/>
+                            </div>
+                            <div class="col m5 s5">
+                                <label for="range-h-max">To:</label> <input id="range-h-max"/>
+                            </div>
+                        </div>
+                        <div class="col l12 m12 s12 center-align">
+                            <div class="col">
+                                <div id="range-horizontal"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col s12">
+                        <h5 >Vertical Range Slider</h5>
+                    </div>
+                    <div class="row col s12">
+                        <div class="col">
+                            <div class="col m3 s5 center-align">
+                                <div id="range-vertical"></div>
+                            </div>
+                            <div class="col m6 s6">
+                                <br/><br/>
+                                <div class="col m6 s12">
+                                    <label for="range-v-min"> From:</label> <input id="range-v-min"/>
+                                    <label for="range-v-max">To:</label> <input id="range-v-max"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col l6 m6 s12 hide-on-small-only">
+                <div class="card">
+                    <div class="row">
+                        <div class="col s12">
+                            <ul class="tabs" tabs>
+                                <li class="tab col s3"><a href="#elements4_html" class="active" >HTML</a></li>
+                                <li class="tab col s3"><a href="#elements4_css">CSS</a></li>
+                                <li class="tab col s3"><a href="#elements4_js">Javascript</a></li>
+                            </ul>
+                        </div>
+                        <div class="col s12">
+                            <div class="row">
+                                <div id="elements4_html" class="s12">
+                                    <pre style="max-height: 487px">
+                                        <code class="language-markup">
+&lt;div class=&quot;card&quot; id=&quot;elements4&quot;&gt;
+    &lt;div class=&quot; col s12&quot;&gt;
+        &lt;br/&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;row col s12&quot;&gt;
+        &lt;div class=&quot;col m6 s12 center-align&quot;&gt;
+            &lt;h5&gt;Horizontal Range Slider&lt;/h5&gt;
+            &lt;div id=&quot;range-horizontal&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col m6 s12&quot;&gt;
+            &lt;br/&gt;&lt;br/&gt;
+            &lt;div class=&quot;col s3&quot;&gt;
+                &lt;label for=&quot;range-h-min&quot;&gt; From:&lt;/label&gt; &lt;input id=&quot;range-h-min&quot;/&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;col s3&quot;&gt;
+                &lt;label for=&quot;range-h-max&quot;&gt;To:&lt;/label&gt; &lt;input id=&quot;range-h-max&quot;/&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;row col s12&quot;&gt;
+        &lt;div class=&quot;col m6 s12 center-align&quot;&gt;
+            &lt;h5&gt;Vertical Range Slider&lt;/h5&gt;
+            &lt;div id=&quot;range-vertical&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col m6 s12&quot;&gt;
+            &lt;br/&gt;&lt;br/&gt;
+            &lt;div class=&quot;col s3&quot;&gt;
+                &lt;label for=&quot;range-v-min&quot;&gt; From:&lt;/label&gt; &lt;input id=&quot;range-v-min&quot;/&gt;
+                &lt;label for=&quot;range-v-max&quot;&gt;To:&lt;/label&gt; &lt;input id=&quot;range-v-max&quot;/&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div id="elements4_css" class="s12">
+                                    <pre>
+                                        <code class="language-css">
+#elements4 {
+    height: 500px;
+}
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div id="elements4_js" class="s12">
+                                    <pre>
+                                        <code class="language-javascript">
+(function () {
+    'use strict';
+    angular.module('mara').config(configuration);
+    configuration.$inject = ['$stateProvider'];
+    function configuration($stateProvider) {
+        $stateProvider
+            .state('mara.forms', {
+                url:'forms',
+                template: '&lt;div forms&gt;&lt;/div&gt;'
+            })
+    };
+    angular.module('mara').directive('forms', forms);
+    forms.$inject = ['$rootScope','$compile'];
+    function forms($rootScope,$compile)
+    {
+        return {
+            restrict: 'EA',
+            templateUrl: '/app/components/pages/forms.html',
+            replace: true,
+            link: function(scope, element) {
+                $compile(element.contents())($rootScope);
+		        // ...
+	            var rangeVertical = angular.element('#range-vertical')[0];
+                noUiSlider.create(rangeVertical, {
+                    start: [ 20, 80 ], // Handle start position
+                    step: 10, // Slider moves in increments of '10'
+                    margin: 20, // Handles must be more than '20' apart
+                    connect: true, // Display a colored bar between the handles
+                    direction: 'rtl', // Put '0' at the bottom of the slider
+                    orientation: 'vertical', // Orient the slider vertically
+                    behaviour: 'tap-drag', // Move handle on tap, bar is draggable
+                    range: { // Slider can select '0' to '100'
+                        'min': 0,
+                        'max': 100
+                    },
+                    pips: { // Show a scale with the slider
+                        mode: 'steps',
+                        density: 2
+                    },
+                    format: wNumb({
+                        decimals: 0
+                    })
+                });
+                var rangeVerticalMin = angular.element('#range-v-min')[0];
+                var rangeVerticalMax = angular.element('#range-v-max')[0];
+                // When the slider value changes, update the input and span
+                rangeVertical.noUiSlider.on('update', function( values, handle ) {
+                    rangeVerticalMin.value = values[0];
+                    rangeVerticalMax.value = values[1];
+                });
+                // When the input changes, set the slider value
+                rangeVerticalMin.addEventListener('change', function(){
+                    range.noUiSlider.set([this.value, null]);
+                });
+                // When the input changes, set the slider value
+                rangeVerticalMax.addEventListener('change', function(){
+                    range.noUiSlider.set([null, this.value]);
+                });
+                var rangeHorizontal = angular.element('#range-horizontal')[0];
+                noUiSlider.create(rangeHorizontal, {
+                    start: [ 20, 80 ], // Handle start position
+                    step: 10, // Slider moves in increments of '10'
+                    margin: 20, // Handles must be more than '20' apart
+                    connect: true, // Display a colored bar between the handles
+                    direction: 'ltr', // Put '0' at the bottom of the slider
+                    orientation: 'horizontal', // Orient the slider vertically
+                    behaviour: 'tap-drag', // Move handle on tap, bar is draggable
+                    range: { // Slider can select '0' to '100'
+                        'min': 0,
+                        'max': 100
+                    },
+                    format: wNumb({
+                        decimals: 0
+                    })
+                });
+                var rangeHorizontalMin = angular.element('#range-h-min')[0];
+                var rangeHorizontalMax = angular.element('#range-h-max')[0];
+                rangeHorizontal.noUiSlider.on('update', function( values, handle ) {
+                    rangeHorizontalMin.value = values[0];
+                    rangeHorizontalMax.value = values[1];
+                });
+                // When the input changes, set the slider value
+                rangeHorizontalMin.addEventListener('change', function(){
+                    rangeHorizontal.noUiSlider.set([this.value, null]);
+                });
+                rangeHorizontalMax.addEventListener('change', function(){
+                    rangeHorizontal.noUiSlider.set([null, this.value]);
+                });
+            }
+        };
+    };
+})();
+                                        </code>
+                                    </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col l6 m6 s12">
+                <div class="card" id="elements5">
+                    <div class="col s12 ">
+                        <h5 >Tags</h5>
+                        <div class="input-field col s12 ">
+                            <form>
+                                <ul id="myTags">
+                                </ul>
+                            </form>
+                        </div>
+                        <h5 class="col s12 no-padding">Color picker</h5>
+                        <div class="col s12 row">
+                            <input type="text" id="col-picker" class="input-margin">
+                            <a id="demo-enable" class="waves-effect waves-light btn input-margin"><i class="material-icons left">done</i>enable</a>
+                            <a id="demo-disable" class="waves-effect waves-light btn"><i class="material-icons left">clear</i>disable</a>
+                        </div>
+                        <h5 class="col s12 no-padding">Spinner</h5>
+                        <input id="spinner" type="number" class="input-margin2">
+                        <h5 class="col s12 no-padding">Rating input</h5>
+                        <div id="rating" class="input-margin2"></div>
+                        <h5 class="col s12 hide-on-med-and-down no-padding">Select with search</h5>
+                        <!--<form>-->
+                        <select class="chosen" style="width:200px;">
+                            <option value="1" selected>Option1</option>
+                            <option value="2">I'm an option</option>
+                            <option value="3">Another Option</option>
+                            <option value="4">This is Mara.</option>
+                        </select>
+                        <!--</form>-->
+                    </div>
+                </div>
+            </div>
+            <div class="col l6 m6 s12 hide-on-small-only">
+                <div class="card">
+                    <div class="row">
+                        <div class="col s12">
+                            <ul class="tabs" tabs>
+                                <li class="tab col s3"><a href="#elements5_html" class="active" >HTML</a></li>
+                                <li class="tab col s3"><a href="#elements5_css">CSS</a></li>
+                                <li class="tab col s3"><a href="#elements5_js">Javascript</a></li>
+                                <li class="tab col s3"><a href="#elements5_res">Resources</a></li>
+                            </ul>
+                        </div>
+                        <div class="col s12">
+                            <div class="row">
+                                <div id="elements5_html" class="s12">
+                                    <pre style="max-height: 616px">
+                                        <code class="language-markup">
+&lt;div class=&quot;card&quot; id=&quot;elements5&quot;&gt;
+    &lt;div class=&quot;col s12 &quot;&gt;
+        &lt;h5 class=&quot;hide-on-med-and-down&quot;&gt;Tags&lt;/h5&gt;
+        &lt;div class=&quot;input-field col s12 &quot;&gt;
+            &lt;form&gt;
+                &lt;ul id=&quot;myTags&quot;&gt;
+                &lt;/ul&gt;
+            &lt;/form&gt;
+        &lt;/div&gt;
+        &lt;h5 class=&quot;col s12 hide-on-med-and-down no-padding&quot;&gt;Color picker&lt;/h5&gt;
+        &lt;div class=&quot;col s12 row&quot;&gt;
+            &lt;input type=&quot;text&quot; id=&quot;col-picker&quot;&gt;
+            &lt;a id=&quot;demo-enable&quot; class=&quot;waves-effect waves-light btn&quot;&gt;&lt;i class=&quot;material-icons left&quot;&gt;done&lt;/i&gt;enable&lt;/a&gt;
+            &lt;a id=&quot;demo-disable&quot; class=&quot;waves-effect waves-light btn red&quot;&gt;&lt;i class=&quot;material-icons left&quot;&gt;clear&lt;/i&gt;disable&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;h5 class=&quot;col s12 hide-on-med-and-down no-padding&quot;&gt;Spinner&lt;/h5&gt;
+        &lt;input id=&quot;spinner&quot; type=&quot;number&quot;&gt;
+        &lt;h5 class=&quot;col s12 hide-on-med-and-down no-padding&quot;&gt;Rating input&lt;/h5&gt;
+        &lt;div id=&quot;rating&quot;&gt;&lt;/div&gt;
+        &lt;h5 class=&quot;col s12 hide-on-med-and-down no-padding&quot;&gt;Select with search&lt;/h5&gt;
+            &lt;form&gt;
+                &lt;select class=&quot;chosen&quot; style=&quot;width:200px;&quot;&gt;
+                    &lt;option value=&quot;1&quot; selected&gt;Option1&lt;/option&gt;
+                    &lt;option value=&quot;2&quot;&gt;I&#39;m an option&lt;/option&gt;
+                    &lt;option value=&quot;3&quot;&gt;Another Option&lt;/option&gt;
+                    &lt;option value=&quot;4&quot;&gt;This is Mara.&lt;/option&gt;
+                &lt;/select&gt;
+        &lt;/form&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div id="elements5_css" class="s12">
+                                    <pre>
+                                        <code class="language-css">
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div id="elements5_js" class="s12">
+                                    <pre style="max-height: 616px">
+                                        <code class="language-javascript">
+$(&quot;#myTags&quot;).tagit({
+    allowDuplicates:true,
+    placeholderText: &#39;Tag text&#39;
+});
+$(&#39;#rating&#39;).addRating();
+$(&quot;.chosen&quot;).chosen();
+$(&#39;#col-picker&#39;).colorpicker(
+    {
+        color: &#39;#fff&#39;,
+        customClass: &#39;colorpicker-2x&#39;,
+        sliders: {
+            saturation: {
+                maxLeft: 200,
+                maxTop: 200
+            },
+            hue: {
+                maxTop: 200
+            },
+            alpha: {
+                maxTop: 200
+            }
+        }
+    }
+);
+$(&quot;#demo-disable&quot;).click(function(e) {
+    e.preventDefault();
+    $(&quot;#col-picker&quot;).colorpicker(&#39;disable&#39;);
+});
+$(&quot;#demo-enable&quot;).click(function(e) {
+    e.preventDefault();
+    $(&quot;#col-picker&quot;).colorpicker(&#39;enable&#39;);
+});
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div id="elements5_res" class="s12">
+                                    <pre style="max-height: 616px">
+                                        <code class="language-res">
+&lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;/assets/css/jquery.tagit.css&quot;  media=&quot;screen&quot;/&gt;
+&lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;/assets/js/libs/materialize-colorpicker/css/materialize-colorpicker.css&quot;  media=&quot;screen&quot;/&gt;
+&lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;/assets/js/libs/chosen/chosen.min.css&quot;  media=&quot;screen&quot;/&gt;
+
+&lt;script type=&quot;text/javascript&quot; src=&quot;/assets/js/libs/tag-it.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;/assets/js/jquery.star.rating.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;/assets/js/libs/materialize-colorpicker/js/materialize-colorpicker.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;/assets/js/libs/chosen/chosen.jquery.min.js&quot;&gt;&lt;/script&gt;
+                                        </code>
+                                    </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

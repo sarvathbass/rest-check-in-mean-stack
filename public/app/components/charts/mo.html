@@ -1,0 +1,337 @@
+<div class="row">
+    <style>
+        #morris1, #morris2, #morris3, #morris4 {
+            min-width: 250px;
+            max-width: 100%;
+            height: 500px;
+            margin: 0 auto
+        }
+        .legend > div {
+            display: none;
+        }
+        pre {
+            max-height: 548px;
+        }
+    </style>
+    <div class="row section-header">
+        <h4 class="page-title">Morris js</h4>
+        <p class="page-title"><a href="http://morrisjs.github.io/morris.js/" target="_blank">More info <small><i class="fontello-icon icon-link-ext blue-text darken-1"></i></small></a></p>
+    </div>
+    <div class="row dashboard-wrapper content-container">
+        <div class="row">
+            <div class="col l6 m12 s12">
+                <div class="card charts">
+                    <div class="card-content">
+                        <h5>Model 1</h5>
+                    </div>
+                    <div class="card-action">
+                        <div id="morris1"></div>
+                    </div>
+                </div>
+             </div>
+            <div class="col l6 m12 s12 hide-on-small-only">
+                <div class="card code1">
+                    <div class="row">
+                        <div class="col s12">
+                            <ul class="tabs" tabs >
+                                <li class="tab col s3"><a href="#morris1_js" class="active" >Javascript</a></li>
+                                <li class="tab col s3"><a href="#morris1_css">CSS</a></li>
+                                <li class="tab col s3"><a href="#morris1_html">HTML</a></li>
+                            </ul>
+                        </div>
+                        <div class="col s12">
+                            <div class="row">
+                                <div id="morris1_js" class="s12">
+                                    <pre>
+                                        <code class="language-javascript">
+(function () {
+    'use strict';
+    angular.module('mara').controller('chartsMorrisController',chartsMorrisController);
+    function chartsMorrisController() {
+        var vm = this;
+        vm.mo1 = Morris.Area({
+            element: 'morris1',
+            data: [
+                { y: '2006', a: 100, b: 90 },
+                { y: '2007', a: 75,  b: 65 },
+                { y: '2008', a: 50,  b: 40 },
+                { y: '2009', a: 75,  b: 65 },
+                { y: '2010', a: 50,  b: 40 },
+                { y: '2011', a: 75,  b: 65 },
+                { y: '2012', a: 100, b: 90 }
+            ],
+            xkey: 'y',
+            ykeys: ['a', 'b'],
+            labels: ['Series A', 'Series B']
+        });
+    }
+})();
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div id="morris1_css" class="s12">
+                                    <pre>
+                                        <code class="language-css">
+#morris1 {
+    min-width: 250px;
+    height: 500px;
+    margin: 0 auto
+}
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div id="morris1_html" class="s12">
+                                    <pre>
+                                        <code class="language-markup">
+&lt;script src=&quot;http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js&quot; &gt;&lt;/script&gt;
+&lt;script src=&quot;http://cdn.oesmith.co.uk/morris-0.5.1.min.js&quot; &gt;&lt;/script&gt;                                                                                &lt;div class=&quot;card&quot;&gt;
+    &lt;div id=&quot;morris1&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+                                        </code>
+                                    </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col l6 m12 s12">
+                <div class="card charts">
+                    <div class="card-content">
+                        <h5>Model 2</h5>
+                    </div>
+                    <div class="card-action">
+                        <div id="morris2"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col l6 m12 s12 hide-on-small-only">
+                <div class="card code1">
+                    <div class="row">
+                        <div class="col s12">
+                            <ul class="tabs" tabs >
+                                <li class="tab col s3"><a href="#morris2_js" class="active" >Javascript</a></li>
+                                <li class="tab col s3"><a href="#morris2_css">CSS</a></li>
+                                <li class="tab col s3"><a href="#morris2_html">HTML</a></li>
+                            </ul>
+                        </div>
+                        <div class="col s12">
+                            <div class="row">
+                                <div id="morris2_js" class="s12">
+                                    <pre>
+                                        <code class="language-javascript">
+(function () {
+    'use strict';
+    angular.module('mara').controller('chartsMorrisController',chartsMorrisController);
+    function chartsMorrisController() {
+        var vm = this;
+        vm.mo2 = Morris.Donut({
+            element: 'morris2',
+            data: [
+                {label: "Download Sales", value: 12},
+                {label: "In-Store Sales", value: 30},
+                {label: "Mail-Order Sales", value: 20}
+            ]
+        });
+
+    }
+})();
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div id="morris2_css" class="s12">
+                                    <pre>
+                                        <code class="language-css">
+#morris2 {
+    min-width:250px;
+    height: 500px;
+    margin: 0 auto
+}
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div id="morris2_html" class="s12">
+                                    <pre>
+                                        <code class="language-markup">
+&lt;script src=&quot;http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js&quot; &gt;&lt;/script&gt;
+&lt;script src=&quot;http://cdn.oesmith.co.uk/morris-0.5.1.min.js&quot; &gt;&lt;/script&gt;
+&lt;div class=&quot;card&quot;&gt;
+    &lt;div id=&quot;morris2&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+                                        </code>
+                                    </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col l6 m12 s12">
+                <div class="card charts">
+                    <div class="card-content">
+                        <h5>Model 3</h5>
+                    </div>
+                    <div class="card-action">
+                        <div id="morris3"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col l6 m12 s12 hide-on-small-only">
+                <div class="card code1">
+                    <div class="row">
+                        <div class="col s12">
+                            <ul class="tabs" tabs >
+                                <li class="tab col s3"><a href="#morris3_js" class="active" >Javascript</a></li>
+                                <li class="tab col s3"><a href="#morris3_css">CSS</a></li>
+                                <li class="tab col s3"><a href="#morris3_html">HTML</a></li>
+                            </ul>
+                        </div>
+                        <div class="col s12">
+                            <div class="row">
+                                <div id="morris3_js" class="s12">
+                                    <pre>
+                                        <code class="language-javascript">
+(function () {
+    'use strict';
+    angular.module('mara').controller('chartsMorrisController',chartsMorrisController);
+    function chartsMorrisController() {
+        var vm = this;
+        vm.mo3 = Morris.Bar({
+            element: 'morris3',
+            data: [
+                { y: '2006', a: 100, b: 90 },
+                { y: '2007', a: 75,  b: 65 },
+                { y: '2008', a: 50,  b: 40 },
+                { y: '2009', a: 75,  b: 65 },
+                { y: '2010', a: 50,  b: 40 },
+                { y: '2011', a: 75,  b: 65 },
+                { y: '2012', a: 100, b: 90 }
+            ],
+            xkey: 'y',
+            ykeys: ['a', 'b'],
+            labels: ['Series A', 'Series B']
+        });
+
+    }
+})();
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div id="morris3_css" class="s12">
+                                    <pre>
+                                        <code class="language-css">
+#morris3 {
+    min-width: 250px;
+    height: 500px;
+    margin: 0 auto
+}
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div id="morris3_html" class="s12">
+                                    <pre>
+                                        <code class="language-markup">
+&lt;script src=&quot;http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js&quot; &gt;&lt;/script&gt;
+&lt;script src=&quot;http://cdn.oesmith.co.uk/morris-0.5.1.min.js&quot; &gt;&lt;/script&gt;
+&lt;div class=&quot;card&quot;&gt;
+    &lt;div id=&quot;morris3&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+                                        </code>
+                                    </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col l6 m12 s12">
+                <div class="card charts">
+                    <div class="card-content">
+                        <h5>Model 4</h5>
+                    </div>
+                    <div class="card-action">
+                        <div id="morris4"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col l6 m12 s12 hide-on-small-only">
+                <div class="card code1">
+                    <div class="row">
+                        <div class="col s12">
+                            <ul class="tabs" tabs >
+                                <li class="tab col s3"><a href="#morris4_js" class="active" >Javascript</a></li>
+                                <li class="tab col s3"><a href="#morris4_css">CSS</a></li>
+                                <li class="tab col s3"><a href="#morris4_html">HTML</a></li>
+                            </ul>
+                        </div>
+                        <div class="col s12">
+                            <div class="row">
+                                <div id="morris4_js" class="s12">
+                                    <pre>
+                                        <code class="language-javascript">
+(function () {
+    'use strict';
+    angular.module('mara').controller('chartsMorrisController',chartsMorrisController);
+    function chartsMorrisController() {
+        var vm = this;
+        vm.mo4 = Morris.Line({
+            element: 'morris4',
+            data: [
+                { y: '2006', a: 100, b: 90 },
+                { y: '2007', a: 75,  b: 65 },
+                { y: '2008', a: 50,  b: 40 },
+                { y: '2009', a: 75,  b: 65 },
+                { y: '2010', a: 50,  b: 40 },
+                { y: '2011', a: 75,  b: 65 },
+                { y: '2012', a: 100, b: 90 }
+            ],
+            xkey: 'y',
+            ykeys: ['a', 'b'],
+            labels: ['Series A', 'Series B']
+        });
+
+    }
+})();
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div id="morris4_css" class="s12">
+                                    <pre>
+                                        <code class="language-css">
+#morris4 {
+    min-width: 250px;
+    height: 500px;
+    margin: 0 auto
+}
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div id="morris4_html" class="s12">
+                                    <pre>
+                                        <code class="language-markup">
+&lt;script src=&quot;http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js&quot; &gt;&lt;/script&gt;
+&lt;script src=&quot;http://cdn.oesmith.co.uk/morris-0.5.1.min.js&quot; &gt;&lt;/script&gt;
+&lt;div class=&quot;card&quot;&gt;
+    &lt;div id=&quot;morris4&quot;&gt;&lt;/div&gt;4
+&lt;/div&gt;
+                                        </code>
+                                    </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br/>
+    </div>
+</div>

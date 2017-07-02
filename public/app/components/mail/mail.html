@@ -1,0 +1,377 @@
+<div>
+<input id="checkMailPage" type="text" value="mailPage" style="display: none">
+<style>
+    .section-header {
+        margin-bottom: 40px;
+    }
+    .allMails {
+        border-bottom: 1px solid #DCD7D7;
+    }
+</style>
+    <div id="compose-modal" class="modal">
+        <div class="modal-content">
+            <div class="row">
+                <div class="col s12 m12 l12 content-compose">
+                    <ul class="left mailbox-custom-search-modal-compose">
+                        <div class="navbar-custom-search ">
+                            <div class="input-field col s12 m12 l12 ">
+                                <input type="text" id="autocompleteState" class="autocomplete inputFields" placeholder="Search">
+                            </div>
+                            <i class="material-icons">search</i>
+                        </div>
+                    </ul>
+                    <p class="modal-participants hiddendiv">Participants: @Me</p>
+                    <div class="compose-content ">
+                        <div class="first-one-johanna hiddendiv">
+                            <ul class="collection">
+                                <li class="collection-item avatar" data-group="first">
+                                    <img src="../assets/images/users/john.png" alt="john" class="circle">
+                                    <div class="col s12 m12 l12">
+                                        <div class="card-panel user-message">
+                                            <span class="white-text">Hey, Johanna! What's up? Please reply this as soon as you can.</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="second-one-jane hiddendiv">
+                            <ul class="collection">
+                                <li class="collection-item avatar" data-group="first">
+                                    <img src="../assets/images/users/john.png" alt="john" class="circle">
+                                    <div class="col s12 m12 l12">
+                                        <div class="card-panel user-message">
+                                            <span class="white-text">Hey, Jane! How are you.</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="third-one-katia hiddendiv">
+                            <ul class="collection">
+                                <li class="collection-item avatar" data-group="first">
+                                    <img src="../assets/images/users/john.png" alt="john" class="circle">
+                                    <div class="col s12 m12 l12">
+                                        <div class="card-panel user-message">
+                                            <span class="white-text">Hello, Katia! I really need your help, please call me.</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="reply-text">
+                            <textarea rows="2" cols="10" placeholder="Write a message..."></textarea>
+                            <div class="send-reply">
+                                <i class="material-icons waves-effect">attach_file</i>
+                                <a class="waves-effect waves-light btn color-custom right center">SEND</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="fs-10"> Tip >  Search for: Johanna, Jane or Katia</div>
+            <a href="#!" class=" modal-action modal-close waves-effect waves-teal btn">EXIT</a>
+        </div>
+    </div>
+    <div class="row white section-header">
+        <h4 class="page-title">Mailbox</h4>
+    </div>
+    <div class="row dashboard-wrapper content-container">
+        <div class="row part1 bg-white white">
+            <div class="col s12 m4 l4 part1_1">You have <span class="inbox-badge inbox-badge-green pulse countEmails">2</span> unread mails</div>
+            <div class="col s12 m8 l8 part1_2"><a class="waves-effect waves-light btn color-custom compose-modal">Compose</a></div>
+        </div>
+        <div class="row part2 bg-white white">
+            <div class="col s12 m4 l4 part2_1">
+                <div class="s6 m2 l2 part2_1_1">
+                    <ul>
+                        <li class="col s3 small material-icons waves-effect waves-pink tabInbox grey lighten-3">email</li>
+                        <li class="col s3 small material-icons waves-effect waves-pink tabImportant">warning</li>
+                        <li class="col s3 small material-icons waves-effect waves-pink tabSend">send</li>
+                        <li class="col s3 small material-icons waves-effect waves-pink tabDelete">delete</li>
+                    </ul>
+                </div>
+                <div class="s6 m2 l2">
+                    <ul class="left mailbox-custom-search">
+
+                            <li class="navbar-custom-search">
+                                <input type="search" required="" placeholder="Search">
+                                <i class="material-icons">search</i>
+                            </li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="col s12 m8 l8 part2_2 first_2_2">
+                <h6>Super Secret Group</h6>
+                <h6>Participants: Me, Johanna, Jim</h6>
+            </div>
+            <div class="col s12 m8 l8 part2_2 second_2_2 hiddendiv">
+                <h6>Mail Group</h6>
+                <h6>Participants: Me, Sarah, Jane, Katia</h6>
+            </div>
+            <div class="col s12 m8 l8 part2_2 user_first_2_2 hiddendiv">
+                <h6>Johanna Doe</h6>
+                <h6>Participants: Me, Johanna</h6>
+            </div>
+            <div class="col s12 m8 l8 part2_2 user_second_2_2 hiddendiv">
+                <h6>Jane Doe</h6>
+                <h6>Participants: Me, Jane</h6>
+            </div>
+        </div>
+        <div class="row allMails bg-white white">
+        <div class="col s12 m4 l4 mailsParts tabInbox_3_1">
+            <ul class="collection">
+                <li class="collection-item avatar waves-effect waves-pink" data-group="first">
+                    <img src="../assets/images/users/group_icon.png" alt="avatar" class="circle">
+                    <span class="title"><strong>Johanna, Jim</strong></span>
+                    <p><i>Hey, man! What's up?</i></p>
+                    <span class="secondary-content"><small>27 Jan</small></span>
+                </li>
+                <li class="collection-item avatar waves-effect waves-pink unread" data-user="first">
+                    <img src="../assets/images/users/johanna.png" alt="johanna" class="circle">
+                    <span class="title"><strong>Johanna Doe</strong></span>
+                    <p class="truncate"><i>Thanks for this practical and useful lesson about Email adresses.</i></p>
+                    <span class="secondary-content"><small>27 Jan</small></span>
+                </li>
+                <li class="collection-item avatar waves-effect waves-pink unread" data-user="second">
+                    <img src="../assets/images/users/jane.png" alt="jane" class="circle">
+                    <span class="title"><strong>Jane Doe</strong></span>
+                    <p class="truncate"><i>Hello Jane, Could you please help with proper opening remarks for writing an email to a friend. Also, I'm a bit confused with commas while writing opening remarks.</i></p>
+                    <span class="secondary-content"><small>27 Jan</small></span>
+                </li>
+                <li class="collection-item avatar waves-effect waves-pink" data-group="second">
+                    <img src="../assets/images/users/group_icon.png" alt="avatar" class="circle">
+                    <span class="title"><strong>Sarah, Jane, Katia</strong></span>
+                    <p class="truncate"><i>Hei! How are you?</i></p>
+                    <span class="secondary-content"><small>27 Jan</small></span>
+                </li>
+                <li class="collection-item avatar waves-effect waves-pink">
+                    <img src="../assets/images/users/john.png" alt="john" class="circle">
+                    <span class="title"><strong>John Doe</strong></span>
+                    <p class="truncate"><i>Hello John, When you're writing to a friend you should use less formal language, so the 'rules' are quite relaxed about how to start.</i></p>
+                    <span class="secondary-content"><small>27 Jan</small></span>
+                </li>
+                <li class="collection-item avatar waves-effect waves-pink">
+                    <img src="../assets/images/users/sarah.png" alt="sarah" class="circle">
+                    <span class="title"><strong>Sarah Klimt</strong></span>
+                    <p class="truncate"><i>Hei! How are you?</i></p>
+                    <span class="secondary-content"><small>27 Jan</small></span>
+                </li>
+                <li class="collection-item avatar waves-effect waves-pink">
+                    <img src="../assets/images/users/aria.png" alt="aria" class="circle">
+                    <span class="title"><strong>Aria Watson</strong></span>
+                    <p class="truncate"><i>They all look so nice. Can I have three: pistachio, almond and chocolate?</i></p>
+                    <span class="secondary-content"><small>27 Jan</small></span>
+                </li>
+                <li class="collection-item avatar waves-effect waves-pink">
+                    <img src="../assets/images/users/jim1.png" alt="jim" class="circle">
+                    <span class="title"><strong>Jim Morrison</strong></span>
+                    <p class="truncate"><i>Excellent article. Very good job; I like it because I was needed something like this.</i></p>
+                    <span class="secondary-content"><small>27 Jan</small></span>
+                </li>
+                <li class="collection-item avatar waves-effect waves-pink">
+                    <img src="../assets/images/users/katia.png" alt="katia" class="circle">
+                    <span class="title"><strong>Katia Herbert</strong></span>
+                    <p class="truncate"><i>Last night was amazing!</i></p>
+                    <span class="secondary-content"><small>27 Jan</small></span>
+                </li>
+            </ul>
+        </div>
+        <div class="col s12 m4 l4 mailsParts tabImportant_3_1 hiddendiv">
+            <ul class="collection">
+                <li class="collection-item avatar waves-effect waves-pink">
+                    <img src="../assets/images/users/johanna.png" alt="johanna" class="circle">
+                    <span class="title"><strong>Johanna Doe</strong></span>
+                    <p class="truncate"><i>Thanks for this practical and useful lesson about Email adresses.</i></p>
+                    <span class="secondary-content"><small>27 Jan</small></span>
+                </li>
+                <li class="collection-item avatar waves-effect waves-pink">
+                    <img src="../assets/images/users/jane.png" alt="jane" class="circle">
+                    <span class="title"><strong>Jane Doe</strong></span>
+                    <p class="truncate"><i>Hello Jane, Could you please help with proper opening remarks for writing an email to a friend. Also, I'm a bit confused with commas while writing opening remarks.</i></p>
+                    <span class="secondary-content"><small>27 Jan</small></span>
+                </li>
+            </ul>
+        </div>
+        <div class="col s12 m4 l4 mailsParts tabSend_3_1 hiddendiv">
+            <ul class="collection">
+                <li class="collection-item avatar waves-effect waves-pink">
+                    <img src="../assets/images/users/katia.png" alt="katia" class="circle">
+                    <span class="title"><strong>Katia Herbert</strong></span>
+                    <p class="truncate"><i>Last night was amazing!</i></p>
+                    <span class="secondary-content"><small>27 Jan</small></span>
+                </li>
+            </ul>
+        </div>
+        <div class="col s12 m4 l4 mailsParts tabDelete_3_1 hiddendiv">
+            <ul class="collection">
+                <li class="collection-item avatar waves-effect waves-pink">
+                    <img src="../assets/images/users/jim1.png" alt="jim" class="circle">
+                    <span class="title"><strong>Jim Morrison</strong></span>
+                    <p class="truncate"><i>Excellent article. Very good job; I like it because I was needed something like this.</i></p>
+                    <span class="secondary-content"><small>27 Jan</small></span>
+                </li>
+                <li class="collection-item avatar waves-effect waves-pink">
+                    <img src="../assets/images/users/katia.png" alt="katia" class="circle">
+                    <span class="title"><strong>Katia Herbert</strong></span>
+                    <p class="truncate"><i>Last night was amazing!</i></p>
+                    <span class="secondary-content"><small>27 Jan</small></span>
+                </li>
+            </ul>
+        </div>
+    
+        <div class="col s12 m8 l8 messageBox first_3_2">
+            <ul class="collection">
+                <li class="collection-item avatar second">
+                    <img src="../assets/images/users/johanna.png" alt="johanna" class="circle">
+                    <span class="title">Johanna Doe</span>
+                    <div class="card-panel">
+                        <span>Hey, man! What's up?</span>
+                    </div>
+                </li>
+                <li class="collection-item avatar second">
+                    <img src="../assets/images/users/jim1.png" alt="jim" class="circle">
+                    <span class="title">Jim Morrison</span>
+                    <div class="card-panel">
+                        <span>Hello, Johanna and Jane! I really need your help with the design for the postcards I've telled you about. Do you guys think you can do it today?</span>
+                    </div>
+                </li>
+                <li class="collection-item avatar second">
+                    <img src="../assets/images/users/johanna.png" alt="johanna" class="circle">
+                    <span class="title">Johanna Doe</span>
+                    <div class="card-panel">
+                        <span>Uh, oh.. Today? Isn't it a bit .. too short?</span>
+                    </div>
+                </li>
+                <li class="collection-item avatar second">
+                    <img src="../assets/images/users/jim1.png" alt="jim" class="circle">
+                    <span class="title">Jim Morrison</span>
+                    <div class="card-panel">
+                        <span>Yeah... And I would really appreciate you you would do it for free... I mean, there are only a few images and some text, shouldn't take more than a couple of hours :)</span>
+                    </div>
+                </li>
+                <li class="collection-item avatar second">
+                    <img src="../assets/images/users/johanna.png" alt="johanna" class="circle">
+                    <span class="title">Jim Morrison</span>
+                    <div class="card-panel">
+                        <span>Always a pleasure to do business with you, Jim.</span>
+                    </div>
+                </li>
+                <li class="collection-item avatar first">
+                    <img src="../assets/images/users/john.png" alt="john" class="circle">
+                    <span class="title"></span>
+                    <div class="card-panel default-background">
+                        <span class="white-text ">:D</span>
+                    </div>
+                </li>
+            </ul>
+            <div class="reply-text">
+                <textarea rows="2" cols="10" placeholder="Write a reply..."></textarea>
+                <div class="send-reply">
+                    <i class="material-icons waves-effect">attach_file</i>
+                    <a class="waves-effect waves-light btn color-custom right center">SEND</a>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m8 l8 messageBox second_3_2 hiddendiv ">
+            <ul class="collection">
+                <li class="collection-item avatar second">
+                    <img src="../assets/images/users/sarah.png" alt="sarah" class="circle">
+                    <span class="title">Sarah Klimt</span>
+                    <div class="card-panel">
+                        <span>Hei! How are you?</span>
+                    </div>
+                </li>
+                <li class="collection-item avatar second">
+                    <img src="../assets/images/users/jane.png" alt="jane" class="circle">
+                    <span class="title">Jane Doe</span>
+                    <div class="card-panel">
+                        <span>Hello, Sarah. I do not feel so good</span>
+                    </div>
+                </li>
+                <li class="collection-item avatar second">
+                    <img src="../assets/images/users/katia.png" alt="katia" class="circle">
+                    <span class="black-text">Katia Herbert</span>
+                    <div class="card-panel">
+                        <span>Uh, oh.. What's the matter?</span>
+                    </div>
+                </li>
+                <li class="collection-item avatar second">
+                    <img src="../assets/images/users/jane.png" alt="jane" class="circle">
+                    <span class="black-text">Jane Doe</span>
+                    <div class="card-panel">
+                        <span>I think I'm pregnant.</span>
+                    </div>
+                </li>
+                <li class="collection-item avatar first">
+                    <img src="../assets/images/users/john.png" alt="john" class="circle">
+                    <span class="black-text"></span>
+                    <div class="card-panel default-background">
+                        <span class="white-text ">I hope to be ...</span>
+                    </div>
+                </li>
+            </ul>
+            <div class="reply-text">
+                <textarea rows="2" cols="10" placeholder="Write a reply..."></textarea>
+                <div class="send-reply">
+                    <i class="material-icons waves-effect">attach_file</i>
+                    <a class="waves-effect waves-light btn color-custom right center">SEND</a>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m8 l8 messageBox user_first_3_2 hiddendiv">
+            <ul class="collection">
+                <li class="collection-item avatar second">
+                    <img src="../assets/images/users/johanna.png" alt="johanna" class="circle">
+                    <span class="black-text">Johanna Doe</span>
+                    <div class="card-panel">
+                        <span>Hei!</span>
+                    </div>
+                </li>
+                <li class="collection-item avatar first">
+                    <img src="../assets/images/users/john.png" alt="john" class="circle">
+                    <span class="black-text"></span>
+                    <div class="card-panel default-background">
+                        <span class="white-text ">Hello :)</span>
+                    </div>
+                </li>
+            </ul>
+            <div class="reply-text">
+                <textarea rows="2" cols="10" placeholder="Write a reply..."></textarea>
+                <div class="send-reply">
+                    <i class="material-icons waves-effect">attach_file</i>
+                    <a class="waves-effect waves-light btn color-custom right center">SEND</a>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m8 l8 messageBox user_second_3_2 hiddendiv">
+            <ul class="collection">
+                <li class="collection-item avatar second">
+                    <img src="../assets/images/users/jane.png" alt="jane" class="circle">
+                    <span class="black-text">Jane Doe</span>
+                    <div class="card-panel">
+                        <span>Hello, You.</span>
+                    </div>
+                </li>
+                <li class="collection-item avatar first">
+                    <img src="../assets/images/users/john.png" alt="john" class="circle">
+                    <span class="black-text"></span>
+                    <div class="card-panel default-background">
+                        <span class="white-text ">...</span>
+                    </div>
+                </li>
+            </ul>
+            <div class="reply-text">
+                <textarea rows="2" cols="10" placeholder="Write a reply..."></textarea>
+                <div class="send-reply">
+                    <i class="material-icons waves-effect">attach_file</i>
+                    <a class="waves-effect waves-light btn color-custom right center">SEND</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>

@@ -1,0 +1,118 @@
+<div id="page-content">
+    <div class="section-header">
+       <h4>Snackbars & Toasts</h4>
+    </div>
+    <div class="row content-container">
+        <div class="row">
+            <div class="col s12 no-padding">
+               <div class="col s12 m6">
+                   <h5>Toasts</h5>
+                   <p>
+                       Toasts provide an easy way for users to receive unobtrusive alerts. Toasts are also placed and sized responsively.<br>
+                       Test it out by clicking the button below on different devices.
+                   </p>
+                   <a class="btn" onclick="Materialize.toast('I am a toast', 4000)">Toast!</a>
+                   <p>
+                       To do this, call the Materialize.toast() function programatically in JavaScript.
+                   </p>
+               </div>
+               <div class="col s12 m6 hide-on-small-only">
+                   <div class="card">
+                       <div class="card-content">
+                           <h5 class="fs-20">Code Sample</h5>
+                       </div>
+                       <div class="card-action">
+                           <pre class="language-javascript"><code>// Materialize.toast(message, displayLength, className, completeCallback);
+Materialize.toast(&#39;I am a toast!&#39;, 4000) // 4000 is the duration of the toast</code></pre>
+                       </div>
+                   </div>
+               </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 no-padding">
+                <div class="col s12 m6">
+                    <p>
+                        Another way to add this into your application is to add this as an onclick event to a button.
+                    </p>
+                </div>
+                <div class="col s12 m6 hide-on-small-only">
+                    <div class="card">
+                        <div class="card-content">
+                            <h5 class="fs-20">Code Sample</h5>
+                        </div>
+                        <div class="card-action">
+                            <pre class="language-html"><code>&lt;a class=&quot;btn&quot; onclick=&quot;Materialize.toast(&#39;I am a toast&#39;, 4000)&quot;&gt;Toast!&lt;/a&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 no-padding">
+                <div class="col s12 m6">
+                    <h5>Custom HTML</h5>
+                    <p>
+                        You can pass in an HTML String as the first argument as well. Take a look at the example below, where we pass in text as well as a flat button.
+                        If you call an external function instead of in-line JavaScript, you will not need to escape quotation marks.
+                    </p>
+                    <a class="btn" ng-click="displayCustomHTMLToast()">Custom HTML toast</a>
+                </div>
+                <div class="col s12 m6 hide-on-small-only">
+                    <div class="card">
+                        <div class="card-content">
+                            <h5 class="fs-20">Code Sample</h5>
+                        </div>
+                        <div class="card-action">
+                           <pre class="language-javascript"><code>var $toastContent = $(&#39;&lt;span&gt;I am custom HTML toast content&lt;/span&gt;&#39;);
+Materialize.toast($toastContent, 5000);</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 no-padding">
+                <div class="col s12 m6">
+                    <h5>Callback</h5>
+                    <p>
+                        You can have the toast callback a function when it has been dismissed.
+                    </p>
+                    <a class="btn" onclick="Materialize.toast('I am a toast', 4000,'',function(){alert('Your toast was dismissed')})">Callback Toast!</a>
+                </div>
+                <div class="col s12 m6 hide-on-small-only">
+                    <div class="card">
+                        <div class="card-content">
+                            <h5 class="fs-20">Code Sample</h5>
+                        </div>
+                        <div class="card-action">
+                           <pre class="language-html"><code>&lt;a class=&quot;btn&quot; onclick=&quot;Materialize.toast(&#39;I am a toast&#39;, 4000,&#39;&#39;,function(){alert(&#39;Your toast was dismissed&#39;)})&quot;&gt;Toast!&lt;/a&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 no-padding">
+                <div class="col s12 m6">
+                    <h5>Styling Toasts</h5>
+                    <p>
+                        Your toasts can be easily customized. You can pass in classes as an optional parameter into the toast function.
+                        The rounded class is added by default for you, but you can create your own CSS classes and apply them to toasts. Checkout out the full example below.
+                    </p>
+                    <a class="btn" onclick="Materialize.toast('I am a toast!', 3000, 'rounded')">Round Toast!</a>
+                </div>
+                <div class="col s12 m6 hide-on-small-only">
+                    <div class="card">
+                        <div class="card-content">
+                            <h5 class="fs-20">Code Sample</h5>
+                        </div>
+                        <div class="card-action">
+                            <pre class="language-javascript"><code>Materialize.toast(&#39;I am a toast!&#39;, 3000, &#39;rounded&#39;) // &#39;rounded&#39; is the class I&#39;m applying to the toast</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,262 @@
+<div class="row" style="margin-bottom: 0">
+    <style>
+        pre {
+            max-height: 567px;
+        }
+        .spark-card{
+            height: 650px;
+        }
+        .spark-card p{
+            margin-top: 5px;
+        }
+        .jqstooltip {
+            position: absolute;
+            min-width: 30px;
+            min-height: 30px;
+            left: 0;top: 0;
+            visibility: hidden;
+            background: rgb(0, 0, 0) transparent;
+            background-color: rgba(0,0,0,0.6);
+            filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+            -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+            color: white;font: 10px arial, san serif;
+            text-align: left;
+            white-space: nowrap;
+            padding: 5px;
+            border: 1px solid white;z-index: 10000;
+        }
+        .jqsfield {
+            color: white;
+            font: 10px arial, san serif;
+            text-align: left;
+        }
+    </style>
+    <div class="row section-header">
+        <h4 class="page-title">Angular Sparkline</h4>
+        <p class="page-title"><a href="http://omnipotent.net/jquery.sparkline/#s-about" target="_blank">More info <small><i class="fontello-icon icon-link-ext blue-text darken-1"></i></small></a></p>
+    </div>
+    <div class="row dashboard-wrapper content-container">
+        <div class="col l6 m6 s12">
+            <div class="card spark-card" >
+                <div class="card-content">
+                    <h5>Models</h5>
+                </div>
+                <div class="card-action">
+                    <p>
+                    Mouse speed <span id="mousespeed">Loading..</span>
+                    </p>
+                    <p>
+                        Inline <span id="spark"></span> line graphs <span id="spark1"></span>
+                    </p>
+                    <p>
+                        Bar charts <span id="spark2"></span>,
+                        negative values: <span id="spark3"></span>,
+                        stacked values: <span id="spark4"></span>
+                    </p>
+                    <p>
+                        Composite inline <span id="spark5"></span>
+                    </p>
+                    <p>
+                        Inline with normal range <span id="spark6"></span>
+                    </p>
+                    <p>
+                        Composite bar <span id="spark7"></span>
+                    </p>
+                    <p>
+                        Discrete <span id="spark8"></span><br />
+                        Discrete with threshold <span id="spark9"></span>
+                    </p>
+                    <p>
+                        Customize size and colours <span id="spark10"></span>
+                    </p>
+                    <p>
+                        Tristate charts <span id="spark11"></span> (think games won, lost or drawn)
+                    </p>
+                    <p>
+                        Tristate chart using a colour map: <span id="spark12"></span>
+                    </p>
+                    <p>
+                        Box Plot: <span id="spark13"></span><br />
+                        Pre-computed box plot <span id="spark14">Loading..</span>
+                    </p>
+                    <p>
+                        Pie charts <span id="spark15"></span> <span id="spark16"></span> <span id="spark17"></span>
+                    </p>
+                    <p>
+                        Bullet charts <span id="spark18"></span> <span id="spark19"></span> <span id="spark20"></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col l6 m6 s12 hide-on-small-only">
+            <div class="card">
+                <div class="row">
+                    <div class="col s12">
+                        <ul class="tabs" tabs>
+                            <li class="tab col s3"><a href="#spark1_js" class="active" >Javascript</a></li>
+                            <li class="tab col s3"><a href="#spark1_css">CSS</a></li>
+                            <li class="tab col s3"><a href="#spark1_html">HTML</a></li>
+                        </ul>
+                    </div>
+                    <div class="col s12">
+                        <div class="row">
+                            <div id="spark1_js" class="s12">
+                                <pre>
+                                    <code class="language-javascript">
+(function () {
+    'use strict';
+    angular.module('mara').controller('chartsSparklineController',chartsSparklineController);
+    chartsSparklineController.$inject = ['$timeout'];
+    function chartsSparklineController($timeout) {
+        var vm = this;
+        angular.element("#spark").sparkline([10,8,9,3,5,8,5], { type: 'line'});
+        angular.element("#spark1").sparkline([8,4,0,0,0,0,1,4,4,10,10,10,10,0,0,0,4,6,5,9,10], { type: 'line'});
+        angular.element("#spark2").sparkline([1, 3, 5, 3, 8], { type: 'bar' });
+        angular.element("#spark3").sparkline([5, 6, 7, 2, 0, -4, -2, 4], { type: 'bar', barColor: '#0000ff', negBarColor: '#ff0000' });
+        angular.element("#spark4").sparkline([[3,4],[1,2],[3,2],[2,2],[1,1],[0,0],[0,1]], { type: 'bar'});
+        angular.element("#spark5").sparkline([8,4,0,0,0,0,1,4,4,10,10,10,10,0,0,0,4,6,5,9,10], { fillColor: false }).sparkline([4,1,5,7,9,9,8,7,6,6,4,7,8,4,3,2,2,5,6,7], { composite: true, fillColor: false, lineColor: 'red' });
+        angular.element("#spark6").sparkline([8,4,0,0,0,0,1,4,4,10,10,10,10,0,0,0,4,6,5,9,10],{ fillColor: false, normalRangeMin: -1, normalRangeMax: 8 });
+        angular.element("#spark7").sparkline([4,6,7,7,4,3,2,1,4], { type: 'bar', barColor: '#aaf' }).sparkline([4,1,5,7,9,9,8,7,6,6,4,7,8,4,3,2,2,5,6,7], { composite: true, fillColor: false, lineColor: 'red' });
+        angular.element('#spark8').sparkline([4,6,7,7,4,3,2,1,4,4,5,6,7,6,6,2,4,5], { type: 'discrete', lineColor: 'blue', xwidth:18});
+        angular.element('#spark9').sparkline([4,6,7,7,4,3,2,1,4],{ type: 'discrete', lineColor: 'blue', thresholdColor: 'red', thresholdValue: 4 });
+        angular.element('#spark10').sparkline([10,8,9,3,5,8,5,7], {height: '1.5em', width: '8em', lineColor: '#f00', fillColor: '#ffa', minSpotColor: false, maxSpotColor: false, spotColor: '#77f', spotRadius: 3});
+        angular.element('#spark11').sparkline([1,1,0,1,-1,-1,1,-1,0,0,1,1], {type: 'tristate'});
+        angular.element('#spark12').sparkline([1,2,0,2,-1,-2,1,-2,0,0,1,1], {type: 'tristate', colorMap: {'-2': '#fa7', '2': '#44f'} });
+        angular.element('#spark13').sparkline([4,27,34,52,54,59,61,68,78,82,85,87,91,93,100], { type: 'box'});
+        angular.element('#spark14').sparkline([ 1, 3, 5, 8, 10, 15, 18 ], {type:'box', raw: true, showOutliers:true, target: 6});
+        angular.element('#spark15').sparkline([1,1,2], { type: 'pie', height: '1.0em' });
+        angular.element('#spark16').sparkline([1,5], { type: 'pie', height: '1.0em' });
+        angular.element('#spark17').sparkline([20,50,80], { type: 'pie', height: '1.0em' });
+        angular.element('#spark18').sparkline([10,12,12,9,7], { type: 'bullet' });
+        angular.element('#spark19').sparkline([14,12,12,9,7], { type: 'bullet' });
+        angular.element('#spark20').sparkline([10,12,14,9,7], { type: 'bullet' });
+        vm.drawMouseSpeedDemo = function () {
+            var mrefreshinterval = 500; // update display every 500ms
+            var lastmousex=-1;
+            var lastmousey=-1;
+            var lastmousetime;
+            var mousetravel = 0;
+            var mpoints = [];
+            var mpoints_max = 30;
+            angular.element('html').mousemove(function(e) {
+                var mousex = e.pageX;
+                var mousey = e.pageY;
+                if (lastmousex > -1) {
+                    mousetravel += Math.max( Math.abs(mousex-lastmousex), Math.abs(mousey-lastmousey) );
+                }
+                lastmousex = mousex;
+                lastmousey = mousey;
+            });
+            var mdraw = function() {
+                var md = new Date();
+                var timenow = md.getTime();
+                if (lastmousetime && lastmousetime!=timenow) {
+                    var pps = Math.round(mousetravel / (timenow - lastmousetime) * 1000);
+                    mpoints.push(pps);
+                    if (mpoints.length > mpoints_max)
+                        mpoints.splice(0,1);
+                    mousetravel = 0;
+                    angular.element('#mousespeed').sparkline(mpoints, { width: mpoints.length*2, tooltipSuffix: ' pixels per second' });
+                }
+                lastmousetime = timenow;
+                $timeout(mdraw, mrefreshinterval);
+            };
+            // We could use setInterval instead, but I prefer to do it this way
+            $timeout(mdraw, mrefreshinterval);
+        };
+        vm.drawMouseSpeedDemo();
+    }
+})();
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div id="spark1_css" class="s12">
+                                    <pre>
+                                        <code class="language-css">
+.spark-card{
+    height: 500px;
+    padding: 10px;
+}
+.jqstooltip {
+    position: absolute;
+    min-width: 30px;
+    min-height: 30px;
+    left: 0;top: 0;
+    visibility: hidden;
+    background: rgb(0, 0, 0) transparent;
+    background-color: rgba(0,0,0,0.6);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+    color: white;font: 10px arial, san serif;
+    text-align: left;
+    white-space: nowrap;
+    padding: 5px;
+    border: 1px solid white;z-index: 10000;
+}
+.jqsfield {
+    color: white;
+    font: 10px arial, san serif;
+    text-align: left;
+}
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div id="spark1_html" class="s12">
+                                    <pre>
+                                        <code class="language-markup">
+&lt;script src=&quot;https://raw.githubusercontent.com/aehlke/jquery-sparkline/master/jquery.sparkline.js&quot;&gt;&lt;/script&gt;
+&lt;div class=&quot;card spark-card&quot; &gt;
+    &lt;p&gt;
+        Mouse speed &lt;span id=&quot;mousespeed&quot;&gt;Loading..&lt;/span&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+        Inline &lt;span id=&quot;spark&quot;&gt;&lt;/span&gt; line graphs &lt;span id=&quot;spark1&quot;&gt;&lt;/span&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+        Bar charts &lt;span id=&quot;spark2&quot;&gt;&lt;/span&gt;,
+        negative values: &lt;span id=&quot;spark3&quot;&gt;&lt;/span&gt;,
+        stacked values: &lt;span id=&quot;spark4&quot;&gt;&lt;/span&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+        Composite inline &lt;span id=&quot;spark5&quot;&gt;&lt;/span&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+        Inline with normal range &lt;span id=&quot;spark6&quot;&gt;&lt;/span&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+        Composite bar &lt;span id=&quot;spark7&quot;&gt;&lt;/span&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+        Discrete &lt;span id=&quot;spark8&quot;&gt;&lt;/span&gt;&lt;br /&gt;
+        Discrete with threshold &lt;span id=&quot;spark9&quot;&gt;&lt;/span&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+        Customize size and colours &lt;span id=&quot;spark10&quot;&gt;&lt;/span&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+        Tristate charts &lt;span id=&quot;spark11&quot;&gt;&lt;/span&gt; (think games won, lost or drawn)
+    &lt;/p&gt;
+    &lt;p&gt;
+        Tristate chart using a colour map: &lt;span id=&quot;spark12&quot;&gt;&lt;/span&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+        Box Plot: &lt;span id=&quot;spark13&quot;&gt;&lt;/span&gt;&lt;br /&gt;
+        Pre-computed box plot &lt;span id=&quot;spark14&quot;&gt;Loading..&lt;/span&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+        Pie charts &lt;span id=&quot;spark15&quot;&gt;&lt;/span&gt; &lt;span id=&quot;spark16&quot;&gt;&lt;/span&gt; &lt;span id=&quot;spark17&quot;&gt;&lt;/span&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+        Bullet charts &lt;span id=&quot;spark18&quot;&gt;&lt;/span&gt; &lt;span id=&quot;spark19&quot;&gt;&lt;/span&gt; &lt;span id=&quot;spark20&quot;&gt;&lt;/span&gt;
+    &lt;/p&gt;
+&lt;/div&gt;
+                                    </code>
+                                </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

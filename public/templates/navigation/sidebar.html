@@ -1,0 +1,39 @@
+<aside class="sidebar-left">
+    <ul class="side-nav fixed clearfix left" id="nav-mobile">
+        <li>
+            <ul class="collapsible" data-collapsible="accordion">
+                <li>
+                    <div class="collapsible-header waves-effect"><i class="zmdi zmdi-apps zmdi-hc-fw"></i>Admissions <i class="zmdi zmdi-chevron-down"></i><i class="zmdi zmdi-chevron-up"></i></div>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li>
+                                <a href="general.html">Master Data</a>
+                            </li>
+                            <li>
+                                <a href="social.html">Application Criteria</a>
+                            </li>
+                            <li>
+                                <a href="social.html">Seat Allocation</a>
+                            </li>
+                            <li>
+                                <a href="social.html">Fee Structure</a>
+                            </li>
+                            <li>
+                                <a href="social.html">Admissions</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</aside>
+<script>
+    root();
+    $('.button-collapse').sideNav({
+        menuWidth: 240, // Default is 240
+        edge: typeof ThemeSettings != "undefined" && ThemeSettings.getCookie('reading-direction') == 'rtl' ? 'right' :'left', // Choose the horizontal origin
+        closeOnClick: false // Closes side-nav on <a> clicks, useful for Angular/Meteor
+    });
+    $('.collapsible').collapsible();
+</script>

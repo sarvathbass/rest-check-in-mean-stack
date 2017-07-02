@@ -1,0 +1,1246 @@
+<div class="row" id="amCharts" >
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+        #mapdiv {
+            width: 100%;
+            height: 500px;
+        }
+        .amcharts-map-line {
+            stroke-dasharray: 2px 2px;
+            stroke-linejoin: round;
+            stroke-linecap: round;
+            -webkit-animation: am-moving-dashes 3s linear infinite;
+            animation: am-moving-dashes 3s linear infinite;
+        }
+        @-webkit-keyframes am-moving-dashes {
+            100% {
+                stroke-dashoffset: -30px;
+            }
+        }
+        @keyframes am-moving-dashes {
+            100% {
+                stroke-dashoffset: -30px;
+            }
+        }
+        .amcharts-map-image-london {
+            -webkit-animation: am-pulsating 1s ease-out infinite;
+            animation: am-pulsating 1s ease-out infinite;
+        }
+        @-webkit-keyframes am-pulsating {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+        @keyframes am-pulsating {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+        .amcharts-map-area {
+            -webkit-transition: all .3s .3s ease-out;
+            transition: all .3s .3s ease-out;
+        }
+        .amcharts-map-area:hover {
+            fill: #93c765;
+            stroke: #93c765;
+            -webkit-transition: all .3s ease-out;
+            transition: all .3s ease-out;
+        }
+        #chartdiv, #chartdiv1, #chartdiv2, #chartdiv3, #chartdiv4 {
+            width       : 100%;
+            height      : 500px;
+            font-size   : 11px;
+        }
+        .amcharts-legend-div {
+            overflow-y: auto!important;
+            max-height: 300px;
+            top: 100px !important;
+        }
+        pre {
+            max-height: 547px;
+        }
+    </style>
+    <div class="row section-header">
+        <h4 class="page-title">AmCharts</h4>
+        <p class="page-title"><a href="https://www.amcharts.com/" target="_blank">More info <small><i class="fontello-icon icon-link-ext blue-text darken-1"></i></small></a></p>
+    </div>
+    <div class="row dashboard-wrapper content-container">
+        <div class="row">
+            <div class="col l6 m12 s12">
+                <div class="card charts">
+                    <div class="card-content">
+                        <h5>Model 1</h5>
+                    </div>
+                    <div class="card-action">
+                        <div id="mapdiv"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col l6 m12 s12 hide-on-small-only">
+                <div class="card code1" >
+                    <div class="row">
+                        <div class="col s12">
+                            <ul class="tabs" tabs >
+                                <li class="tab col s3"><a href="#mapdiv_js" class="active" >Javascript</a></li>
+                                <li class="tab col s3"><a href="#mapdiv_css">CSS</a></li>
+                                <li class="tab col s3"><a href="#mapdiv_html">HTML</a></li>
+                            </ul>
+                        </div>
+                        <div class="col s12 ">
+                            <div class="row">
+                                <div id="mapdiv_js" class="s12">
+                                    <pre>
+                                        <code class="language-javascript">
+(function () {
+    'use strict';
+    angular.module('mara').controller('chartsAmChartsController',chartsAmChartsController);
+    function chartsAmChartsController() {
+    var vm = this;
+        // svg path for target icon
+        vm.targetSVG = "M9,0C4.029,0,0,4.029,0,9s4.029,9,9,9s9-4.029,9-9S13.971,0,9,0z M9,15.93 c-3.83,0-6.93-3.1-6.93-6.93S5.17,2.07,9,2.07s6.93,3.1,6.93,6.93S12.83,15.93,9,15.93 M12.5,9c0,1.933-1.567,3.5-3.5,3.5S5.5,10.933,5.5,9S7.067,5.5,9,5.5 S12.5,7.067,12.5,9z";
+        // svg path for plane icon
+        vm.planeSVG = "M19.671,8.11l-2.777,2.777l-3.837-0.861c0.362-0.505,0.916-1.683,0.464-2.135c-0.518-0.517-1.979,0.278-2.305,0.604l-0.913,0.913L7.614,8.804l-2.021,2.021l2.232,1.061l-0.082,0.082l1.701,1.701l0.688-0.687l3.164,1.504L9.571,18.21H6.413l-1.137,1.138l3.6,0.948l1.83,1.83l0.947,3.598l1.137-1.137V21.43l3.725-3.725l1.504,3.164l-0.687,0.687l1.702,1.701l0.081-0.081l1.062,2.231l2.02-2.02l-0.604-2.689l0.912-0.912c0.326-0.326,1.121-1.789,0.604-2.306c-0.452-0.452-1.63,0.101-2.135,0.464l-0.861-3.838l2.777-2.777c0.947-0.947,3.599-4.862,2.62-5.839C24.533,4.512,20.618,7.163,19.671,8.11z";
+        AmCharts.makeChart("mapdiv", {
+            type: "map",
+            addClassNames: true,
+            dataProvider: {
+                map: "worldLow",
+                getAreasFromMap: true,
+                linkToObject: "london",
+                images: [{
+                    id: "london",
+                    color: "#000000",
+                    type: "circle",
+                    title: "London",
+                    latitude: 51.5002,
+                    longitude: -0.1262,
+                    scale: 1.5,
+                    zoomLevel: 2.74,
+                    zoomLongitude: -20.1341,
+                    zoomLatitude: 49.1712,
+                    lines: [{
+                        latitudes: [51.5002, 50.4422],
+                        longitudes: [-0.1262, 30.5367]
+                    }, {
+                        latitudes: [51.5002, 46.9480],
+                        longitudes: [-0.1262, 7.4481]
+                    }, {
+                        latitudes: [51.5002, 59.3328],
+                        longitudes: [-0.1262, 18.0645]
+                    }, {
+                        latitudes: [51.5002, 40.4167],
+                        longitudes: [-0.1262, -3.7033]
+                    }, {
+                        latitudes: [51.5002, 46.0514],
+                        longitudes: [-0.1262, 14.5060]
+                    }, {
+                        latitudes: [51.5002, 48.2116],
+                        longitudes: [-0.1262, 17.1547]
+                    }, {
+                        latitudes: [51.5002, 44.8048],
+                        longitudes: [-0.1262, 20.4781]
+                    }, {
+                        latitudes: [51.5002, 55.7558],
+                        longitudes: [-0.1262, 37.6176]
+                    }, {
+                        latitudes: [51.5002, 38.7072],
+                        longitudes: [-0.1262, -9.1355]
+                    }, {
+                        latitudes: [51.5002, 54.6896],
+                        longitudes: [-0.1262, 25.2799]
+                    }, {
+                        latitudes: [51.5002, 64.1353],
+                        longitudes: [-0.1262, -21.8952]
+                    }, {
+                        latitudes: [51.5002, 40.4300],
+                        longitudes: [-0.1262, -74.0000]
+                    }],
+                    images: [{
+                        label: "Flights from London",
+                        svgPath: vm.planeSVG,
+                        left: 100,
+                        top: 45,
+                        labelShiftY: 5,
+                        color: "#CC0000",
+                        labelColor: "#CC0000",
+                        labelRollOverColor: "#CC0000",
+                        labelFontSize: 20
+                    }, {
+                        label: "show flights from Vilnius",
+                        left: 106,
+                        top: 70,
+                        labelColor: "#000000",
+                        labelRollOverColor: "#CC0000",
+                        labelFontSize: 11,
+                        linkToObject: "vilnius"
+                    }]
+                },
+                    {
+                        id: "vilnius",
+                        color: "#000000",
+                        svgPath: vm.targetSVG,
+                        title: "Vilnius",
+                        latitude: 54.6896,
+                        longitude: 25.2799,
+                        scale: 1.5,
+                        zoomLevel: 4.92,
+                        zoomLongitude: 15.4492,
+                        zoomLatitude: 50.2631,
+                        lines: [{
+                            latitudes: [54.6896, 50.8371],
+                            longitudes: [25.2799, 4.3676],
+                            color: "#00cc00"
+                        }, {
+                            latitudes: [54.6896, 59.9138],
+                            longitudes: [25.2799, 10.7387],
+                            color: "#00cc00"
+                        }, {
+                            latitudes: [54.6896, 40.4167],
+                            longitudes: [25.2799, -3.7033],
+                            color: "#00cc00"
+                        }, {
+                            latitudes: [54.6896, 50.0878],
+                            longitudes: [25.2799, 14.4205],
+                            color: "#00cc00"
+                        }, {
+                            latitudes: [54.6896, 48.2116],
+                            longitudes: [25.2799, 17.1547],
+                            color: "#00cc00"
+                        }, {
+                            latitudes: [54.6896, 44.8048],
+                            longitudes: [25.2799, 20.4781],
+                            color: "#00cc00"
+                        }, {
+                            latitudes: [54.6896, 55.7558],
+                            longitudes: [25.2799, 37.6176],
+                            color: "#00cc00"
+                        }, {
+                            latitudes: [54.6896, 37.9792],
+                            longitudes: [25.2799, 23.7166],
+                            color: "#00cc00"
+                        }, {
+                            latitudes: [54.6896, 54.6896],
+                            longitudes: [25.2799, 25.2799],
+                            color: "#00cc00"
+                        }, {
+                            latitudes: [54.6896, 51.5002],
+                            longitudes: [25.2799, -0.1262],
+                            color: "#00cc00"
+                        }, {
+                            latitudes: [54.6896, 53.3441],
+                            longitudes: [25.2799, -6.2675],
+                            color: "#00cc00"
+                        }],
+                        images: [{
+                            label: "Flights from Vilnius",
+                            svgPath: vm.planeSVG,
+                            left: 100,
+                            top: 45,
+                            labelShiftY: 5,
+                            color: "#CC0000",
+                            labelColor: "#CC0000",
+                            labelRollOverColor: "#CC0000",
+                            labelFontSize: 20
+                        }, {
+                            label: "show flights from London",
+                            left: 106,
+                            top: 70,
+                            labelColor: "#000000",
+                            labelRollOverColor: "#CC0000",
+                            labelFontSize: 11,
+                            linkToObject: "london"
+                        }]
+                    }, {
+                        svgPath: vm.targetSVG,
+                        title: "Brussels",
+                        latitude: 50.8371,
+                        longitude: 4.3676
+                    }, {
+                        svgPath:  vm.targetSVG,
+                        title: "Prague",
+                        latitude: 50.0878,
+                        longitude: 14.4205
+                    }, {
+                        svgPath:  vm.targetSVG,
+                        title: "Athens",
+                        latitude: 37.9792,
+                        longitude: 23.7166
+                    }, {
+                        svgPath:  vm.targetSVG,
+                        title: "Reykjavik",
+                        latitude: 64.1353,
+                        longitude: -21.8952
+                    }, {
+                        svgPath:  vm.targetSVG,
+                        title: "Dublin",
+                        latitude: 53.3441,
+                        longitude: -6.2675
+                    }, {
+                        svgPath:  vm.targetSVG,
+                        title: "Oslo",
+                        latitude: 59.9138,
+                        longitude: 10.7387
+                    }, {
+                        svgPath:  vm.targetSVG,
+                        title: "Lisbon",
+                        latitude: 38.7072,
+                        longitude: -9.1355
+                    }, {
+                        svgPath:  vm.targetSVG,
+                        title: "Moscow",
+                        latitude: 55.7558,
+                        longitude: 37.6176
+                    }, {
+                        svgPath:  vm.targetSVG,
+                        title: "Belgrade",
+                        latitude: 44.8048,
+                        longitude: 20.4781
+                    }, {
+                        svgPath:  vm.targetSVG,
+                        title: "Bratislava",
+                        latitude: 48.2116,
+                        longitude: 17.1547
+                    }, {
+                        svgPath:  vm.targetSVG,
+                        title: "Ljubljana",
+                        latitude: 46.0514,
+                        longitude: 14.5060
+                    }, {
+                        svgPath:  vm.targetSVG,
+                        title: "Madrid",
+                        latitude: 40.4167,
+                        longitude: -3.7033
+                    }, {
+                        svgPath:  vm.targetSVG,
+                        title: "Stockholm",
+                        latitude: 59.3328,
+                        longitude: 18.0645
+                    }, {
+                        svgPath:  vm.targetSVG,
+                        title: "Bern",
+                        latitude: 46.9480,
+                        longitude: 7.4481
+                    }, {
+                        svgPath:  vm.targetSVG,
+                        title: "Kiev",
+                        latitude: 50.4422,
+                        longitude: 30.5367
+                    }, {
+                        svgPath:  vm.targetSVG,
+                        title: "Paris",
+                        latitude: 48.8567,
+                        longitude: 2.3510
+                    }, {
+                        svgPath:  vm.targetSVG,
+                        title: "New York",
+                        latitude: 40.43,
+                        longitude: -74
+                    }
+                ]
+            },
+            areasSettings: {
+                unlistedAreasColor: "#FFCC00"
+            },
+            imagesSettings: {
+                color: "#CC0000",
+                rollOverColor: "#CC0000",
+                selectedColor: "#000000"
+            },
+            linesSettings: {
+                color: "#CC0000",
+                alpha: 0.4
+            },
+            backgroundZoomsToTop: true,
+            linesAboveImages: true
+        });
+    }
+})();
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div id="mapdiv_css" class=" s12">
+                                    <pre>
+                                        <code class="language-css">
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+#mapdiv {
+    width: 100%;
+    height: 500px;
+}
+.amcharts-map-line {
+    stroke-dasharray: 2px 2px;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+    -webkit-animation: am-moving-dashes 3s linear infinite;
+    animation: am-moving-dashes 3s linear infinite;
+}
+@-webkit-keyframes am-moving-dashes {
+    100% {
+    stroke-dashoffset: -30px;
+    }
+}
+@keyframes am-moving-dashes {
+    100% {
+    stroke-dashoffset: -30px;
+    }
+}
+.amcharts-map-image-london {
+    -webkit-animation: am-pulsating 1s ease-out infinite;
+    animation: am-pulsating 1s ease-out infinite;
+}
+@-webkit-keyframes am-pulsating {
+    0% {
+    transform: scale(0);
+    opacity: 1;
+    }
+    100% {
+    transform: scale(4);
+    opacity: 0;
+    }
+}
+@keyframes am-pulsating {
+    0% {
+    transform: scale(0);
+    opacity: 1;
+    }
+    100% {
+    transform: scale(4);
+    opacity: 0;
+    }
+}
+.amcharts-map-area {
+    -webkit-transition: all .3s .3s ease-out;
+    transition: all .3s .3s ease-out;
+}
+.amcharts-map-area:hover {
+    fill: #93c765;
+    stroke: #93c765;
+    -webkit-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+}
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div id="mapdiv_html" class=" s12">
+                                    <pre>
+                                        <code class="language-markup">
+&lt;script src=&quot;https://www.amcharts.com/lib/3/ammap.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://www.amcharts.com/lib/3/maps/js/worldLow.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://www.amcharts.com/lib/3/themes/light.js&quot;&gt;&lt;/script&gt;
+&lt;div class=&quot;card&quot;&gt;
+    &lt;div id=&quot;mapdiv&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+                                        </code>
+                                    </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col l6 m12 s12">
+                <div class="card charts">
+                    <div class="card-content">
+                        <h5>Model 2</h5>
+                    </div>
+                    <div class="card-action">
+                        <div id="chartdiv"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col l6 m12 s12 hide-on-small-only">
+                <div class="card code1">
+                    <div class="row">
+                        <div class="col s12">
+                            <ul class="tabs" tabs >
+                                <li class="tab col s3"><a href="#chartdiv_js" class="active" >Javascript</a></li>
+                                <li class="tab col s3"><a href="#chartdiv_css">CSS</a></li>
+                                <li class="tab col s3"><a href="#chartdiv_html">HTML</a></li>
+                            </ul>
+                        </div>
+                        <div class="col s12">
+                            <div class="row">
+                                <div id="chartdiv_js" class="s12">
+                                    <pre>
+                                        <code class="language-javascript">
+(function () {
+    'use strict';
+    angular.module('mara').controller('chartsAmChartsController',chartsAmChartsController);
+    function chartsAmChartsController() {
+        var vm = this;
+        /*
+         * This demo illustrates real-time data updates from a websocket by
+         * writing and listening to data events from a websocket echo server.
+         */
+        vm.websocketEchoServerUri = "wss://echo.websocket.org/";
+        vm.chartData = [];
+        vm.chart = AmCharts.makeChart("chartdiv", {
+            "type": "serial",
+            "theme": "light",
+            "dataDateFormat": "YYYY-MM-DD",
+            "valueAxes": [{
+                "id": "v1",
+                "position": "left"
+            }],
+            "graphs": [{
+                "id": "g1",
+                "bullet": "round",
+                "valueField": "value",
+                "balloonText": "[[category]]: [[value]]"
+            }],
+            "categoryField": "date",
+            "categoryAxis": {
+                "parseDates": true,
+                "equalSpacing": true,
+                "dashLength": 1,
+                "minorGridEnabled": true
+            },
+            "dataProvider": vm.chartData
+        });
+        vm.initWebSocket = function (wsUri) {
+            var ws = new WebSocket(wsUri);
+            ws.onopen = vm.onConnect;
+            ws.onclose = vm.onClose;
+            ws.onerror = vm.onError;
+            ws.onmessage = vm.updateChart;
+            return ws;
+        };
+        vm.updateChart = function(wsEvent) {
+            var newData = JSON.parse(wsEvent.data);
+            vm.chartData.push.apply(vm.chartData, newData);
+            if (vm.chartData.length > 50) {
+                vm.chartData.splice(0, vm.chartData.length - 50);
+            }
+            vm.writeToScreen("<span style='color: blue'>Received: " + wsEvent.data + "</span>");
+            vm.chart.validateData();
+        };
+        vm.onConnect = function (wsEvent) {
+            vm.writeToScreen("Server connection successful. Listening for data now.");
+            vm.interval = setInterval(vm.getDataFromServer, 5000); //we're simulating a datafeed by calling our getDataFromServer method every 2 seconds
+        };
+        vm.onError = function(wsEvent) {
+            vm.writeToScreen("<span style='color: red'>ERROR:" + wsEvent + "</span>");
+        };
+        vm.onClose = function (wsEvent) {
+            vm.writeToScreen("Server connection closed");
+            clearInterval(vm.interval);
+        };
+        vm.writeToScreen = function(message) {
+            var pre = document.createElement("p");
+            pre.style.wordWrap = "break-word";
+            pre.innerHTML = message;
+        };
+        vm.getDataFromServer = function() {
+            var newDate;
+            var newValue;
+            var newData = [];
+            var newDataSize = Math.round(Math.random() + 3) + 1;
+            if (vm.chartData.length) {
+                newDate = new Date(vm.chartData[vm.chartData.length - 1].date);
+            } else {
+                newDate = new Date();
+            }
+            for (var i = 0; i < newDataSize; ++i) {
+                newValue = Math.round(Math.random() * (40 + i)) + 10 + i;
+                newDate.setDate(newDate.getDate() + 1);
+                newData.push({
+                    date: newDate,
+                    value: newValue
+                });
+            }
+            vm.websocket.send(JSON.stringify(newData));
+        };
+        vm.websocket = vm.initWebSocket(vm.websocketEchoServerUri);
+    }
+})();
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div id="chartdiv_css" class="s12">
+                                    <pre>
+                                        <code class="language-css">
+#chartdiv {
+    width: 100%;
+    height: 500px;
+    font-size : 11px;
+}
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div id="chartdiv_html" class="s12">
+                                    <pre>
+                                        <code class="language-markup">
+&lt;script src=&quot;http://www.amcharts.com/lib/3/amcharts.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;http://www.amcharts.com/lib/3/serial.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;http://www.amcharts.com/lib/3/themes/light.js&quot;&gt;&lt;/script&gt;
+&lt;div class=&quot;card&quot;&gt;
+    &lt;div id=&quot;chartdiv&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+                                        </code>
+                                    </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col l6 m12 s12">
+                <div class="card charts">
+                    <div class="card-content">
+                        <h5>Model 3</h5>
+                    </div>
+                    <div class="card-action">
+                        <div id="chartdiv1"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col l6 m12 s12 hide-on-small-only">
+                <div class="card code1">
+                    <div class="row">
+                        <div class="col s12">
+                            <ul class="tabs" tabs >
+                                <li class="tab col s3"><a href="#chartdiv1_js" class="active" >Javascript</a></li>
+                                <li class="tab col s3"><a href="#chartdiv1_css">CSS</a></li>
+                                <li class="tab col s3"><a href="#chartdiv1_html">HTML</a></li>
+                            </ul>
+                        </div>
+                        <div class="col s12">
+                            <div class="row">
+                                <div id="chartdiv1_js" class="s12">
+                                    <pre>
+                                        <code class="language-javascript">
+(function () {
+    'use strict';
+    angular.module('mara').controller('chartsAmChartsController',chartsAmChartsController);
+    function chartsAmChartsController() {
+        var vm = this;
+        AmCharts.makeChart( "chartdiv1", {
+            "type": "radar",
+            "theme": "light",
+            "dataProvider": [ {
+                "country": "Czech Republic",
+                "litres": 156.9
+            }, {
+                "country": "Ireland",
+                "litres": 131.1
+            }, {
+                "country": "Germany",
+                "litres": 115.8
+            }, {
+                "country": "Australia",
+                "litres": 109.9
+            }, {
+                "country": "Austria",
+                "litres": 108.3
+            }, {
+                "country": "UK",
+                "litres": 99
+            } ],
+            "valueAxes": [ {
+                "axisTitleOffset": 20,
+                "minimum": 0,
+                "axisAlpha": 0.15,
+                "guides": [{
+                    "value": 0,
+                    "toValue": 50,
+                    "fillColor": "#c00",
+                    "fillAlpha": 0.3
+                }, {
+                    "value": 50,
+                    "toValue": 100,
+                    "fillColor": "#c00",
+                    "fillAlpha": 0.2
+                }, {
+                    "value": 100,
+                    "toValue": 150,
+                    "fillColor": "#cc0",
+                    "fillAlpha": 0.2
+                }, {
+                    "value": 150,
+                    "toValue": 200,
+                    "fillColor": "#0c0",
+                    "fillAlpha": 0.2
+                }]
+            } ],
+            "startDuration": 2,
+            "graphs": [ {
+                "balloonText": "[[value]] litres of beer per year",
+                "bullet": "round",
+                "valueField": "litres"
+            } ],
+            "categoryField": "country"
+        } );
+    }
+})();
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div id="chartdiv1_css" class="s12">
+                                    <pre>
+                                        <code class="language-css">
+#chartdiv1 {
+    width       : 100%;
+    height      : 500px;
+    font-size   : 11px;
+}
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div id="chartdiv1_html" class="s12">
+                                    <pre>
+                                        <code class="language-markup">
+&lt;script src=&quot;http://www.amcharts.com/lib/3/amcharts.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;http://www.amcharts.com/lib/3/radar.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;http://www.amcharts.com/lib/3/themes/light.js&quot;&gt;&lt;/script&gt;
+&lt;div class=&quot;card&quot;&gt;
+    &lt;div id=&quot;chartdiv1&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+                                        </code>
+                                    </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col l6 m12 s12">
+                <div class="card charts">
+                    <div class="card-content">
+                        <h5>Model 4</h5>
+                    </div>
+                    <div class="card-action">
+                        <div id="chartdiv2"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col l6 m12 s12 hide-on-small-only">
+                <div class="card code1">
+                    <div class="row">
+                        <div class="col s12">
+                            <ul class="tabs" tabs >
+                                <li class="tab col s3"><a href="#chartdiv2_js" class="active" >Javascript</a></li>
+                                <li class="tab col s3"><a href="#chartdiv2_css">CSS</a></li>
+                                <li class="tab col s3"><a href="#chartdiv2_html">HTML</a></li>
+                            </ul>
+                        </div>
+                        <div class="col s12">
+                            <div class="row">
+                                <div id="chartdiv2_js" class="s12">
+                                    <pre style="max-height: 556px">
+                                        <code class="language-javascript">
+(function () {
+    'use strict';
+    angular.module('mara').controller('chartsAmChartsController',chartsAmChartsController);
+    function chartsAmChartsController() {
+        var vm = this;
+        vm.chartData1 = [];
+        vm.generateChartData = function() {
+            var firstDate = new Date();
+            firstDate.setDate( firstDate.getDate() - 500 );
+            firstDate.setHours( 0, 0, 0, 0 );
+            for ( var i = 0; i < 500; i++ ) {
+                var newDate = new Date( firstDate );
+                newDate.setDate( newDate.getDate() + i );
+                var a1 = Math.round( Math.random() * ( 40 + i ) ) + 100 + i;
+                var b1 = Math.round( Math.random() * ( 1000 + i ) ) + 500 + i * 2;
+                vm.chartData1.push( {
+                    "date": newDate,
+                    "value": a1,
+                    "volume": b1
+                } );
+            }
+        };
+        vm.generateChartData();
+        AmCharts.makeChart( "chartdiv2", {
+            "type": "stock",
+            "theme": "light",
+            "dataSets": [ {
+                "title": "My Data",
+                "fieldMappings": [ {
+                    "fromField": "value",
+                    "toField": "value"
+                }, {
+                    "fromField": "volume",
+                    "toField": "volume"
+                } ],
+                "dataProvider": vm.chartData1,
+                "categoryField": "date"
+            }],
+            "panels": [ {
+                "showCategoryAxis": false,
+                "title": "Value",
+                "percentHeight": 70,
+                "stockGraphs": [ {
+                    "id": "g1",
+                    "valueField": "value",
+                    "balloonText": "[[title]]:<b>[[value]]</b>"
+                } ],
+                "valueAxes": [{
+                    "axisColor": "#c00"
+                }],
+                "stockLegend": {
+                    "periodValueTextRegular": "[[value.close]]"
+                }
+            }, {
+                "title": "Volume",
+                "percentHeight": 30,
+                "stockGraphs": [ {
+                    "valueField": "volume",
+                    "type": "column",
+                    "showBalloon": false,
+                    "fillAlphas": 1
+                } ],
+                "valueAxes": [{
+                    "axisColor": "#0c0"
+                }],
+                "stockLegend": {
+                    "periodValueTextRegular": "[[value.close]]"
+                }
+            }],
+            "chartScrollbarSettings": {
+                "graph": "g1"
+            },
+            "chartCursorSettings": {
+                "valueBalloonsEnabled": true,
+                "fullWidth": true,
+                "cursorAlpha": 0.1,
+                "valueLineBalloonEnabled": true,
+                "valueLineEnabled": true,
+                "valueLineAlpha": 0.5
+            },
+            "periodSelector": {
+                "position": "bottom",
+                "periods": [ {
+                    "period": "MM",
+                    "selected": true,
+                    "count": 1,
+                    "label": "1 month"
+                }, {
+                    "period": "YYYY",
+                    "count": 1,
+                    "label": "1 year"
+                }, {
+                    "period": "YTD",
+                    "label": "YTD"
+                }, {
+                    "period": "MAX",
+                    "label": "MAX"
+                } ]
+            },
+            "valueAxesSettings": {
+                "inside": false,
+                "axisThickness": 50,
+                "axisAlpha": 0.7,
+                "labelOffset": -50,
+                "color": "#fff"
+            },
+            "panelsSettings": {
+                "marginLeft": 50
+            }
+        });
+    }
+})();
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div id="chartdiv2_css" class="s12">
+                                    <pre style="max-height: 556px">
+                                        <code class="language-css">
+#chartdiv2 {
+    width       : 100%;
+    height      : 500px;
+    font-size   : 11px;
+}
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div id="chartdiv2_html" class="s12">
+                                    <pre style="max-height: 556px">
+                                        <code class="language-markup">
+&lt;script src=&quot;http://www.amcharts.com/lib/3/amcharts.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;http://www.amcharts.com/lib/3/radar.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;http://www.amcharts.com/lib/3/themes/light.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;http://www.amcharts.com/lib/3/amstock.js&quot;&gt;&lt;/script&gt;
+&lt;div class=&quot;card&quot;&gt;
+    &lt;div id=&quot;chartdiv2&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+                                        </code>
+                                    </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col l6 m12 s12">
+                <div class="card charts">
+                    <div class="card-content">
+                        <h5>Model 5</h5>
+                    </div>
+                    <div class="card-content">
+                        <div id="chartdiv3"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col l6 m12 s12 hide-on-small-only">
+                <div class="card code1">
+                    <div class="row">
+                        <div class="col s12">
+                            <ul class="tabs" tabs >
+                                <li class="tab col s3"><a href="#chartdiv3_js" class="active" >Javascript</a></li>
+                                <li class="tab col s3"><a href="#chartdiv3_css">CSS</a></li>
+                                <li class="tab col s3"><a href="#chartdiv3_html">HTML</a></li>
+                            </ul>
+                        </div>
+                        <div class="col s12">
+                            <div class="row">
+                                <div id="chartdiv3_js" class="s12">
+                                    <pre>
+                                        <code class="language-javascript">
+(function () {
+    'use strict';
+    angular.module('mara').controller('chartsAmChartsController',chartsAmChartsController);
+    function chartsAmChartsController() {
+        var vm = this;
+        AmCharts.makeChart("chartdiv3", {
+            "type": "pie",
+            "startDuration": 0,
+            "theme": "light",
+            "addClassNames": true,
+            "legend": {
+                "position": "right",
+                "marginRight": 100,
+                "autoMargins": false
+            },
+            "innerRadius": "30%",
+            "dataProvider": [{
+                "country": "Lithuania",
+                "litres": 501.9
+            }, {
+                "country": "Czech Republic",
+                "litres": 301.9
+            }, {
+                "country": "Ireland",
+                "litres": 201.1
+            }, {
+                "country": "Germany",
+                "litres": 165.8
+            }, {
+                "country": "Australia",
+                "litres": 139.9
+            }, {
+                "country": "Austria",
+                "litres": 128.3
+            }, {
+                "country": "UK",
+                "litres": 99
+            }, {
+                "country": "Belgium",
+                "litres": 60
+            }, {
+                "country": "The Netherlands",
+                "litres": 50
+            }, {
+                "country": "Lithuania",
+                "litres": 501.9
+            }, {
+                "country": "Czech Republic",
+                "litres": 301.9
+            }, {
+                "country": "Ireland",
+                "litres": 201.1
+            }, {
+                "country": "Germany",
+                "litres": 165.8
+            }, {
+                "country": "Australia",
+                "litres": 139.9
+            }, {
+                "country": "Austria",
+                "litres": 128.3
+            }, {
+                "country": "UK",
+                "litres": 99
+            }, {
+                "country": "Belgium",
+                "litres": 60
+            }, {
+                "country": "The Netherlands",
+                "litres": 50
+            }],
+            "valueField": "litres",
+            "titleField": "country"
+        });
+    }
+})();
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div id="chartdiv3_css" class="s12">
+                                    <pre>
+                                        <code class="language-css">
+#chartdiv3 {
+    width       : 100%;
+    height      : 500px;
+    font-size   : 11px;
+}
+.amcharts-legend-div {
+    overflow-y: auto!important;
+    max-height: 300px;
+    top: 100px !important;
+}
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div id="chartdiv3_html" class="s12">
+                                    <pre>
+                                        <code class="language-markup">
+&lt;script src=&quot;http://www.amcharts.com/lib/3/amcharts.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;http://www.amcharts.com/lib/3/pie.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;http://www.amcharts.com/lib/3/themes/light.js&quot;&gt;&lt;/script&gt;
+&lt;div class=&quot;card&quot;&gt;
+    &lt;div id=&quot;chartdiv3&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+                                        </code>
+                                    </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col l6 m12 s12">
+                <div class="card charts">
+                    <div class="card-content">
+                        <h5>Model 6</h5>
+                    </div>
+                    <div class="card-action">
+                        <div id="chartdiv4"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col l6 m12 s12 hide-on-small-only">
+                <div class="card code1">
+                    <div class="row">
+                        <div class="col s12">
+                            <ul class="tabs" tabs >
+                                <li class="tab col s3"><a href="#chartdiv4_js" class="active" >Javascript</a></li>
+                                <li class="tab col s3"><a href="#chartdiv4_css">CSS</a></li>
+                                <li class="tab col s3"><a href="#chartdiv4_html">HTML</a></li>
+                            </ul>
+                        </div>
+                        <div class="col s12">
+                            <div class="row">
+                                <div id="chartdiv4_js" class="s12">
+                                    <pre>
+                                        <code class="language-javascript">
+(function () {
+    'use strict';
+    angular.module('mara').config(configuration);
+    configuration.$inject = ['$stateProvider'];
+    function configuration($stateProvider) {
+        //...
+        $stateProvider.state('mara.charts-am', {
+		url:'charts/amCharts',
+		template: '&lt;div charts-am&gt;&lt;/div&gt;'
+	    })
+    }
+    angular.module('mara').directive('chartsAm', chartsAm);
+    chartsAm.$inject = ['$rootScope','$compile'];
+    function chartsAm($rootScope,$compile)
+    {
+        return {
+            restrict: 'EA',
+            templateUrl: '/app/components/charts/am.html',
+            replace: true,
+            link: function(scope, element) {
+                $compile(element.contents())($rootScope);
+            },
+            controller:'chartsAmChartsController',
+            controllerAs:'ch1'
+        };
+    }
+    angular.module('mara').controller('chartsAmChartsController',chartsAmChartsController);
+    function chartsAmChartsController() {
+        var vm = this;
+        vm.chartData3 = [{
+	    "title": "Marketing",
+	    "value": 23,
+	    "url":"#",
+	    "description":"click to drill-down",
+	    "data": [
+            { "title": "Jan", "value": 1, "data": [
+                { "title": "AAA", "value": 2 },
+                { "title": "BBB", "value": 5 },
+                { "title": "CCC", "value": 1 }
+            ] },
+            { "title": "Feb", "value": 2 },
+            { "title": "Mar", "value": 1 },
+            { "title": "Apr", "value": 3 },
+            { "title": "May", "value": 2 },
+            { "title": "Jun", "value": 1 },
+            { "title": "Jul", "value": 2 },
+            { "title": "Aug", "value": 3 },
+            { "title": "Sep", "value": 3 },
+            { "title": "Oct", "value": 1 },
+            { "title": "Nov", "value": 1 },
+            { "title": "Dec", "value": 3 }
+            ]
+        }, {
+            "title": "Sales",
+            "value": 26,
+            "url":"#",
+            "description":"click to drill-down",
+            "data": [
+            { "title": "Jan", "value": 4 },
+            { "title": "Feb", "value": 3 },
+            { "title": "Mar", "value": 1 },
+            { "title": "Apr", "value": 4 },
+            { "title": "May", "value": 2 },
+            { "title": "Jun", "value": 1 },
+            { "title": "Jul", "value": 2 },
+            { "title": "Aug", "value": 2 },
+            { "title": "Sep", "value": 3 },
+            { "title": "Oct", "value": 1 },
+            { "title": "Nov", "value": 1 },
+            { "title": "Dec", "value": 3 }
+            ]
+        }, {
+            "title": "Logistics",
+            "value": 30,
+            "url":"#",
+            "description":"click to drill-down",
+            "data": [
+            { "title": "Jan", "value": 2 },
+            { "title": "Feb", "value": 3 },
+            { "title": "Mar", "value": 1 },
+            { "title": "Apr", "value": 5 },
+            { "title": "May", "value": 2 },
+            { "title": "Jun", "value": 1 },
+            { "title": "Jul", "value": 2 },
+            { "title": "Aug", "value": 2 },
+            { "title": "Sep", "value": 3 },
+            { "title": "Oct", "value": 1 },
+            { "title": "Nov", "value": 1 },
+            { "title": "Dec", "value": 3 }
+            ]
+        }];
+        // create pie chart
+        vm.chart2 = AmCharts.makeChart("chartdiv4", {
+            "type": "pie",
+            "dataProvider": vm.chartData3,
+            "valueField": "value",
+            "titleField": "title",
+            "labelText": "[[title]]: [[value]]",
+            "pullOutOnlyOne": true,
+            "titles": [{
+            "text": "Departments"
+            }],
+            "allLabels": []
+        });
+        // initialize step array
+        vm.chart2.drillLevels = [{
+            "title": "Departments",
+            "data": vm.chartData3
+        }];
+        vm.chart2.addListener("clickSlice", function (event) {
+            var chart2 = event.chart;
+            if (event.dataItem.dataContext.data !== undefined) {
+            chart2.drillLevels.push(event.dataItem.dataContext);
+            chart2.dataProvider = event.dataItem.dataContext.data;
+            chart2.titles[0].text = event.dataItem.dataContext.title;
+            event.chart.addLabel(
+                0, 25,
+                "< Go back",
+                undefined,
+                undefined,
+                undefined,
+                undefined,
+                undefined,
+                undefined,
+                'javascript:angular.element($("#amCharts")).scope().ch1.drillUp();'
+            );
+            chart2.validateData();
+            chart2.animateAgain();
+            }
+        });
+        vm.drillUp = function () {
+            vm.chart2.drillLevels.pop();
+            var level = vm.chart2.drillLevels[vm.chart2.drillLevels.length - 1];
+            vm.chart2.dataProvider = level.data;
+            vm.chart2.titles[0].text = level.title;
+            if (vm.chart2.drillLevels.length === 1)
+            vm.chart2.clearLabels();
+            vm.chart2.validateData();
+            vm.chart2.animateAgain();
+        }
+    }
+})();
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div id="chartdiv4_css" class="s12">
+                                    <pre>
+                                        <code class="language-css">
+#chartdiv4 {
+    width       : 100%;
+    height      : 500px;
+    font-size   : 11px;
+}
+                                        </code>
+                                    </pre>
+                                </div>
+                                <div id="chartdiv4_html" class="s12">
+                                    <pre>
+                                        <code class="language-markup">
+&lt;script src=&quot;http://www.amcharts.com/lib/3/amcharts.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;http://www.amcharts.com/lib/3/pie.js&quot;&gt;&lt;/script&gt;
+&lt;div class=&quot;card&quot;&gt;
+    &lt;div id=&quot;chartdiv4&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+                                        </code>
+                                    </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br/>
+    </div>
+</div>

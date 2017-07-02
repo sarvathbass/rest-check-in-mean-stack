@@ -1,0 +1,342 @@
+<div >
+    <div class="row section-header">
+        <h4 class="page-title">Dashboard</h4>
+    </div>
+    <div class=" row content-container general">
+    <div>
+    <div class="row">
+        <div class="col l3 m6 s12">
+            <div class="card small-chart margin" id="small-chart1">
+                <div class="col l6 m6 s6 scc" >
+                    <div id="smc1" ></div>
+                </div>
+                <div class="col l6 m6 s6 sct" >
+                    <small>Website Views</small>
+                    <h2>25,236</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col l3 m6 s12">
+            <div class=" small-chart card margin" id="small-chart2">
+                <div class="col l6 m6 s6 scc" >
+                    <div id="smc2" ></div>
+                </div>
+                <div class="col l6 m6 s6 sct">
+                    <small>User Reviews</small>
+                    <h2>1,913</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col l3 m6 s12">
+            <div class="small-chart card margin" id="small-chart3">
+                <div class="col l6 m6 s6 scc" >
+                    <div id="smc3" ></div>
+                </div>
+                <div class="col l6 m6 s6 sct" >
+                    <small>Earnings</small>
+                    <h2>$4,656K</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col l3 m6 s12">
+            <div class="small-chart card margin" id="small-chart4">
+                <div class="col l6 m6 s6 scc" >
+                    <div id="smc4" ></div>
+                </div>
+                <div class="col l6 m6 s6 sct" >
+                    <small>Market Share</small>
+                    <h2>3.698 %</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col l8 m12 s12" >
+            <div id="darkChart" class="card">
+                <div class="card-content">
+                    <h5>Column and Spline Dynamic Chart</h5>
+                </div>
+                <div class="card-action">
+                    <div id="chartdiv" style="width:100%; height:400px;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col l4 m12 s12">
+            <div class="card" id="secondChart">
+                <div class="card-content">
+                    <h5>Horizontal Column Chart</h5>
+                </div>
+                <div class="card-action">
+                    <div id="chartdiv2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col l7 m12 s12">
+            <div class="card last-orders">
+                <div class="card-content">
+                    <h5>Last Orders</h5>
+                </div>
+                <div class="card-action">
+                    <table class="responsive-table highlight">
+                        <thead>
+                        <tr>
+                            <th data-field=""><i class="zmdi zmdi-delete"></i></th>
+                            <th data-field="Order ID">Order ID</th>
+                            <th data-field="Product">Product</th>
+                            <th data-field="Buyer">Buyer</th>
+                            <th data-field="Date">Date</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
+                                <label for="filled-in-box"></label></td>
+                            <td>#7584</td>
+                            <td>Product 1</td>
+                            <td>Alvin</td>
+                            <td>27/01/2017</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" class="filled-in" id="filled-in-box2" checked="checked" />
+                                <label for="filled-in-box2"></label></td>
+                            <td>#7583</td>
+                            <td>Product 2</td>
+                            <td>John Smith</td>
+                            <td>22/01/2017</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" class="filled-in" id="filled-in-box3" checked="checked" />
+                                <label for="filled-in-box3"></label></td>
+                            <td>#7582</td>
+                            <td>Product 3</td>
+                            <td>Jane Doe</td>
+                            <td>18/01/2017</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" class="filled-in" id="filled-in-box4" checked="checked" />
+                                <label for="filled-in-box4"></label></td>
+                            <td>#7581</td>
+                            <td>Product 4</td>
+                            <td>John Smith</td>
+                            <td>02/01/2017</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" class="filled-in" id="filled-in-box5" checked="checked" />
+                                <label for="filled-in-box5"></label></td>
+                            <td>#7582</td>
+                            <td>Product 5</td>
+                            <td>Jane Doe</td>
+                            <td>02/01/2017</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" class="filled-in" id="filled-in-box6" checked="checked" />
+                                <label for="filled-in-box6"></label></td>
+                            <td>#7586</td>
+                            <td>Product 6</td>
+                            <td>Eliza Doe</td>
+                            <td>03/03/2017</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" class="filled-in" id="filled-in-box7" checked="checked" />
+                                <label for="filled-in-box7"></label></td>
+                            <td>#7587</td>
+                            <td>Product 7</td>
+                            <td>John Courtney</td>
+                            <td>05/04/2017</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" class="filled-in" id="filled-in-box8" checked="checked" />
+                                <label for="filled-in-box8"></label></td>
+                            <td>#7588</td>
+                            <td>Product 8</td>
+                            <td>Jim Morrison</td>
+                            <td>05/04/2017</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col m12 l5 s12">
+            <div class="email-widget card">
+                <div class="card inbox-element inbox-4">
+                    <div class="card-content">
+                        <h5>Inbox 4</h5>
+                    </div>
+                    <div class="card-action">
+                        <div class="collection margin" id="signup-feed2">
+                            <div class="collection-item avatar new">
+                                <img src="../assets/images/users/aria.png" alt="Eliza Doe" class="circle responsive-img" />
+                                <span class="title">Eliza Doe</span>
+                                <p class="fs-12">Can you send those files?</p>
+                            </div>
+                            <div class="collection-item avatar new">
+                                <img src="../assets/images/profile/129.jpg" alt="Courtney Stravinsky" class="circle responsive-img">
+                                <span class="title">Courtney Stravinsky</span>
+                                <p class="fs-12">Can you send those files?</p>
+                            </div>
+                            <div class="collection-item avatar new">
+                                <img src="../assets/images/users/aria.png" alt="Eliza Doe" class="circle responsive-img" />
+                                <span class="title">Eliza Doe</span>
+                                <p class="fs-12">Can you send those files?</p>
+                            </div>
+                            <div class="collection-item avatar new">
+                                <img src="../assets/images/profile/128.jpg" alt="John Doe" class="circle responsive-img">
+                                <span class="title">John Doe</span>
+                                <p class="fs-12">Can you send those files?</p>
+                            </div>
+                            <div class="collection-item avatar new">
+                                <img src="../assets/images/profile/129.jpg" alt="Courtney Stravinsky" class="circle responsive-img">
+                                <span class="title">Courtney Stravinsky</span>
+                                <p class="fs-12">Can you send those files?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row margin-bottom-0">
+        <div class="col s12 m12 l7">
+            <div class="card project-stats">
+                <div class="card-content">
+                    <h5><i class="material-icons small icon-demo">insert_chart</i> Project Stats</h5>
+                </div>
+                <div class="card-action">
+                    <table class="responsive-table highlight">
+                        <thead>
+                        <tr>
+                            <th data-field="Project">Project</th>
+                            <th data-field="Key">Key</th>
+                            <th data-field="Summary">Summary</th>
+                            <th data-field="Status">Status</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>iBenefits</td>
+                            <td>Coupout</td>
+                            <td>Some Project</td>
+                            <td><span class="label status first-complementary-bg">Finished</span></td>
+                        </tr>
+                        <tr>
+                            <td>iBenefits</td>
+                            <td>Coupout</td>
+                            <td>Some Project</td>
+                            <td><span class="label status second-complementary-bg">Developing</span></td>
+                        </tr>
+                        <tr>
+                            <td>iBenefits</td>
+                            <td>Coupout</td>
+                            <td>Some Project</td>
+                            <td><span class="label status third-complementary-bg">Annuled</span></td>
+                        </tr>
+                        <tr>
+                            <td>iBenefits</td>
+                            <td>Coupout</td>
+                            <td>Some Project</td>
+                            <td><span class="label status first-complementary-bg">Finished</span></td>
+                        </tr>
+                        <tr>
+                            <td>iBenefits</td>
+                            <td>Coupout</td>
+                            <td>Some Project</td>
+                            <td><span class="label status second-complementary-bg">Developing</span></td>
+                        </tr>
+                        <tr>
+                            <td>iBenefits</td>
+                            <td>Coupout</td>
+                            <td>Some Project</td>
+                            <td><span class="label status third-complementary-bg">Annuled</span></td>
+                        </tr>
+                        <tr>
+                            <td>iBenefits</td>
+                            <td>Coupout</td>
+                            <td>Some Project</td>
+                            <td><span class="label status first-complementary-bg">Finished</span></td>
+                        </tr>
+                        <tr>
+                            <td>iBenefits</td>
+                            <td>Coupout</td>
+                            <td>Some Project</td>
+                            <td><span class="label status second-complementary-bg">Developing</span></td>
+                        </tr>
+                        <tr>
+                            <td>iBenefits</td>
+                            <td>Coupout</td>
+                            <td>Some Project</td>
+                            <td><span class="label status third-complementary-bg">Annuled</span></td>
+                        </tr>
+                        <tr>
+                            <td>iBenefits</td>
+                            <td>Coupout</td>
+                            <td>Some Project</td>
+                            <td><span class="label status first-complementary-bg">Finished</span></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+        <div class="col s12 m12 l5 socialMessage">
+            <div class="messageBox">
+                <div class="card">
+                    <div class="card-content">
+                        <h5><i class="material-icons small dp48">email</i> Messages</h5>
+                    </div>
+                    <div class="card-action">
+                        <ul class="collection">
+                            <li class="collection-item avatar second">
+                                <img src="../assets/images/users/johanna.png" alt="johanna" class="circle">
+                                <span class="title">Johanna Doe</span>
+                                <div class="card-panel user-message">
+                                    <span>Hey, man! What's up?</span>
+                                </div>
+                            </li>
+                            <li class="collection-item avatar second">
+                                <img src="../assets/images/users/jim1.png" alt="jim" class="circle">
+                                <span class="title">Jim Morrison</span>
+                                <div class="card-panel user-message">
+                                    <span>Hello, Johanna and Jane! I really need your help with the design for the postcards I've telled you about. Do you guys think you can do it today?</span>
+                                </div>
+                            </li>
+                            <li class="collection-item avatar second">
+                                <img src="../assets/images/users/johanna.png" alt="johanna" class="circle">
+                                <span class="title">Johanna Doe</span>
+                                <div class="card-panel user-message">
+                                    <span>Uh, oh.. Today? Isn't it a bit .. too short?</span>
+                                </div>
+                            </li>
+                            <li class="collection-item avatar second">
+                                <img src="../assets/images/users/johanna.png" alt="johanna" class="circle">
+                                <span class="title">Jim Morrison</span>
+                                <div class="card-panel user-message">
+                                    <span>Always a pleasure to do business with you, Jim.</span>
+                                </div>
+                            </li>
+                            <li class="collection-item avatar first">
+                                <img src="../assets/images/users/john.png" alt="john" class="circle">
+                                <span class="title"></span>
+                                <div class="card-panel user-message">
+                                    <span>:D</span>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="reply-text">
+                            <textarea rows="2" cols="10" placeholder="Write a reply..."></textarea>
+                            <div class="send-reply">
+                                <i class="material-icons waves-effect">attach_file</i>
+                                <a class="waves-effect waves-light btn color-custom right center">SEND</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+</div>
